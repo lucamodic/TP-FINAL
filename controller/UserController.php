@@ -15,14 +15,14 @@ class UserController
     }
 
     public function register($datos){
-        $this->renderer->render('', $datos);
+        $this->renderer->render('register', $datos);
     }
 
     public function add(){
         $imagen_ruta="../public/images/generica.png";
         if(isset($_FILES["imagen"])){
-            $imagen= $_FILES["imagen"];
-            $loc_temp=$_FILES["imagen"]["tmp_name"];
+            $imagen= $_FILES["imagen"]["name"];
+            $loc_temp = $_FILES["imagen"]["tmp_name"];
             $imagen_ruta = "../public/images/". $imagen;
             move_uploaded_file($loc_temp, $imagen_ruta);
         };
