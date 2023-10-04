@@ -28,4 +28,5 @@ class Router {
         call_user_func(array($controller, $validMethod));
     }
 
+
 }

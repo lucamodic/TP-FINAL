@@ -1,0 +1,10 @@
+[2023-10-04][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-04][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-04][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-04][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-04][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-04][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-04][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-04][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-04][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('asd', '2023-10-06', 'masculino', 'asdad@asdas.com', 'asdasdasd','asd', '../public/images/Array')

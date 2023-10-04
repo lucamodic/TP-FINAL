@@ -3,16 +3,9 @@ include_once('helpers/MySqlDatabase.php');
 include_once("helpers/MustacheRender.php");
 include_once('helpers/Router.php');
 include_once('helpers/Logger.php');
-
-include_once ("model/ToursModel.php");
-include_once('model/SongsModel.php');
-include_once('model/IntegrantesModel.php');
-
-include_once('controller/ToursController.php');
-include_once('controller/SongsController.php');
-include_once('controller/LaBandaController.php');
-include_once('controller/IntegrantesController.php');
-
+include_once ("model/UserModel.php");
+include_once('controller/HomeController.php');
+include_once('controller/UserController.php');
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 
 
@@ -22,27 +15,14 @@ class Configuration {
     public function __construct() {
     }
 
-    public function getIntegrantesController(){
-        return new IntegrantesController(
-            new IntegrantesModel($this->getDatabase()),
-            $this->getRenderer()
-        );
-    }
-
-    public function getToursController() {
-        return new ToursController(
-            new ToursModel($this->getDatabase()),
+    public function getUserController(){
+        return new UserController(
+            new UserModel($this->getDatabase()),
             $this->getRenderer());
     }
 
-    public function getSongsController() {
-        return new SongsController(
-            new SongsModel($this->getDatabase()),
-            $this->getRenderer());
-    }
-
-    public function getLaBandaController() {
-        return new LaBandaController($this->getRenderer());
+    public function getHomeController() {
+        return new HomeController($this->getRenderer());
     }
 
     private function getArrayConfig() {
@@ -65,7 +45,7 @@ class Configuration {
     public function getRouter() {
         return new Router(
             $this,
-            "getLaBandaController",
-            "list");
+            "getHomeController",
+            "mostrar");
     }
 }

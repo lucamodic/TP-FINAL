@@ -1,0 +1,107 @@
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ body{
+     background-color: #1E1E1E;
+     background-image: radial-gradient(#333232 1px, transparent 0);
+     background-size: 40px 40px;
+     color: #945bc9;
+     display: flex;
+     height: 100vh;
+     width: 100vw;
+     justify-content: center;
+     align-items: center;
+     font-family: Consolas, sans-serif;
+ }
+ .form{
+     background-color: #252525;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     width: auto;
+     border-radius: 15px;
+     height: auto;
+     padding: 2em 2em;
+ }
+ .form form{
+     display:flex;
+     flex-direction: column;
+     justify-content: center;
+ }
+ .form label{
+     margin-top: 10px;
+     margin-bottom: 10px;
+ }
+.form input{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 3px;
+    color:white;
+    background-color:#252525;
+}
+
+option {
+    color:white;
+    background-color:#252525;
+}
+
+ input[type="text"] {
+     border:none;
+     border-bottom:1px solid #ffffff;
+     background-color: #252525;
+     padding:3px;
+     color: white;
+ }
+.form select{
+    background-color: #252525;
+    color: white;
+    border:none;
+    border-bottom:1px solid #ffffff;
+    padding: 3px;
+}
+.btnSumate{
+    border: 1px solid #945bc9;
+    background-color: #333232;
+    border-radius: 10px;
+    width: 8em;
+    height: 3em;
+    color: white;
+    margin: 1em auto 0px auto;
+}
+ .btnSumate:hover{
+     cursor: pointer;
+     background-color: #945bc9;
+     color: white;
+ }
+ #pfp {
+     background-color: #252525;
+     color:white;
+ }
+ .custom-file-upload {
+     display: inline-block;
+     padding: 10px 20px;
+     cursor: pointer;
+     background-color: #252525;
+     color: #fff;
+     border: 1px solid white;
+     border-radius: 5px;
+     width: 20em;
+     text-align: center;
+ }
+ .custom-file-upload:hover {
+     background-color: #945bc9;
+ }
+ .a-usuario{
+     text-align: center;
+     margin-top: 1em;
+ }
+ .a-usuario:hover {
+     cursor: pointer;
+     text-decoration: underline;
+ }
+h3{
+    font-size: small;
+}
