@@ -1,10 +1,11 @@
 <link rel="stylesheet" href="../public/css/register.css">
 <div class="form">
-    <form action="/user/login" method="post">
+    <form action="/user/ingresar" method="post">
         <label for="usuario">Usuario</label>
         <input type="text" required name="usuario" placeholder="NestorSanchez">
         <label for="password">Clave</label>
         <input type="password" name="password" id="password" placeholder="**********" required>
         <button class="btnSumate" type="submit">Ingresar</button>
+        <h3>{{suceso}}</h3>
     </form>
 </div>

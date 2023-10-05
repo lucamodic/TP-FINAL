@@ -3,8 +3,6 @@
 class UserModel{
     private $database;
 
-
-
     public function __construct($database) {
         $this->database = $database;
     }
@@ -17,7 +15,12 @@ class UserModel{
         return $suceso;
     }
 
-
+    public function checkearLogin($usuario, $password){
+         if(!$this->checkUsername($usuario)){
+             return false;
+        }
+        return $this->checkPassword($usuario, $password);
+    }
 
     public function addToDatabase($data){
         $name = $data['nombre'];
@@ -60,14 +63,59 @@ class UserModel{
             return "Contraseñas no coinciden";
         }
 
-        $sql = "SELECT MAIL FROM user";
+        if(!$this->checkEmail($data)){
+            return "Mail ya registrado";
+        }
+
+        $usuario = $data['usuario'];
+
+        if($this->checkUsername($usuario)){
+            return "Usuario ya registrado";
+        }
+
+         return "exito";
+    }
+
+    public function checkEmail($data){
+        $sql = "SELECT * FROM user ";
         $resultado = $this->database->query($sql);
 
         foreach ($resultado as $mail){
-            if($mail == $data['mail']){
-                return "Mail ya registrado";
+            if($mail['mail'] == $data['email']){
+                return false;
             }
         }
-         return "exito";
+
+        return true;
     }
+
+    public function checkUsername($usuario){
+        $sql = "SELECT * FROM user";
+        $resultado = $this->database->query($sql);
+
+        foreach ($resultado as $username){
+            if($username['username'] == $usuario){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function getUserFromDatabaseWhereUsernameExists($usuario){
+        $sql = "SELECT * FROM user";
+        $resultado = $this->database->query($sql);
+
+        foreach ($resultado as $username){
+            if($username['username'] == $usuario){
+                return $username;
+            }
+        }
+        return false;
+    }
+
+    public function checkPassword($usuario, $password){
+        $resultado = $this->getUserFromDatabaseWhereUsernameExists($usuario);
+        return $password == $resultado['password'];
+    }
+
 }

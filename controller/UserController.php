@@ -14,8 +14,30 @@ class UserController
         $this->renderer->render('register');
     }
 
+    public function login(){
+        $this->renderer->render('login');
+    }
+
+    public function errorLogin($data){
+        $this->renderer->render('login', $data);
+    }
+
     public function register($datos){
         $this->renderer->render('register', $datos);
+    }
+
+    public function ingresar(){
+        $usuario = $_POST['usuario'];
+        $password = $_POST['password'];
+
+        if($this->userModel->checkearLogin($usuario, $password)) {
+            $_SESSION["usuario"] = $usuario;
+            $this->renderer->render('home');
+            exit();
+        }
+
+        $data = array("suceso" => "Usuario o contraseña incorrectos");
+        $this->errorLogin($data);
     }
 
     public function add(){

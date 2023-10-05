@@ -1,1 +1,100 @@
 [2023-10-05][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-05][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('Lucas', '2023-10-17', 'masculino', 'lucasferro2001@hotmail.com', 'qwertyui','Lucas', '../public/images/')
+[2023-10-05][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-05][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('Lucas', '2023-10-17', 'masculino', 'lucasferro2001@hotmail.com', 'qwertyui','Lucas', '../public/images/')
+[2023-10-05][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('a', '2023-10-03', 'x', 'a@a.com', '12345678','a', '../public/images/')
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT MAIL FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT username FROM user
+[2023-10-05][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('aasd', '2023-10-06', 'x', 'a@a.com', '987654321','asdsa', '../public/images/')
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT password FROM user WHERE username = 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT password FROM user WHERE username = 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT password FROM user WHERE username = 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username = 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE a
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE a
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE user.username LIKE 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Password: 
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Resultado: Array
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Resultado: 
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Resultado: 
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE 'a'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user WHERE username LIKE '%a%'
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-05][INFO]Ejecutando query: SELECT * FROM user
