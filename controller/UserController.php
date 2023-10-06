@@ -46,7 +46,7 @@ class UserController
         if(isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] === UPLOAD_ERR_OK){
             $imagen= $_FILES["imagen"]["name"];
             $loc_temp = $_FILES["imagen"]["tmp_name"];
-            $imagen_ruta = "../public/images/". $imagen;
+            $imagen_ruta = "public/images/" . $imagen;
             move_uploaded_file($loc_temp, $imagen_ruta);
         };
 

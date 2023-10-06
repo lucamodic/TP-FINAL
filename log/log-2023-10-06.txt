@@ -46,3 +46,11 @@
 [2023-10-06][INFO]Ejecutando query: SELECT * FROM user
 [2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
             values ('b', '2023-10-14', 'femenino', 'b@b.com', '10101010','b', '../public/images/7c7b805a-f921-497f-9651-298372bacce9.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('t', '2023-10-04', 'femenino', 't@t.com', '10101010','t', '..\public\images\7c7b805a-f921-497f-9651-298372bacce9.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('w', '2023-10-04', 'femenino', 'w@w.com', '10101010','w', 'public\images\7c7b805a-f921-497f-9651-298372bacce9.png')
