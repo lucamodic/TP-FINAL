@@ -1,0 +1,4 @@
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('E', '2023-10-11', 'femenino', 'lucamodic17@gmail.com', '12345678','e', '../public/images/7c7b805a-f921-497f-9651-298372bacce9.png')
