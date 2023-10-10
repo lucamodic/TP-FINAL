@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 include_once('helpers/MySqlDatabase.php');
 include_once("helpers/MustacheRender.php");
 include_once('helpers/Router.php');
@@ -18,11 +21,15 @@ class Configuration {
     public function getUserController(){
         return new UserController(
             new UserModel($this->getDatabase()),
-            $this->getRenderer());
+            $this->getRenderer()
+        );
     }
 
     public function getHomeController() {
-        return new HomeController($this->getRenderer());
+        return new HomeController(
+            new UserModel($this->getDatabase()),
+            $this->getRenderer()
+        );
     }
 
     private function getArrayConfig() {
@@ -48,4 +55,5 @@ class Configuration {
             "getHomeController",
             "mostrar");
     }
+
 }
