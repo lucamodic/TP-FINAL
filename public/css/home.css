@@ -3,6 +3,7 @@
     padding:0px;
     box-sizing: border-box;
     color:white;
+    font-family: Consolas, sans-serif;
 }
 
 
@@ -13,7 +14,7 @@ body {
 }
 
 .header-home {
-    background-color: rgba(0, 0, 0, 0.33);
+    background-color: #252525;
     display:flex;
     justify-content: end;
     align-items: center;
@@ -42,7 +43,7 @@ a {
 
 .pfp:hover{
     cursor:pointer;
-    border-radius:15px;
+    border: 5px solid #945bc9;
 }
 
 .botones-cont {
@@ -51,20 +52,21 @@ a {
     justify-content: center;
     align-items:center;
     flex-direction:column;
+
 }
 
 .boton-activo {
-    padding:2rem 5rem;
-    font-size:4rem;
-    background-color: rgba(86, 86, 86, 0.4);
+    padding:1rem 4rem;
+    font-size:1.5rem;
     margin:1rem;
     border-radius:15px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
 }
 
 .boton-activo:hover {
-    background-color: rgba(86, 86, 86, 0.81);
-    transform: scale(105%);
+    background-color: #100f0f;
 }
 
 @media screen and (max-width: 800px) {
