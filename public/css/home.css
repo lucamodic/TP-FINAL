@@ -1,15 +1,9 @@
-* {
+*{
     margin:0px;
     padding:0px;
-    box-sizing: border-box;
-    color:white;
+    box-sizing: border-box;color:white;
     font-family: Consolas, sans-serif;
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 516e1eed09cb7bc046e766fc8e98073316b8c910
 body {
     background-color: #1E1E1E;
     background-image: radial-gradient(#333232 1px, transparent 0);
@@ -41,20 +35,12 @@ a {
 .pfp {
     width:3.5rem;
     border-radius:100%;
-<<<<<<< HEAD
     transition: border 0.1s ease;
-=======
-    transition: border-radius 0.3s ease;
->>>>>>> 516e1eed09cb7bc046e766fc8e98073316b8c910
 }
 
 .pfp:hover{
     cursor:pointer;
-<<<<<<< HEAD
     border: 3px solid #945bc9;
-=======
-    border: 5px solid #945bc9;
->>>>>>> 516e1eed09cb7bc046e766fc8e98073316b8c910
 }
 
 .botones-cont {
