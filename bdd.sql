@@ -1,12 +1,19 @@
+<<<<<<< HEAD
 CREATE SCHEMA IF NOT EXISTS questionario;
 USE questionario;
 CREATE TABLE user(
     username VARCHAR(255) PRIMARY KEY,
+=======
+CREATE SCHEMA IF NOT EXISTS respuestados;
+USE respuestados;
+CREATE TABLE user(
+>>>>>>> 516e1eed09cb7bc046e766fc8e98073316b8c910
     name VARCHAR(255),
     spawn VARCHAR(255),
     sex VARCHAR(255),
     mail VARCHAR(255),
     password VARCHAR(255),
+<<<<<<< HEAD
     image VARCHAR(255),
     puntaje INT,
     partidasRealizadas INT,
@@ -52,3 +59,8 @@ INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La última cena', 
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La creación de Adán', 2, false);
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La Venus de Milo', 2, false);
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La Mona Lisa', 2, true);
+=======
+    username VARCHAR(255),
+    image VARCHAR(255)
+);
+>>>>>>> 516e1eed09cb7bc046e766fc8e98073316b8c910

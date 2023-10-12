@@ -28,6 +28,7 @@ class Configuration {
             new UserModel($this->getDatabase()),
             $this->getRenderer()
         );
+<<<<<<< HEAD
     }
 
     public function getGameController(){
@@ -37,6 +38,8 @@ class Configuration {
             new UserModel($this->getDatabase()),
             $this->getRenderer()
         );
+=======
+>>>>>>> 516e1eed09cb7bc046e766fc8e98073316b8c910
     }
 
     public function getHomeController() {
