@@ -31,8 +31,8 @@ class UserModel{
         $foto = $data['imagen'];
         $username = $data['usuario'];
 
-        $sql = "INSERT INTO user (name, spawn, sex, mail, password, username, image) 
-            values ('$name', '$spawn', '$sex', '$mail', '$password','$username', '$foto')";
+        $sql = "INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje,partidasRealizadas, qr) 
+            values ('$username', '$name', '$spawn', '$sex', '$mail', '$password', '$foto', 0, 0, '')";
         $this->database->execute($sql);
     }
 

@@ -32,7 +32,12 @@ class UserController
 
         if($this->userModel->checkearLogin($usuario, $password)) {
             $_SESSION["usuario"] = $usuario;
-            $this->renderer->render('home');
+            $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
+            $data = [
+                'username' => $user['username'],
+                'image' => $user['image']
+            ];
+            $this->renderer->render('home', $data);
             exit();
         }
 
@@ -42,10 +47,11 @@ class UserController
 
     public function add(){
         $imagen_ruta="../public/images/generica.png";
-        if(isset($_FILES["imagen"])){
+
+        if(isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] === UPLOAD_ERR_OK){
             $imagen= $_FILES["imagen"]["name"];
             $loc_temp = $_FILES["imagen"]["tmp_name"];
-            $imagen_ruta = "../public/images/". $imagen;
+            $imagen_ruta = "public/images/" . $imagen;
             move_uploaded_file($loc_temp, $imagen_ruta);
         };
 

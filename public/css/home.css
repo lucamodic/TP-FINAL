@@ -1,0 +1,99 @@
+* {
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    color:white;
+    font-family: Consolas, sans-serif;
+}
+body {
+    background-color: #1E1E1E;
+    background-image: radial-gradient(#333232 1px, transparent 0);
+    background-size: 40px 40px;
+}
+
+.header-home {
+    background-color: #252525;
+    display:flex;
+    justify-content: end;
+    align-items: center;
+    padding:10px;
+}
+
+a {
+    text-decoration:none;
+}
+
+.username {
+    font-size:1.3rem;
+    margin:0px 2vw 3px 1vw;
+    transition: border-bottom 0.3s ease;
+}
+
+.username:hover {
+    border-bottom:1px solid white;
+}
+
+.pfp {
+    width:3.5rem;
+    border-radius:100%;
+    transition: border 0.1s ease;
+}
+
+.pfp:hover{
+    cursor:pointer;
+    border: 3px solid #945bc9;
+}
+
+.botones-cont {
+    height:90vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+
+}
+
+.boton-activo {
+    padding:1rem 4rem;
+    font-size:1.5rem;
+    margin:1rem;
+    border-radius:15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+}
+
+.boton-activo:hover {
+    background-color: #100f0f;
+}
+
+@media screen and (max-width: 800px) {
+    .boton-activo {
+        padding:1.5rem 4rem;
+        font-size:3rem;
+        background-color: rgba(86, 86, 86, 0.4);
+        margin:0.7rem;
+    }
+}
+
+@media screen and (max-width: 500px), (max-height: 600px) {
+    .botones-cont {
+        margin-top:3rem;
+        height:40vh;
+    }
+    .username {
+        font-size:0.9rem;
+        margin:0px 2vw 0px 1vw;
+    }
+    .pfp {
+        width:2.5rem;
+    }
+    .boton-activo {
+        padding:1rem 3rem;
+        font-size:2rem;
+        background-color: rgba(86, 86, 86, 0.4);
+        margin:0.5rem;
+    }
+}
+
+

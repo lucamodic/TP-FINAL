@@ -1,0 +1,10 @@
+<h1>
+    {{pregunta.enunciado}}
+</h1>
+{{#respuestas}}
+    <form method="POST" action="/game/checkAnswer">
+        <input type="hidden" name="id_pregunta" value="{{pregunta.id}}">
+        <input class="{{pregunta.categoria}}" type="hidden" name="bool" value="{{es_correcta}}">
+        <button type="submit"> {{texto}} </button>
+    </form>
+{{/respuestas}}

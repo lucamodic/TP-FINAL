@@ -1,28 +1,49 @@
 <?php
+
+session_start();
+
 include_once('helpers/MySqlDatabase.php');
 include_once("helpers/MustacheRender.php");
 include_once('helpers/Router.php');
 include_once('helpers/Logger.php');
 include_once ("model/UserModel.php");
+include_once ("model/QuestionModel.php");
+include_once ("model/RespuestaModel.php");
 include_once('controller/HomeController.php');
 include_once('controller/UserController.php');
+include_once('controller/GameController.php');
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
+include_once('helpers/Session.php');
 
 
 class Configuration {
     private $configFile = 'config/config.ini';
 
-    public function __construct() {
+    public function __construct($module) {
+        conectar($module, $this->getRouter());
     }
 
     public function getUserController(){
         return new UserController(
             new UserModel($this->getDatabase()),
-            $this->getRenderer());
+            $this->getRenderer()
+        );
+    }
+
+    public function getGameController(){
+        return new GameController(
+            new QuestionModel($this->getDatabase()),
+            new RespuestaModel($this->getDatabase()),
+            new UserModel($this->getDatabase()),
+            $this->getRenderer()
+        );
     }
 
     public function getHomeController() {
-        return new HomeController($this->getRenderer());
+        return new HomeController(
+            new UserModel($this->getDatabase()),
+            $this->getRenderer()
+        );
     }
 
     private function getArrayConfig() {
@@ -48,4 +69,5 @@ class Configuration {
             "getHomeController",
             "mostrar");
     }
+
 }

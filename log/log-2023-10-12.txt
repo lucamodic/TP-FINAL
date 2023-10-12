@@ -1,0 +1,75 @@
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje, qr) 
+            values ('insomnya', 'insomnya', '2023-10-13', 'femenino', 'lucamodic17@gmail.com', '12345678', 'public/images/34eb8533acf431b5a6bf00b86774f52e.png', '0', '0', '')
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje, qr) 
+            values ('insomnya', 'insomnya', '2023-10-13', 'femenino', 'lucamodic17@gmail.com', '12345678', 'public/images/34eb8533acf431b5a6bf00b86774f52e.png', 0, 0, '')
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje,partidasRealizadas, qr) 
+            values ('insomnya', 'insomnya', '2023-10-13', 'femenino', 'lucamodic17@gmail.com', '12345678', 'public/images/34eb8533acf431b5a6bf00b86774f52e.png', 0, 0, '')
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-12][INFO]Ejecutando query: SELECT * FROM user

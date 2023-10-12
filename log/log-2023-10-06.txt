@@ -1,0 +1,56 @@
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('E', '2023-10-11', 'femenino', 'lucamodic17@gmail.com', '12345678','e', '../public/images/7c7b805a-f921-497f-9651-298372bacce9.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('s', '2023-10-05', 'femenino', 's@s.com', '123456789','s', '../public/images/')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('w', '2023-10-05', 'femenino', 'w@w.com', '12345678','w', '../public/images/generica.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('q', '2023-10-03', 'femenino', 'q@q.com', '123456789','q', '../public/images/7c7b805a-f921-497f-9651-298372bacce9.png')
+[2023-10-06][INFO]Ruta: ../public/images/
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('a', '2023-10-07', 'femenino', 'b@b.com', '10101010','b', '../public/images/')
+[2023-10-06][INFO]Ruta: ../public/images/
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('a', '2023-10-06', 'femenino', 'a@a.com', '10101010','a', '../public/images/')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('w', '2023-10-11', 'femenino', 'w@w.com', '10101010','w', '../public/images/generica.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('e', '2023-10-07', 'femenino', 'e@e.com', '10101010','e', '../public/images/generica.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('r', '2023-10-11', 'femenino', 'r@r.com', '10101010','r', '../public/images/generica.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('a', '2023-10-07', 'femenino', 'a@a.com', '10101010','a', '../public/images/generica.png')
+[2023-10-06][INFO]Imagen: 7c7b805a-f921-497f-9651-298372bacce9.png
+[2023-10-06][INFO]Ruta: ../public/images/7c7b805a-f921-497f-9651-298372bacce9.png
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('b', '2023-10-14', 'femenino', 'b@b.com', '10101010','b', '../public/images/7c7b805a-f921-497f-9651-298372bacce9.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('t', '2023-10-04', 'femenino', 't@t.com', '10101010','t', '..\public\images\7c7b805a-f921-497f-9651-298372bacce9.png')
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-06][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-06][INFO]Ejecutando query: INSERT INTO user (name, spawn, sex, mail, password, username, image) 
+            values ('w', '2023-10-04', 'femenino', 'w@w.com', '10101010','w', 'public\images\7c7b805a-f921-497f-9651-298372bacce9.png')

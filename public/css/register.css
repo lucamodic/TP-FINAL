@@ -9,11 +9,12 @@
      background-size: 40px 40px;
      color: #945bc9;
      display: flex;
-     height: 100vh;
+     height: 100%;
      width: 100vw;
      justify-content: center;
      align-items: center;
      font-family: Consolas, sans-serif;
+     margin-top:4rem;
  }
  .form{
      background-color: #252525;
@@ -26,6 +27,8 @@
      height: auto;
      padding: 2em 2em;
  }
+
+
  .form form{
      display:flex;
      flex-direction: column;
@@ -95,13 +98,24 @@ option {
      background-color: #945bc9;
  }
  .a-usuario{
+     text-decoration:none;
+     color:#945bc9;
      text-align: center;
      margin-top: 1em;
+     background-color: #252525;
+     border:none;
  }
  .a-usuario:hover {
      cursor: pointer;
-     text-decoration: underline;
+     text-decoration:  underline;
  }
+
 h3{
     font-size: small;
+    text-align:center;
+}
+
+.error {
+    margin:15px 0px 0px 0px;
+    text-align:center;
 }

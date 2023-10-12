@@ -12,13 +12,21 @@ class MustacheRender{
     }
 
     public function render($contentFile , $data = array() ){
-        echo  $this->generateHtml($contentFile, $data);
+        if(isset($_SESSION["usuario"])){
+            echo  $this->generateHtml($contentFile, $data);
+            exit();
+        }
+        echo  $this->generateHtmlWithoutHeader($contentFile, $data);
     }
 
     public function generateHtml($contentFile, $data = array()) {
         $contentAsString = file_get_contents('view/partial/header.mustache');
         $contentAsString .= file_get_contents('view/' . $contentFile . '_view.mustache');
         $contentAsString .= file_get_contents('view/partial/footer.mustache');
+        return $this->mustache->render($contentAsString, $data);
+    }
+    public function generateHtmlWithoutHeader($contentFile, $data = array()) {
+        $contentAsString = file_get_contents('view/' . $contentFile . '_view.mustache');
         return $this->mustache->render($contentAsString, $data);
     }
 }
