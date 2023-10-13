@@ -2383,6 +2383,7 @@
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+<<<<<<< HEAD
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM user
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM user
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM user
@@ -2859,3 +2860,5 @@
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+=======
+>>>>>>> e91fa2531cd33ab9032218cd2dcc26c28d7655c2
