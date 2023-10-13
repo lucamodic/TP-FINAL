@@ -754,3 +754,1632 @@
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
 [2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user 
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje,partidasRealizadas, qr) 
+            values ('dersy1', 'dersy1', '2023-10-12', 'femenino', 'a@a', '12344321', '../public/images/generica.png', 0, 0, '')
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '1'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM pregunta
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM respuesta WHERE id_pregunta LIKE '2'
+[2023-10-13][INFO]Ejecutando query: SELECT * FROM user
