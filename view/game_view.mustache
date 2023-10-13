@@ -1,10 +1,18 @@
-<h1>
-    {{pregunta.enunciado}}
-</h1>
+<link rel="stylesheet" href="../public/css/game.css">
+<div class="todo-div">
+    <div class="{{pregunta.categoria}}">
+        <h1 class="preg">
+            {{pregunta.enunciado}}
+        </h1>
+    </div>
+<div class="botones-div">
 {{#respuestas}}
     <form method="POST" action="/game/checkAnswer">
         <input type="hidden" name="id_pregunta" value="{{pregunta.id}}">
-        <input class="{{pregunta.categoria}}" type="hidden" name="bool" value="{{es_correcta}}">
-        <button type="submit"> {{texto}} </button>
+        <input type="hidden" name="bool" value="{{es_correcta}}">
+
+        <button type="submit" class="boton-game"> {{texto}} </button>
     </form>
 {{/respuestas}}
+</div>
+</div>

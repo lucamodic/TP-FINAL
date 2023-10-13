@@ -1,0 +1,80 @@
+.boton-game{
+    padding:1rem 4rem;
+    font-size:1.5rem;
+    margin:1rem;
+    border-radius:15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    width:100%;
+}
+.boton-game:hover {
+    background-color: #100f0f;
+}
+.todo-div {
+    height:90vh;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+
+}
+.preg{
+    color: #ece3e3;
+}
+.botones-div{
+    width:20%;
+    text-align: center;
+}
+.Cultura{
+    background-color: #1eb0a6;
+    width: 80%;
+    padding-bottom: 5em;
+    padding-top: 5em;
+    text-align: center;
+    margin: 2em;
+    border-radius: 20px;
+    border: 5px solid #ffffff;
+}
+.Deporte{
+    background-color: #da6e19;
+    width: 80%;
+    padding-bottom: 5em;
+    padding-top: 5em;
+    text-align: center;
+    margin: 2em;
+    border-radius: 20px;
+    border: 5px solid #ffffff;
+}
+.Ciencia{
+    background-color: #abc52f;
+    width: 80%;
+    padding-bottom: 5em;
+    padding-top: 5em;
+    text-align: center;
+    margin: 2em;
+    border-radius: 20px;
+    border: 5px solid #ffffff;
+}
+@media screen and (max-width: 1270px) {
+
+    .boton-game {
+        width: 170%;
+    }
+    .botones-div{
+        max-width: 100%;
+        margin: 0 auto;
+        transform: translate(-50%, 0%);
+    }
+}
+@media screen and (max-width: 850px) {
+
+    .boton-game {
+        width: 250%;
+    }
+    .botones-div{
+        max-width: 100%;
+        margin: 0 auto;
+        transform: translate(-80%, 0%);
+    }
+
+}
