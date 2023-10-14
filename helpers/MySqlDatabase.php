@@ -25,6 +25,12 @@ class MySqlDatabase {
         return mysqli_fetch_all($result, MYSQLI_BOTH);
     }
 
+    public function querySinFetchAll($sql) {
+        Logger::info('Ejecutando query: ' . $sql);
+        $result = mysqli_query($this->connection, $sql);
+        return mysqli_num_rows($result);
+    }
+
     public function execute($sql) {
         Logger::info('Ejecutando query: ' . $sql);
         mysqli_query($this->connection, $sql);

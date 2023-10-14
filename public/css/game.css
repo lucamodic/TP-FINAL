@@ -10,6 +10,7 @@
 }
 .boton-game:hover {
     background-color: #100f0f;
+    cursor:pointer;
 }
 .todo-div {
     height:90vh;

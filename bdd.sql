@@ -52,3 +52,21 @@ INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La última cena', 
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La creación de Adán', 2, false);
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La Venus de Milo', 2, false);
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La Mona Lisa', 2, true);
+
+INSERT INTO pregunta(categoria, enunciado, dificultad)values('Ciencia', '¿Cuál es el elemento químico más abundante en la Tierra?', 'facil');
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Hierro', 3, false);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Oxígeno', 3, true);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Carbono', 3, false);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Hidrógeno', 3, false);
+
+INSERT INTO pregunta(categoria, enunciado, dificultad)values('Cultura', '¿En qué año comenzó la Primera Guerra Mundial?', 'facil');
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('1901', 4, false);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('1914', 4, true);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('1939', 4, false);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('1945', 4, false);
+
+INSERT INTO pregunta(categoria, enunciado, dificultad)values('Cultura', '¿Cuál es la capital de Japón?', 'facil');
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Pekín', 5, false);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Seúl', 5, false);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Tokio', 5, true);
+INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Bankok', 5, false);

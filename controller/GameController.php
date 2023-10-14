@@ -30,7 +30,7 @@ class GameController{
 
     public function getDataGame(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        $pregunta = $this->questionModel->getRandomQuestion();
+        $pregunta = $this->checkQuestion($usuario['username']);
         $respuestas = $this->respuestaModel->getRespuestas($pregunta['id']);
         return $data = [
             'pregunta' => $pregunta,
@@ -38,6 +38,25 @@ class GameController{
             'username' => $usuario['username'],
             'image' => $usuario['image']
         ];
+    }
+
+    public function checkQuestion($usuario){
+        $this->checkCount($usuario);
+        $boolean = true;
+        while($boolean){
+            $pregunta = $this->questionModel->getRandomQuestion();
+            $boolean = $this->questionModel->isAnswered($pregunta['id'], $usuario);
+        }
+        $this->questionModel->addQuestionToAnswered($pregunta['id'], $usuario);
+        return $pregunta;
+    }
+
+    public function checkCount($usuario){
+        $resultadoUsuario = $this->questionModel->getQuestionsAsked($usuario);
+        $resultadoPreguntas = $this->questionModel->getQuestions();
+        if($resultadoUsuario !== null && $resultadoPreguntas == $resultadoUsuario){
+            $this->questionModel->deleteUserAnsweredQuestions($usuario);
+        }
     }
 
     public function getData(){
