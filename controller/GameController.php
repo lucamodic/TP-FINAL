@@ -28,6 +28,12 @@ class GameController{
         exit();
     }
 
+    public function sumarPuntos(){
+
+
+
+    }
+
     public function getDataGame(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $pregunta = $this->checkQuestion($usuario['username']);
