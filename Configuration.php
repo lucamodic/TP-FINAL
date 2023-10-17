@@ -9,6 +9,7 @@ include_once('helpers/Logger.php');
 include_once ("model/UserModel.php");
 include_once ("model/QuestionModel.php");
 include_once ("model/RespuestaModel.php");
+include_once ("model/PartidaModel.php");
 include_once('controller/HomeController.php');
 include_once('controller/UserController.php');
 include_once('controller/GameController.php');
@@ -35,7 +36,8 @@ class Configuration {
             new QuestionModel($this->getDatabase()),
             new RespuestaModel($this->getDatabase()),
             new UserModel($this->getDatabase()),
-            $this->getRenderer()
+            $this->getRenderer(),
+            new PartidaModel($this->getDatabase())
         );
     }
 

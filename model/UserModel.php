@@ -118,4 +118,11 @@ class UserModel{
         return $password == $resultado['password'];
     }
 
+    public function sumarPuntos($username){
+        $sql = "UPDATE user
+                SET puntaje = puntaje + 1
+                WHERE username = '$username'";
+        $this->database->execute($sql);
+    }
+
 }

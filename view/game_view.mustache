@@ -8,6 +8,7 @@
 <div class="botones-div">
 {{#respuestas}}
     <form method="POST" action="/game/checkAnswer">
+        <input type="hidden" name="id_partida" value="{{partida}}">
         <input type="hidden" name="id_pregunta" value="{{pregunta.id}}">
         <input type="hidden" name="bool" value="{{es_correcta}}">
 

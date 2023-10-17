@@ -44,4 +44,22 @@ class QuestionModel{
         $this->database->execute($sql);
     }
 
+    public function agarrarUltimaPregunta($usuario){
+        $result = $this->buscarPreguntaActual($usuario);
+        return $this->getPreguntaById($result[0]['pregunta_id']);
+    }
+
+    public function buscarPreguntaActual($usuario){
+        $sql = "SELECT * FROM preguntas_usadas 
+         WHERE username LIKE '$usuario'
+         ORDER BY tiempo DESC
+        LIMIT 1";
+        return $this->database->query($sql);
+    }
+
+    public function getPreguntaById($id){
+        $sql = "SELECT * FROM pregunta 
+         WHERE id = '$id'";
+        return $this->database->query($sql);
+    }
 }

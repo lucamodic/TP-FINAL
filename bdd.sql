@@ -70,3 +70,12 @@ INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Pekín', 5, false)
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Seúl', 5, false);
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Tokio', 5, true);
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Bankok', 5, false);
+
+ALTER TABLE partida
+    ADD esta_activa BOOLEAN;
+
+ALTER TABLE preguntas_usadas
+    ADD tiempo TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE partida
+    ADD tiempo TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
