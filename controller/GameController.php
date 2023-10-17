@@ -19,10 +19,6 @@ class GameController{
         $this->renderer->render('game', $this->getDataGameStart());
     }
 
-    public function jugar(){
-        $this->renderer->render('game', $this->getDataGame());
-    }
-
     public function checkAnswer(){
         $respuesta = $_POST['bool'];
         $pregunta = $_POST['id_pregunta'];
