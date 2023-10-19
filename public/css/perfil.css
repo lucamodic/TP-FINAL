@@ -1,0 +1,47 @@
+.usuario{
+    height:90vh;
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin:6rem;
+    width:20%;
+    height:20%;
+    background-color: #252525;
+    padding: 5em;
+    border-radius: 20px;
+    border: 2px solid #945bc9;
+}
+.usuario-entero{
+    display: flex;
+    justify-content: center;
+}
+.img-usuario{
+    border-radius: 200px;
+    margin-bottom: 2em;
+}
+h3{
+    margin:5px;
+}
+p{
+    margin:5px;
+}
+.boton-activo {
+    padding:1rem 1rem;
+    font-size:1rem;
+    margin:1rem;
+    border-radius:15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    width:10rem;
+    text-align: center;
+}
+label:hover{
+    cursor:pointer;
+    color: #945bc9;
+}
+.boton-activo,
+label {
+    display: flex;
+    justify-content: center;
+}

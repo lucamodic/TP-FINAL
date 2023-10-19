@@ -28,6 +28,7 @@ class GameController{
             $this->renderer->render('game', $this->getDataGame());
             exit();
         }
+        $this->userModel->sumarPartidaRealizadas($_SESSION['usuario']);
         $this->partidaModel->gameOver($_POST['id_partida']);
         $this->renderer->render('end', $this->getDataGameOver());
         exit();

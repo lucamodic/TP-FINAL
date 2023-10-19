@@ -113,6 +113,12 @@ class UserModel{
         return false;
     }
 
+    public  function  getAllUsersOrdenados(){
+        $sql = "SELECT * FROM user 
+        ORDER BY puntaje DESC";
+        return $this->database->query($sql);
+    }
+
     public function checkPassword($usuario, $password){
         $resultado = $this->getUserFromDatabaseWhereUsernameExists($usuario);
         return $password == $resultado['password'];
@@ -122,6 +128,19 @@ class UserModel{
         $sql = "UPDATE user
                 SET puntaje = puntaje + 1
                 WHERE username = '$username'";
+        $this->database->execute($sql);
+    }
+    public function sumarPartidaRealizadas($username){
+        $sql = "UPDATE user
+                SET partidasRealizadas = partidasRealizadas + 1
+                WHERE username = '$username'";
+        $this->database->execute($sql);
+    }
+
+    public function cambiarImagen($imagen, $username){
+        $sql = "UPDATE user
+                SET image = '$imagen'
+                WHERE username = '$username';";
         $this->database->execute($sql);
     }
 

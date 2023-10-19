@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="../public/css/ranking.css">
+<table class="ranking">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Puntos</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#usuarios}}
+        <tr>
+            <td><a href="/user/mostrarPerfil">{{username}}</a></td>
+            <td>{{puntaje}}</td>
+        </tr>
+    {{/usuarios}}
+    </tbody>
+</table>

@@ -5,13 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
 <body>
 <link rel="stylesheet" href="../public/css/home.css">
 <header class="header-home">
-    <a href="/home"><img class="pfp" src="../{{image}}" alt="Pfp" ></a>
-
-    <a class="username" href="/user/profile">{{username}}</a>
+    <a href="/home"><img src="" alt="LOGO" class="logo"></a>
+    <input type="text" class="buscador" placeholder="buscar usuarios...">
+    <a href="/home/mostrarPerfil?user={{username}}"><img class="pfp" src="../{{image}}" alt="" ></a>
+    <a class="username" href="/home/mostrarPerfil?user={{username}}">{{username}}</a>
 </header>

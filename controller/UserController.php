@@ -73,11 +73,16 @@ class UserController
             $data = array("suceso" => $suceso);
             $this->register($data);
             exit();
-        }else{
+        }else {
             $this->renderer->render('login');
             exit();
         }
-
-
     }
+    public function cambiarImagen(){
+        $imagen=$_POST['imagen'];
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        this->userModel->cambiarImagen($imagen, $usuario);
+        //COMO HACER QUE SE REDIRIGA AL METODO MOSTRARUSUARIO?
+    }
+
 }
