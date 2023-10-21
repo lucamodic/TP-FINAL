@@ -13,9 +13,11 @@ body {
 .header-home {
     background-color: #252525;
     display:flex;
-    justify-content: end;
+    justify-content: space-between;
     align-items: center;
     padding:10px;
+    width: 100%;
+
 }
 
 a {
@@ -26,6 +28,9 @@ a {
     font-size:1.3rem;
     margin:0px 2vw 3px 1vw;
     transition: border-bottom 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .username:hover {
@@ -49,7 +54,6 @@ a {
     justify-content: center;
     align-items:center;
     flex-direction:column;
-
 }
 
 .boton-activo {
@@ -69,7 +73,7 @@ a {
 }
 
 .buscador{
-    margin-right: 10em;
+    margin-right:1rem ;
     width:70%;
     padding: 0.5em;
     color:white;
@@ -80,6 +84,27 @@ a {
     margin-right: 8em;
     margin-left:2em;
 }
+.busqueda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.busqueda .form{
+    display: flex;
+    width: 30rem;
+}
+.header-right{
+    display: flex;
+}
+.perfil{
+    display: flex;
+}
+.botonConfirmar{
+    padding: 0.5em;
+    color:white;
+    background-color: #444040;
+}
+
 
 @media screen and (max-width: 800px) {
     .boton-activo {

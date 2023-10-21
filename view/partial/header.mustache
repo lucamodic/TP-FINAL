@@ -10,8 +10,19 @@
 <body>
 <link rel="stylesheet" href="../public/css/home.css">
 <header class="header-home">
-    <a href="/home"><img src="../public/images/LOGO.png" alt="LOGO" class="logo" width="250em"></a>
-    <input type="text" class="buscador" placeholder="buscar usuarios...">
-    <a href="/home/mostrarPerfil?user={{username}}"><img class="pfp" src="../{{image}}" alt="" ></a>
-    <a class="username" href="/home/mostrarPerfil?user={{username}}">{{username}}</a>
+    <div>
+        <a href="/home"><img src="../public/images/LOGO.png" alt="LOGO" class="logo" width="250em"></a>
+    </div>
+    <div class="header-right">
+        <div class="busqueda">
+            <form class="form" action="/home/buscarPerfil" method="post">
+                <input type="text" class="buscador" placeholder="buscar usuarios..." id="username" name="username">
+                <input class="botonConfirmar" type="submit" value="Buscar">
+            </form>
+        </div>
+        <div class="perfil">
+            <a href="/home/mostrarPerfil?user={{username}}"><img class="pfp" src="../{{image}}" alt=""></a>
+            <a class="username" href="/home/mostrarPerfil?user={{username}}">{{username}}</a>
+        </div>
+    </div>
 </header>

@@ -44,6 +44,30 @@ class HomeController
         ];
         $this->renderer->render('user', $data);
     }
+    public function buscarPerfil(){
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $usernameBuscado = $_POST['username'];
+        $resultadoBusqueda = $this->userModel->getUserFromDatabaseWhereUsernameExists($usernameBuscado);
+        if($resultadoBusqueda){
+            $data = [
+                'username' => $usuario['username'],
+                'image' => $usuario['image'],
+                'imagenBuscado' => $resultadoBusqueda['image'],
+                'usernameBuscado' => $resultadoBusqueda['username'],
+                'puntaje' => $resultadoBusqueda['puntaje'],
+                'partidasRealizadas' => $resultadoBusqueda['partidasRealizadas'],
+            ];
+            $this->renderer->render('userSearch',$data);
+        }
+        else{
+
+            $data = [
+                'username' => $usuario['username'],
+                'image' => $usuario['image']
+            ];
+            $this->renderer->render('home',$data);
+        }
+    }
 
 
 

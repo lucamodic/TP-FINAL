@@ -144,4 +144,9 @@ class UserModel{
         $this->database->execute($sql);
     }
 
+    public function buscarPerfilPorNombreUsuario($username){
+        $sql =  "SELECT * FROM user WHERE username LIKE '%$username%'";
+        return $this->database->query($sql);
+    }
+
 }
