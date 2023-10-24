@@ -41,6 +41,11 @@ CREATE TABLE preguntas_usadas (
                                   FOREIGN KEY (pregunta_id) REFERENCES pregunta(id)
 );
 
+CREATE TABLE preguntas_reportadas (
+                                  pregunta_id INT,
+                                  FOREIGN KEY (pregunta_id) REFERENCES pregunta(id)
+);
+
 
 INSERT INTO pregunta(categoria, enunciado, dificultad)values('Cultura', '¿Cuál es la moneda oficial de Japón?', 'facil');
 INSERT INTO pregunta(categoria, enunciado, dificultad)values('Cultura', '¿Qué famosa pintura de Leonardo da Vinci representa a una mujer con una enigmática sonrisa?', 'facil');
@@ -79,3 +84,15 @@ ALTER TABLE preguntas_usadas
 
 ALTER TABLE partida
     ADD tiempo TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE user
+    ADD COLUMN latitud DECIMAL(10, 6),
+    ADD COLUMN longitud DECIMAL(10, 6);
+
+ALTER TABLE user
+    ADD COLUMN esEditor BOOLEAN,
+    ADD COLUMN esAdmin BOOLEAN;
+
+ALTER TABLE user
+    ADD COLUMN token_verificacion VARCHAR(100) NOT NULL,
+    ADD COLUMN esta_verificado BOOLEAN DEFAULT 0;

@@ -63,8 +63,9 @@ class UserController
             "password" => $_POST["password"],
             "usuario" => $_POST["usuario"],
             "repeatPassword" => $_POST["repeatPassword"],
-            "imagen" => $imagen_ruta
-
+            "imagen" => $imagen_ruta,
+            "lat" => $_POST["lat"],
+            "lon" => $_POST["lon"],
         );
 
         $suceso = $this->userModel->add($datos);
@@ -81,8 +82,56 @@ class UserController
     public function cambiarImagen(){
         $imagen=$_POST['imagen'];
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        this->userModel->cambiarImagen($imagen, $usuario);
-        //COMO HACER QUE SE REDIRIGA AL METODO MOSTRARUSUARIO?
+        $this->userModel->cambiarImagen($imagen, $usuario);
+        $this->renderer->render('user');
+    }
+    public function mostrarPerfil(){
+        $nombre = $_GET['user'];
+        $editar = false;
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        if($nombre === $usuario['username']){
+            $editar = true;
+        }
+        $data = [
+            'image' => $usuario['image'],
+            'username' => $usuario['username'],
+            'puntaje' => $usuario['puntaje'],
+            'partidasRealizadas' => $usuario['partidasRealizadas'],
+            'editar' => $editar,
+            'latitud' => $usuario['latitud'],
+            'longitud' => $usuario['longitud']
+        ];
+        $this->renderer->render('user', $data);
+    }
+    public function buscarPerfil(){
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $usernameBuscado = $_POST['username'];
+        $resultadoBusqueda = $this->userModel->getUserFromDatabaseWhereUsernameExists($usernameBuscado);
+        if($resultadoBusqueda){
+            $data = [
+                'username' => $usuario['username'],
+                'image' => $usuario['image'],
+                'imagenBuscado' => $resultadoBusqueda['image'],
+                'usernameBuscado' => $resultadoBusqueda['username'],
+                'puntaje' => $resultadoBusqueda['puntaje'],
+                'partidasRealizadas' => $resultadoBusqueda['partidasRealizadas'],
+                'latitud' => $usuario['latitud'],
+                'longitud' => $usuario['longitud']
+            ];
+            $this->renderer->render('userSearch',$data);
+        }
+        else{
+
+            $data = [
+                'username' => $usuario['username'],
+                'image' => $usuario['image']
+            ];
+            $this->renderer->render('home',$data);
+        }
     }
 
+    public function verify(){
+        $token = $_GET['token'];
+        $this->userModel->verificar($token, $this->mailer);
+    }
 }

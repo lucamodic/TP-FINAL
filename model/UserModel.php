@@ -1,16 +1,25 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require 'third-party/PHPMailer-master/src/Exception.php';
+require 'third-party/PHPMailer-master/src/PHPMailer.php';
+require 'third-party/PHPMailer-master/src/SMTP.php';
+
+
 class UserModel{
     private $database;
+
 
     public function __construct($database) {
         $this->database = $database;
     }
-    public function add($datos){
+
+    public function add($datos, $mailer){
         $suceso = $this->checkdata($datos);
 
         if($suceso == "exito"){
-            $this->addToDatabase($datos);
+            $this->addToDatabase($datos, $mailer);
         }
         return $suceso;
     }
@@ -30,10 +39,18 @@ class UserModel{
         $password = $data['password'];
         $foto = $data['imagen'];
         $username = $data['usuario'];
+        $latitud=$data['lat'];
+        $longitud = $data['lon'];
+        $token = bin2hex(random_bytes(50));
 
-        $sql = "INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje,partidasRealizadas, qr) 
-            values ('$username', '$name', '$spawn', '$sex', '$mail', '$password', '$foto', 0, 0, '')";
+        $sql = "INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje,partidasRealizadas, qr, latitud, longitud, esEditor, esAdmin, token_verificacion) 
+            values ('$username', '$name', '$spawn', '$sex', '$mail', '$password', '$foto', 0, 0, '', '$latitud', '$longitud', false, false, '$token')";
         $this->database->execute($sql);
+
+        $verificationLink = "localhost/user/verify?token=" . $token;
+
+        $this->enviarMail($verificationLink, $mail, $name);
+
     }
 
     public function compararContrasenia($data){
@@ -148,5 +165,47 @@ class UserModel{
         $sql =  "SELECT * FROM user WHERE username LIKE '%$username%'";
         return $this->database->query($sql);
     }
+
+    public function verificar($token){
+        $this->UserModel->verificar($token);
+        $query = "SELECT id FROM users WHERE token_verificacion = ? AND esta_verificado = 0";
+        $stmt = $this->database->query($query);
+
+        if ($stmt->rowCount() == 1) {
+            // Token is valid; mark the user as verified
+            $query = "UPDATE users SET is_verified = 1, verification_token = NULL WHERE verification_token = ?";
+            $this->database->execute($query);
+            echo "Email verification successful. You can now log in.";
+        } else {
+            echo "Invalid or expired verification link.";
+        }
+    }
+
+
+    public function enviarMail($verificationLink, $address, $name){
+            $mail = new PHPMailer;
+
+            $mail->SMTPDebug = 0;
+            $mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'freegames4me2me@gmail.com';
+            $mail->Password = 'Freegames';
+            $mail->SMTPSecure = 'tls';
+            $mail->Port = 587;
+
+
+            $mail->setFrom('freegames4me2me@gmail.com', 'Frei');
+            $mail->addAddress("$address", "$name");
+            $mail->Subject = 'Valida tu cuenta para disfrutar!';
+
+
+            $mail->isHTML(true);
+            $mail->Body = '<h1> Link para verificar tu correo </h1>
+                         Hace click aca <a href="' . $verificationLink . '"> Link para validar tu correo </a>';
+            $mail->send();
+    }
+
+
 
 }

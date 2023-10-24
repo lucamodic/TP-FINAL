@@ -4,6 +4,7 @@ class PartidaModel
 {
     private $database;
 
+
     public function __construct($database) {
         $this->database = $database;
     }
@@ -47,5 +48,6 @@ class PartidaModel
          WHERE id = '$id'";
         return $this->database->query($sql)[0];
     }
+
 
 }

@@ -62,4 +62,24 @@ class QuestionModel{
          WHERE id = '$id'";
         return $this->database->query($sql);
     }
+    public function agregarPreguntaReportada($idPreguntaReportada){
+        $sql = "INSERT INTO preguntas_reportadas  (idPregunta) values ($idPreguntaReportada)";
+        $this->database->execute($sql);
+    }
+    public function getPreguntasReportadas(){
+        $sql = "SELECT * FROM preguntas_reportadas";
+        $preguntas = $this->database->query($sql);
+        $preguntasReportadas = array();
+        foreach ($preguntas as $pregunta){
+             $preguntaBuscada = $pregunta['pregunta_id'];
+             $sql = "SELECT * FROM pregunta Where id LIKE '$preguntaBuscada'";
+             $preguntasReportadas[] = $this->database->query($sql)[0];
+        }
+        return $preguntasReportadas;
+    }
+    public function getCategorias(){
+        $sql="SELECT DISTINCT categorias
+                FROM preguntas;";
+        return $this->database->query($sql);
+    }
 }

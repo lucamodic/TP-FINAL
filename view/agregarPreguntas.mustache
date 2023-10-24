@@ -1,0 +1,15 @@
+<form action="/home/agregarPreguntaParaEditor">
+    <select id="categorias" name="opcion">
+        <option name="categoriaNueva" value="opcion">Nueva categoria</option>
+    {{#categorias}}
+        <option name="categoria" value="opcion1">{{categoria}}</option>
+    {{/categorias}}
+    </select>
+    <input type="text" name="categoriaNueva" placeholder="Ingresar nueva categoria...">
+    <input type="text" required name="enunciado" placeholder="Ingresar enunciado...">
+    <input type="text" required name="respuesta1" placeholder="Ingresar respuesta 1...">
+    <input type="text" required name="respuesta2" placeholder="Ingresar respuesta 2...">
+    <input type="text" required name="respuesta3" placeholder="Ingresar respuesta 3...">
+    <input type="text" required name="respuesta4" placeholder="Ingresar respuesta correcta...">
+    <input type="submit" value="Agregar">
+</form>

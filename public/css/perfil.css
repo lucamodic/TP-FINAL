@@ -1,5 +1,4 @@
 .usuario{
-    height:90vh;
     display:flex;
     align-items:center;
     flex-direction:column;
@@ -44,6 +43,12 @@ label:hover{
 label {
     display: flex;
     justify-content: center;
+}
+#mapa{
+    margin-top: 3em;
+    width:90%;
+    height: 10rem;
+    border-radius:10px;
 }
 @media screen and (max-width: 1700px) {
 

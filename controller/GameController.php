@@ -71,7 +71,7 @@ class GameController{
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $username = $usuario['username'];
         if($this->partidaModel->checkPartida($username)){
-            $pregunta = $this->questionModel->agarrarUltimaPregunta($username)[0];
+                $pregunta = $this->questionModel->agarrarUltimaPregunta($username)[0];
             $partida = $this->partidaModel->getPartidaByUsername($username);
         }else {
             $pregunta = $this->checkQuestion($username);
@@ -96,6 +96,11 @@ class GameController{
             'username' => $usuario['username'],
             'image' => $usuario['image']
         ];
+    }
+
+    public function reportarPregunta(){
+        $idPreguntaReportada = $_GET['id_pregunta'];
+        $this->partidaModel->agregarPreguntaReportada($idPreguntaReportada);
     }
 
 }

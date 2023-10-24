@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="../public/css/register.css">
+<link rel="stylesheet" href="../public/css/register.css" xmlns="">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY&callback=initMap" async defer></script>
 <div class="form">
     <form action="/user/add" method="post" enctype="multipart/form-data">
         <label for="nombre">Nombre Completo</label>
@@ -26,6 +27,10 @@
         </label>
         <input id="file-upload" type="file" style="display:none;" name="imagen">
 
+        <div id="mapa" style="width:500px; height:400px;"></div>
+
+        <input type="hidden" id="lat" name="lat" value="">
+        <input type="hidden" id="lon" name="lon" value="">
         <button class="btnSumate" type="submit">Sumate</button>
 
         <h3 class="error">{{suceso}}</h3>
@@ -33,3 +38,39 @@
     </form>
 
 </div>
+
+<script>
+    function initMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(-34.6686986, -58.5614947),
+            zoom: 12,
+            panControl: false,
+            zoomControl: false,
+            scaleControl: false,
+            mapTypeControl: false,
+            streetViewControl: true,
+            overviewMapControl: true,
+            rotateControl: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        let map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
+        let marker = null;
+        google.maps.event.addListener(map, "click", function(event) {
+            if (event.domEvent.button === 0) {
+                var lat = event.latLng.lat();
+                var lng = event.latLng.lng();
+                if (marker) {
+                    marker.setMap(null);
+                }
+                marker = new google.maps.Marker({
+                    position: event.latLng,
+                    map: map,
+                    draggable: true
+                });
+                document.getElementById("lat").value = lat;
+                document.getElementById("lon").value = lng;
+            }
+        });
+    }
+</script>

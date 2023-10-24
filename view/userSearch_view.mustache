@@ -14,5 +14,35 @@
         <h3>USERNAME: {{usernameBuscado}}</h3>
         <p>PUNTAJE: {{puntaje}}</p>
         <p>PARTIDAS JUGADAS: {{partidasRealizadas}}</p>
+        <div id="mapa" style="height:400px;"></div>
+        <input type="hidden" name="latitud" id="latitud" value="{{latitud}}">
+        <input type="hidden" name="longitud" id="longitud" value="{{longitud}}">
     </div>
+
 </div>
+<script>
+    var lat = parseFloat(document.getElementById("latitud").value);
+    var lng = parseFloat(document.getElementById("longitud").value);
+    function initMap() {
+        var mapOptions = {
+            center: new google.maps.LatLng(lat, lng),
+            zoom: 12,
+            panControl: false,
+            zoomControl: false,
+            scaleControl: false,
+            mapTypeControl: false,
+            streetViewControl: true,
+            overviewMapControl: true,
+            rotateControl: true,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+
+        let map = new google.maps.Map(document.getElementById("mapa"), mapOptions);
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(lat, lng),
+            map: map,
+            draggable: true
+        });
+    }
+</script>

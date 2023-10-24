@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="../public/css/preguntasReportadas.css">
+<table class="ranking">
+    <thead>
+    <tr>
+        <th>Pregunta</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#preguntasReportadas}}
+        <tr>
+            <td>{{enunciado}}</td>
+            <td><button>Eliminar</button></td>
+            <td><button>Reestablecer</button></td>
+        </tr>
+    {{/preguntasReportadas}}
+    </tbody>
+</table>

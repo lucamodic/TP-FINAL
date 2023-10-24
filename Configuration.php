@@ -44,7 +44,8 @@ class Configuration {
     public function getHomeController() {
         return new HomeController(
             new UserModel($this->getDatabase()),
-            $this->getRenderer()
+            $this->getRenderer(),
+            new QuestionModel($this->getDatabase())
         );
     }
 
