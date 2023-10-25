@@ -5,6 +5,8 @@ use PHPMailer\PHPMailer\Exception;
 require 'third-party/PHPMailer-master/src/Exception.php';
 require 'third-party/PHPMailer-master/src/PHPMailer.php';
 require 'third-party/PHPMailer-master/src/SMTP.php';
+require 'third-party/phpqrcode/qrlib.php';
+
 
 
 class UserModel{
@@ -229,7 +231,20 @@ class UserModel{
     public function checkVerification($usuario){
         return $this->getUserFromDatabaseWhereUsernameExists($usuario)['esta_verificado'];
     }
+    public function generarQr(){
 
+        $dir = 'public/images/qr/';
+        if(!file_exists($dir)){
+            mkdir($dir);
+        }
+        $filename  = $dir.'test.png';
+        $tamanio = 100;
+        $level = 'M';
+        $fraimSize = 10;
+        $contenido = 'http://localhost/user/mostrarPerfil?user=Panteraa11';
+        QRcode::png($contenido, $filename, $level, $tamanio, $fraimSize);
+        return $filename;
+    }
 
 
 }

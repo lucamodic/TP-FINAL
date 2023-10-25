@@ -95,6 +95,7 @@ class UserController
         if($nombre === $_SESSION['usuario']){
             $editar = true;
         }
+        $filename = $this->userModel->generarQr();
         $data = [
             'image' => $usuario['image'],
             'username' => $usuario['username'],
@@ -103,7 +104,8 @@ class UserController
             'editar' => $editar,
             'latitud' => $usuario['latitud'],
             'longitud' => $usuario['longitud'],
-            'verificado' => $usuario['esta_verificado']
+            'verificado' => $usuario['esta_verificado'],
+            'filename'=>$filename
         ];
         $this->renderer->render('user', $data);
     }

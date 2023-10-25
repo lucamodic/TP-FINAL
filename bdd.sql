@@ -97,7 +97,3 @@ ALTER TABLE user
     ADD COLUMN token_verificacion VARCHAR(100) NOT NULL,
     ADD COLUMN esta_verificado BOOLEAN DEFAULT 0;
 
-CREATE TABLE preguntas_reportadas (
-     pregunta_id INT,
-     FOREIGN KEY (pregunta_id) REFERENCES pregunta(id)
-)
