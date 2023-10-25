@@ -9,4 +9,19 @@ $(document).ready(function(){
             }
         });
     });
+
+    setInterval(() => {
+        $.ajax({
+            url: '/game/calcularTiempoQueQueda',
+            success: function (response) {
+                var data = JSON.parse(response)["tiempo"];
+                if (data >= 10) {
+                    window.location.href = "/game/end";
+                }
+                $('.tiempo').html(data);
+            }
+        });
+    },900);
+
+
 });

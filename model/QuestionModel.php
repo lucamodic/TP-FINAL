@@ -63,9 +63,10 @@ class QuestionModel{
         return $this->database->query($sql);
     }
     public function agregarPreguntaReportada($idPreguntaReportada){
-        $sql = "UPDATE pregunta SET reportada = 1 WHERE id = '$idPreguntaReportada'";
-        $this->database->execute($sql);
+            $sql = "UPDATE pregunta SET reportada = 1 WHERE id = '$idPreguntaReportada'";
+            $this->database->execute($sql);
     }
+
     public function getPreguntasReportadas(){
         $sql = "SELECT * FROM pregunta WHERE reportada = 1";
         return $this->database->query($sql);
@@ -105,4 +106,6 @@ class QuestionModel{
         $preguntasAgregadas= $this->database->query($sql);
         return $preguntasAgregadas;
     }
+
+
 }

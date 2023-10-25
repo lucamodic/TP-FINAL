@@ -55,8 +55,6 @@ class UserModel{
 
     }
 
-
-
     public function compararContrasenia($data){
         if ($data['password'] != $data['repeatPassword']) {
             return false;

@@ -1,5 +1,4 @@
 <?php
-
 class GameController{
     private $renderer;
     private $userModel;
@@ -17,6 +16,9 @@ class GameController{
 
     public function startGame(){
         if($this->userModel->checkVerification($_SESSION['usuario'])){
+
+            $this->createSession();
+
             $this->renderer->render('game', $this->getDataGameStart());
         }
         else {
@@ -34,6 +36,9 @@ class GameController{
         if($respuesta){
             $this->userModel->sumarPuntos($_SESSION['usuario']);
             $this->partidaModel->sumarPuntos($_POST['id_partida']);
+
+            $this->createSession();
+
             $this->renderer->render('game', $this->getDataGame());
             exit();
         }
@@ -41,6 +46,37 @@ class GameController{
         $this->partidaModel->gameOver($_POST['id_partida']);
         $this->renderer->render('end', $this->getDataGameOver());
         exit();
+    }
+
+    public function createSession(){
+        if(isset($_SESSION['tiempo'])){
+            unset($_SESSION['tiempo']);
+        }
+        $_SESSION['tiempo'] = time();
+    }
+
+    public function end(){
+        $partida = $this->partidaModel->getPartidaByUsername($_SESSION['usuario'])[0];
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $this->userModel->sumarPartidaRealizadas($_SESSION['usuario']);
+        $this->partidaModel->gameOver($partida['id']);
+        $data = [
+            'puntajeUsuario'=> $usuario['puntaje'],
+            'puntajeTotal' => $partida['puntaje'],
+            'username' => $usuario['username'],
+            'image' => $usuario['image']
+        ];
+
+        $this->renderer->render('end', $data);
+    }
+
+    public function calcularTiempoQueQueda(){
+        $tiempo = time() - $_SESSION['tiempo'];
+        if($tiempo >= 11){
+            $this->end();
+        }
+        $response = array("tiempo" => $tiempo);
+        echo json_encode($response);
     }
 
     public function checkQuestion($usuario){
@@ -97,7 +133,7 @@ class GameController{
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $username = $usuario['username'];
         if($this->partidaModel->checkPartida($username)){
-                $pregunta = $this->questionModel->agarrarUltimaPregunta($username)[0];
+            $pregunta = $this->questionModel->agarrarUltimaPregunta($username)[0];
             $partida = $this->partidaModel->getPartidaByUsername($username);
         }else {
             $pregunta = $this->checkQuestion($username);
@@ -128,5 +164,4 @@ class GameController{
         $idPreguntaReportada = $_GET['id_pregunta'];
         $this->questionModel->agregarPreguntaReportada($idPreguntaReportada);
     }
-
 }
