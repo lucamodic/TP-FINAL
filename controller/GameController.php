@@ -16,10 +16,19 @@ class GameController{
     }
 
     public function startGame(){
-        $this->renderer->render('game', $this->getDataGameStart());
+        if($this->userModel->checkVerification($_SESSION['usuario'])){
+            $this->renderer->render('game', $this->getDataGameStart());
+        }
+        else {
+            $this->renderer->render('home', $this->getData());
+        }
     }
 
     public function checkAnswer(){
+        if(!isset($_POST['URL'])){
+            $this->renderer->render('home', $this->getDataCheater());
+            exit();
+        }
         $respuesta = $_POST['bool'];
         $pregunta = $_POST['id_pregunta'];
         if($respuesta){
@@ -67,6 +76,23 @@ class GameController{
         ];
     }
 
+    public function getData(){
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        return $data = [
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'verificar' => "Verifica tu mail antes de jugar!"
+        ];
+    }
+
+    public function getDataCheater(){
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        return $data = [
+            'username' => $usuario['username'],
+            'image' => $usuario['image']
+        ];
+    }
+
     public function getDataGameStart(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $username = $usuario['username'];
@@ -100,7 +126,7 @@ class GameController{
 
     public function reportarPregunta(){
         $idPreguntaReportada = $_GET['id_pregunta'];
-        $this->partidaModel->agregarPreguntaReportada($idPreguntaReportada);
+        $this->questionModel->agregarPreguntaReportada($idPreguntaReportada);
     }
 
 }

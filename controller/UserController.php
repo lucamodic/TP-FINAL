@@ -86,10 +86,13 @@ class UserController
         $this->renderer->render('user');
     }
     public function mostrarPerfil(){
-        $nombre = $_GET['user'];
+        $nombre = $_SESSION['usuario'];
+        if(isset($_GET['user'])){
+            $nombre = $_GET['user'];
+        }
         $editar = false;
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        if($nombre === $usuario['username']){
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($nombre);
+        if($nombre === $_SESSION['usuario']){
             $editar = true;
         }
         $data = [
@@ -99,7 +102,8 @@ class UserController
             'partidasRealizadas' => $usuario['partidasRealizadas'],
             'editar' => $editar,
             'latitud' => $usuario['latitud'],
-            'longitud' => $usuario['longitud']
+            'longitud' => $usuario['longitud'],
+            'verificado' => $usuario['esta_verificado']
         ];
         $this->renderer->render('user', $data);
     }
@@ -115,8 +119,8 @@ class UserController
                 'usernameBuscado' => $resultadoBusqueda['username'],
                 'puntaje' => $resultadoBusqueda['puntaje'],
                 'partidasRealizadas' => $resultadoBusqueda['partidasRealizadas'],
-                'latitud' => $usuario['latitud'],
-                'longitud' => $usuario['longitud']
+                'latitud' => $resultadoBusqueda['latitud'],
+                'longitud' => $resultadoBusqueda['longitud']
             ];
             $this->renderer->render('userSearch',$data);
         }
@@ -132,6 +136,20 @@ class UserController
 
     public function verify(){
         $token = $_GET['token'];
-        $this->userModel->verificar($token, $this->mailer);
+        $bool = $this->userModel->verificar($token);
+        $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION["usuario"]);
+        $data = [
+            'username' => $user['username'],
+            'image' => $user['image'],
+            'success' => $bool,
+            'its' => $bool
+        ];
+        $this->renderer->render('verify', $data);
+    }
+
+    public function enviarCorreo(){
+        $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION["usuario"]);
+        $this->userModel->enviarMail($this->userModel->getLink($user['token_verificacion']), $user['mail'], $user['name']);
+        $this->mostrarPerfil();
     }
 }

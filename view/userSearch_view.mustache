@@ -1,4 +1,5 @@
 <link rel="stylesheet" href="../public/css/perfil.css">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY&callback=initMap" async defer></script>
 <div class="usuario-entero">
     <div class="usuario">
         <img class="img-usuario" src="../{{imagenBuscado}}" alt="" >
@@ -15,9 +16,10 @@
         <p>PUNTAJE: {{puntaje}}</p>
         <p>PARTIDAS JUGADAS: {{partidasRealizadas}}</p>
         <div id="mapa" style="height:400px;"></div>
-        <input type="hidden" name="latitud" id="latitud" value="{{latitud}}">
-        <input type="hidden" name="longitud" id="longitud" value="{{longitud}}">
     </div>
+
+    <input type="hidden" name="latitud" id="latitud" value="{{latitud}}">
+    <input type="hidden" name="longitud" id="longitud" value="{{longitud}}">
 
 </div>
 <script>

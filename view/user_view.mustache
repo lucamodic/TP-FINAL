@@ -1,6 +1,5 @@
 <link rel="stylesheet" href="../public/css/perfil.css">
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY&callback=initMap" async defer></script>
-
 <div class="usuario-entero">
     <div class="usuario">
         <img class="img-usuario" src="../{{image}}" alt="" >
@@ -12,6 +11,15 @@
                 <input id="file-upload" type="file" style="display:none;" name="imagen" >
                 <button type="submit" class="boton-activo">cambiar imagen</button>
             </form>
+
+            {{#verificado}}
+                <form action="/user/enviarCorreo" method="POST">
+                    <input type="hidden" name="token">
+                    <button type="submit" class="boton-activo">Enviar correo devuelta</button>
+                </form>
+
+            {{/verificado}}
+
         {{/editar}}
         <h3>USERNAME: {{username}}</h3>
         <p>PUNTAJE: {{puntaje}}</p>

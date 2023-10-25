@@ -12,16 +12,18 @@
         <input type="hidden" name="id_partida" value="{{partida}}">
         <input type="hidden" name="id_pregunta" value="{{pregunta.id}}">
         <input type="hidden" name="bool" value="{{es_correcta}}">
-
+        <input type="hidden" name="URL" value="true">
         <button type="submit" class="boton-game"> {{texto}} </button>
     </form>
 {{/respuestas}}
 </div>
     <div>
         <input type="hidden" id="id_pregunta" value="{{pregunta.id}}">
-        <button type="submit" id="reportar">Reportar</button>
+        <button type="button" id="reportar" name="reportar">Reportar</button>
     </div>
 </div>
+
+
 
 <script type="text/javascript" src="../public/js/jquery-1.11.3.min.js"></script>
 <script type="text/javascript" src="../public/js/game.js"></script>

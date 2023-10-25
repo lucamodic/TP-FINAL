@@ -15,11 +15,11 @@ class UserModel{
         $this->database = $database;
     }
 
-    public function add($datos, $mailer){
+    public function add($datos){
         $suceso = $this->checkdata($datos);
 
         if($suceso == "exito"){
-            $this->addToDatabase($datos, $mailer);
+            $this->addToDatabase($datos);
         }
         return $suceso;
     }
@@ -47,11 +47,13 @@ class UserModel{
             values ('$username', '$name', '$spawn', '$sex', '$mail', '$password', '$foto', 0, 0, '', '$latitud', '$longitud', false, false, '$token')";
         $this->database->execute($sql);
 
-        $verificationLink = "localhost/user/verify?token=" . $token;
+        $verificationLink = $this->getLink($token);
 
         $this->enviarMail($verificationLink, $mail, $name);
 
     }
+
+
 
     public function compararContrasenia($data){
         if ($data['password'] != $data['repeatPassword']) {
@@ -166,18 +168,30 @@ class UserModel{
         return $this->database->query($sql);
     }
 
-    public function verificar($token){
-        $this->UserModel->verificar($token);
-        $query = "SELECT id FROM users WHERE token_verificacion = ? AND esta_verificado = 0";
-        $stmt = $this->database->query($query);
+    public function getLink($token){
+        $port = $_SERVER['SERVER_PORT'];
+        $portString = ":80";
+        $default_https_port = 443;
 
-        if ($stmt->rowCount() == 1) {
-            // Token is valid; mark the user as verified
-            $query = "UPDATE users SET is_verified = 1, verification_token = NULL WHERE verification_token = ?";
-            $this->database->execute($query);
-            echo "Email verification successful. You can now log in.";
+        $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? 'https' : 'http';
+
+        if (($protocol === 'http' && $port !== $portString) || ($protocol === 'https' && $port !== $default_https_port)) {
+            $portString = ":" . $port;
         } else {
-            echo "Invalid or expired verification link.";
+            $portString = "";
+        }
+
+        return $verificationLink = $_SERVER['SERVER_NAME'] . $portString . "/user/verify?token=" . $token;
+    }
+
+    public function verificar($token){
+        $query = "SELECT username FROM user WHERE token_verificacion = '$token' AND esta_verificado = 0";
+        if ($this->database->querySinFetchAll($query) == 1) {
+            $query = "UPDATE user SET esta_verificado = 1, token_verificacion = 'null' WHERE token_verificacion = '$token'";
+            $this->database->execute($query);
+            return true;
+        } else {
+            return false;
         }
     }
 
@@ -185,25 +199,35 @@ class UserModel{
     public function enviarMail($verificationLink, $address, $name){
             $mail = new PHPMailer;
 
-            $mail->SMTPDebug = 0;
-            $mail->isSMTP();
-            $mail->Host = 'smtp.gmail.com';
-            $mail->SMTPAuth = true;
-            $mail->Username = 'freegames4me2me@gmail.com';
-            $mail->Password = 'Freegames';
-            $mail->SMTPSecure = 'tls';
-            $mail->Port = 587;
+        try {
 
+            $mail->IsSMTP(); // enable SMTP
+            //$mail->SMTPDebug = 1; // debugging: 1 = errors and messages, 2 = messages only
+            $mail->SMTPAuth = true; // authentication enabled
+            $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for Gmail
+            $mail->Host = "smtp.gmail.com";
+            $mail->Port = 465; // or 587
+            $mail->IsHTML(true);
 
-            $mail->setFrom('freegames4me2me@gmail.com', 'Frei');
-            $mail->addAddress("$address", "$name");
-            $mail->Subject = 'Valida tu cuenta para disfrutar!';
+            $mail->Username = "questionariogame@gmail.com";
+            $mail->Password = "sokg hfci ciwm bzmt";
 
-
+            $mail->setFrom('questionariogame@gmail.com', 'Questionario');
+            $mail->addAddress($address, $name);
             $mail->isHTML(true);
+            $mail->Subject = 'Verifacion de correo QUESTIONARIO';
             $mail->Body = '<h1> Link para verificar tu correo </h1>
                          Hace click aca <a href="' . $verificationLink . '"> Link para validar tu correo </a>';
+
             $mail->send();
+
+        } catch (Exception $e) {
+            echo "Mailer Error: ".$mail->ErrorInfo;
+        }
+    }
+
+    public function checkVerification($usuario){
+        return $this->getUserFromDatabaseWhereUsernameExists($usuario)['esta_verificado'];
     }
 
 

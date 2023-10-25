@@ -63,7 +63,7 @@ class QuestionModel{
         return $this->database->query($sql);
     }
     public function agregarPreguntaReportada($idPreguntaReportada){
-        $sql = "INSERT INTO preguntas_reportadas  (idPregunta) values ($idPreguntaReportada)";
+        $sql = "INSERT INTO preguntas_reportadas  (pregunta_id) values ($idPreguntaReportada)";
         $this->database->execute($sql);
     }
     public function getPreguntasReportadas(){

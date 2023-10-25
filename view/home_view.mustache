@@ -1,5 +1,8 @@
 <div class="botones-cont">
     <a class="boton-activo" href="/game/startGame"> Jugar </a>
+    {{#verificar}}
+        <h4>{{verificar}}</h4>
+    {{/verificar}}
     <a class="boton-activo" href="/home/mostrarRanking">Ranking</a>
     <a class="boton-activo" href="/home/mostrarAgregarPregunta">Agregar pregunta</a>
     {{#esEditor}}
