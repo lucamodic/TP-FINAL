@@ -66,6 +66,7 @@ class UserController
             "imagen" => $imagen_ruta,
             "lat" => $_POST["lat"],
             "lon" => $_POST["lon"],
+            "qr" => $this->userModel->generarQr($_POST["usuario"])
         );
 
         $suceso = $this->userModel->add($datos);
@@ -95,7 +96,7 @@ class UserController
         if($nombre === $_SESSION['usuario']){
             $editar = true;
         }
-        $filename = $this->userModel->generarQr();
+
         $data = [
             'image' => $usuario['image'],
             'username' => $usuario['username'],
@@ -105,7 +106,7 @@ class UserController
             'latitud' => $usuario['latitud'],
             'longitud' => $usuario['longitud'],
             'verificado' => $usuario['esta_verificado'],
-            'filename'=>$filename
+            'qr'=>$usuario['qr']
         ];
         $this->renderer->render('user', $data);
     }

@@ -44,9 +44,10 @@ class UserModel{
         $latitud=$data['lat'];
         $longitud = $data['lon'];
         $token = bin2hex(random_bytes(50));
+        $qr=$data['qr'];
 
         $sql = "INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje,partidasRealizadas, qr, latitud, longitud, esEditor, esAdmin, token_verificacion) 
-            values ('$username', '$name', '$spawn', '$sex', '$mail', '$password', '$foto', 0, 0, '', '$latitud', '$longitud', false, false, '$token')";
+            values ('$username', '$name', '$spawn', '$sex', '$mail', '$password', '$foto', 0, 0, '$qr', '$latitud', '$longitud', false, false, '$token')";
         $this->database->execute($sql);
 
         $verificationLink = $this->getLink($token);
@@ -229,17 +230,17 @@ class UserModel{
     public function checkVerification($usuario){
         return $this->getUserFromDatabaseWhereUsernameExists($usuario)['esta_verificado'];
     }
-    public function generarQr(){
+    public function generarQr($username){
 
-        $dir = 'public/images/qr/';
+        $dir = '../public/images/qr/';
         if(!file_exists($dir)){
             mkdir($dir);
         }
-        $filename  = $dir.'test.png';
-        $tamanio = 100;
+        $filename  = $dir . $username. '.png';
+        $tamanio = 10;
         $level = 'M';
-        $fraimSize = 10;
-        $contenido = 'http://localhost/user/mostrarPerfil?user=Panteraa11';
+        $fraimSize = 3;
+        $contenido = "http://localhost/user/mostrarPerfil?user='$username'";
         QRcode::png($contenido, $filename, $level, $tamanio, $fraimSize);
         return $filename;
     }

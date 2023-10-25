@@ -58,13 +58,24 @@ class HomeController
             "respuesta4" => $_POST["respuesta4"]
             );
         $this->questionModel->setPreguntasAgregadas($data);
-        $this->renderer->render('home');
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $dataHome = [
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'esEditor' => $usuario['esEditor'],
+            'esAdmin' => $usuario['esAdmin']
+        ];
+        $this->renderer->render('home', $dataHome);
     }
 
     public function mostrarPreguntasNuevas(){
         $preguntas = $this->questionModel->getPreguntasNuevas();
+        $respuestas = $this->questionModel->getRespuestasNuevas();
+
+
         $data = [
-            'preguntasNuevas' => $preguntas
+            'preguntasNuevas' => $preguntas,
+            'respuestasNueva' => $respuestas,
         ];
         $this->renderer->render('preguntasNuevas', $data);
     }

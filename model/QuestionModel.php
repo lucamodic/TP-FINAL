@@ -76,9 +76,9 @@ class QuestionModel{
         $respuesta2=$data["respuesta2"];
         $respuesta3=$data["respuesta3"];
         $respuesta4=$data["respuesta4"];
-        //CREAR TABLA Y RESOLVER CATEGORIA NUEVA
+        //RESOLVER CATEGORIA NUEVA
         $sql = "INSERT INTO pregunta(categoria, enunciado, dificultad, reportada, agregada)
-        values('$categoria', '$enunciado', 'facil', false, false);";
+        values('$categoria', '$enunciado', 'facil', false, true);";
         $this->database->execute($sql);
 
         $last_inserted_id = $this->database->getId();
@@ -94,9 +94,20 @@ class QuestionModel{
 
     }
     public function getPreguntasNuevas(){
-        $sql = "SELECT * FROM pregunta WHERE agregada = 0";
-        $preguntasAgregadas= $this->database->query($sql);
+        $sql = "SELECT * FROM pregunta WHERE agregada = 1";
+        $preguntasAgregadas = $this->database->query($sql);
         return $preguntasAgregadas;
+    }
+    public function getRespuestasNuevas(){
+        $sql = "SELECT * FROM pregunta WHERE agregada = 1";
+        $preguntasAgregadas = $this->database->query($sql);
+        $respuestasAgregadas = array();
+        foreach($preguntasAgregadas as $pregunta){
+            $respuesta = $pregunta['id'];
+            $sql2 ="SELECT * FROM respuesta WHERE id_pregunta LIKE '$respuesta'";
+            $respuestasAgregadas[] = $this->database->query($sql2)[0];
+        }
+        return $respuestasAgregadas;
     }
 
 
