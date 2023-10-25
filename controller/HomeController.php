@@ -39,7 +39,7 @@ class HomeController
         ];
         $this->renderer->render('preguntasReportadas', $data);
     }
-    public function mostrarAgregarPreguntas(){
+    public function mostrarAgregarPregunta(){
         $categorias= $this->questionModel->getCategorias();
         $data=[
             'categorias'=> $categorias
@@ -58,9 +58,14 @@ class HomeController
             "respuesta4" => $_POST["respuesta4"]
             );
         $this->questionModel->setPreguntasAgregadas($data);
-        //ME QUEDE ACA-NO CREE EL METODO EN QUESTION MODEL
         $this->renderer->render('home');
     }
 
-
+    public function mostrarPreguntasNuevas(){
+        $preguntas = $this->questionModel->getPreguntasNuevas();
+        $data = [
+            'preguntasNuevas' => $preguntas
+        ];
+        $this->renderer->render('preguntasNuevas', $data);
+    }
 }

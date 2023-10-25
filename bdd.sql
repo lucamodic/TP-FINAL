@@ -97,3 +97,12 @@ ALTER TABLE user
     ADD COLUMN token_verificacion VARCHAR(100) NOT NULL,
     ADD COLUMN esta_verificado BOOLEAN DEFAULT 0;
 
+CREATE TABLE preguntas_agregadas(
+                                    id INT AUTO_INCREMENT PRIMARY KEY,
+                                    categoria VARCHAR(255),
+                                    enunciado VARCHAR(255),
+                                    respuesta1 VARCHAR(255),
+                                    respuesta2 VARCHAR(255),
+                                    respuesta3 VARCHAR(255),
+                                    respuesta4 VARCHAR(255)
+);

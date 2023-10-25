@@ -1,8 +1,8 @@
-<form action="/home/agregarPreguntaParaEditor">
+<form action="/home/agregarPreguntaParaEditor" method="post">
     <select id="categorias" name="opcion">
-        <option name="categoriaNueva" value="opcion">Nueva categoria</option>
+        <option name="categoria">Nueva categoria</option>
     {{#categorias}}
-        <option name="categoria" value="opcion1">{{categoria}}</option>
+        <option name="categoria" value="{0{categoria}}">{{categoria}}</option>
     {{/categorias}}
     </select>
     <input type="text" name="categoriaNueva" placeholder="Ingresar nueva categoria...">

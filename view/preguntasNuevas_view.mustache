@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="../public/css/preguntasReportadas.css">
+<table class="ranking">
+    <thead>
+    <tr>
+        <th>Pregunta</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#preguntasNuevas}}
+        <tr>
+            <td>{{enunciado}}</td>
+            <td>{{categoria}}</td>
+            <td>{{respuesta1}}</td>
+            <td>{{respuesta2}}</td>
+            <td>{{respuesta3}}</td>
+            <td>{{respuesta4}}</td>
+            <td><button>Eliminar</button></td>
+            <td><button>Agregar</button></td>
+        </tr>
+    {{/preguntasNuevas}}
+    </tbody>
+</table>

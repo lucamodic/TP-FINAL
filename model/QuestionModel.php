@@ -78,8 +78,26 @@ class QuestionModel{
         return $preguntasReportadas;
     }
     public function getCategorias(){
-        $sql="SELECT DISTINCT categorias
-                FROM preguntas;";
+        $sql="SELECT DISTINCT categoria
+                FROM pregunta;";
         return $this->database->query($sql);
+    }
+
+    public function setPreguntasAgregadas($data){
+        $enunciado=$data["enunciado"];
+        $categoria=$data["categoria"];
+        $respuesta1=$data["respuesta1"];
+        $respuesta2=$data["respuesta2"];
+        $respuesta3=$data["respuesta3"];
+        $respuesta4=$data["respuesta4"];
+        //CREAR TABLA Y RESOLVER CATEGORIA NUEVA
+        $sql = "INSERT INTO preguntas_agregadas  (categoria,enunciado,respuesta1, respuesta2, respuesta3, respuesta4) 
+        values ('$categoria','$enunciado','$respuesta1','$respuesta2','$respuesta3','$respuesta4')";
+        $this->database->execute($sql);
+    }
+    public function getPreguntasNuevas(){
+        $sql = "SELECT * FROM preguntas_agregadas";
+        $preguntasAgregadas= $this->database->query($sql);
+        return $preguntasAgregadas;
     }
 }
