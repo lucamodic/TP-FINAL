@@ -15,13 +15,15 @@ $(document).ready(function(){
             url: '/game/calcularTiempoQueQueda',
             success: function (response) {
                 var data = JSON.parse(response)["tiempo"];
-                if (data >= 10) {
+                if (data <= 0) {
+                    console.log("bien");
                     window.location.href = "/game/end";
                 }
                 $('.tiempo').html(data);
             }
         });
     },900);
+
 
 
 });

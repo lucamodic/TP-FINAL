@@ -16,9 +16,7 @@ class GameController{
 
     public function startGame(){
         if($this->userModel->checkVerification($_SESSION['usuario'])){
-
             $this->createSession();
-
             $this->renderer->render('game', $this->getDataGameStart());
         }
         else {
@@ -32,13 +30,12 @@ class GameController{
             exit();
         }
         $respuesta = $_POST['bool'];
-        $pregunta = $_POST['id_pregunta'];
-        if($respuesta){
+        $tiempo = - ($_SESSION['start_time'] - time());
+        Logger::info('TIEMPO: ' . $tiempo);
+        if($respuesta && $tiempo <= 10){
             $this->userModel->sumarPuntos($_SESSION['usuario']);
             $this->partidaModel->sumarPuntos($_POST['id_partida']);
-
             $this->createSession();
-
             $this->renderer->render('game', $this->getDataGame());
             exit();
         }
@@ -51,8 +48,10 @@ class GameController{
     public function createSession(){
         if(isset($_SESSION['tiempo'])){
             unset($_SESSION['tiempo']);
+            unset($_SESSION['start_time']);
         }
-        $_SESSION['tiempo'] = time();
+        $_SESSION['start_time'] = time();
+        $_SESSION['tiempo'] = 10;
     }
 
     public function end(){
@@ -71,8 +70,8 @@ class GameController{
     }
 
     public function calcularTiempoQueQueda(){
-        $tiempo = time() - $_SESSION['tiempo'];
-        if($tiempo >= 11){
+        $tiempo = $_SESSION['tiempo'] - (time() - $_SESSION['start_time']);
+        if($tiempo <= -1){
             $this->end();
         }
         $response = array("tiempo" => $tiempo);
@@ -133,8 +132,8 @@ class GameController{
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $username = $usuario['username'];
         if($this->partidaModel->checkPartida($username)){
-            $pregunta = $this->questionModel->agarrarUltimaPregunta($username)[0];
             $partida = $this->partidaModel->getPartidaByUsername($username);
+            $this->end();
         }else {
             $pregunta = $this->checkQuestion($username);
             $partida = $this->partidaModel->crearPartida($username);

@@ -17,7 +17,7 @@ class PartidaModel
     }
 
     public function crearPartida($usuario){
-        $sql = "INSERT INTO partida (username, puntaje, esta_activa) values ('$usuario', 0, true)";
+        $sql = "INSERT INTO partida (username, puntaje, esta_activa, tiempo_pregunta) values ('$usuario', 0, true, 10)";
         $this->database->execute($sql);
         return $this->getPartidaByUsername($usuario);
     }
@@ -48,6 +48,5 @@ class PartidaModel
          WHERE id = '$id'";
         return $this->database->query($sql)[0];
     }
-
 
 }
