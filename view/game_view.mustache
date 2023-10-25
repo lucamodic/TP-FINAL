@@ -10,21 +10,19 @@
             {{pregunta.enunciado}}
         </h1>
     </div>
-<div class="botones-div">
-{{#respuestas}}
-    <form method="POST" action="/game/checkAnswer">
-        <input type="hidden" name="id_partida" value="{{partida}}">
-        <input type="hidden" name="id_pregunta" value="{{pregunta.id}}">
-        <input type="hidden" name="bool" value="{{es_correcta}}">
-        <input type="hidden" name="URL" value="true">
-        <button type="submit" class="boton-game"> {{texto}} </button>
-    </form>
-{{/respuestas}}
-</div>
-    <div>
-        <input type="hidden" id="id_pregunta" value="{{pregunta.id}}">
-        <button type="button" id="reportar" name="reportar">Reportar</button>
+    <div class="botones-div">
+        {{#respuestas}}
+            <form method="POST" action="/game/checkAnswer">
+                <input type="hidden" name="id_partida" value="{{partida}}">
+                <input type="hidden" name="id_pregunta" value="{{pregunta.id}}">
+                <input type="hidden" name="bool" value="{{es_correcta}}">
+                <input type="hidden" name="URL" value="true">
+                <button type="submit" class="boton-game"> {{texto}} </button>
+            </form>
+        {{/respuestas}}
     </div>
+        <input type="hidden" id="id_pregunta" value="{{pregunta.id}}">
+        <button class="reportar" type="button" id="reportar" name="reportar">Reportar</button>
 </div>
 
 
