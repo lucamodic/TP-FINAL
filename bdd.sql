@@ -41,12 +41,6 @@ CREATE TABLE preguntas_usadas (
                                   FOREIGN KEY (pregunta_id) REFERENCES pregunta(id)
 );
 
-CREATE TABLE preguntas_reportadas (
-                                  pregunta_id INT,
-                                  FOREIGN KEY (pregunta_id) REFERENCES pregunta(id)
-);
-
-
 INSERT INTO pregunta(categoria, enunciado, dificultad)values('Cultura', '¿Cuál es la moneda oficial de Japón?', 'facil');
 INSERT INTO pregunta(categoria, enunciado, dificultad)values('Cultura', '¿Qué famosa pintura de Leonardo da Vinci representa a una mujer con una enigmática sonrisa?', 'facil');
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Dólar japonés', 1, false);
@@ -97,12 +91,10 @@ ALTER TABLE user
     ADD COLUMN token_verificacion VARCHAR(100) NOT NULL,
     ADD COLUMN esta_verificado BOOLEAN DEFAULT 0;
 
-CREATE TABLE preguntas_agregadas(
-                                    id INT AUTO_INCREMENT PRIMARY KEY,
-                                    categoria VARCHAR(255),
-                                    enunciado VARCHAR(255),
-                                    respuesta1 VARCHAR(255),
-                                    respuesta2 VARCHAR(255),
-                                    respuesta3 VARCHAR(255),
-                                    respuesta4 VARCHAR(255)
-);
+ALTER TABLE pregunta
+    ADD COLUMN reportada BOOLEAN;
+
+UPDATE pregunta SET reportada =0;
+
+ALTER TABLE pregunta
+    ADD COLUMN agregada BOOLEAN;

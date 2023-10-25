@@ -35,4 +35,8 @@ class MySqlDatabase {
         Logger::info('Ejecutando query: ' . $sql);
         mysqli_query($this->connection, $sql);
     }
+
+    public function getId(){
+        return mysqli_insert_id($this->connection);
+    }
 }

@@ -63,19 +63,12 @@ class QuestionModel{
         return $this->database->query($sql);
     }
     public function agregarPreguntaReportada($idPreguntaReportada){
-        $sql = "INSERT INTO preguntas_reportadas  (pregunta_id) values ($idPreguntaReportada)";
+        $sql = "UPDATE pregunta SET reportada = 1 WHERE id = '$idPreguntaReportada'";
         $this->database->execute($sql);
     }
     public function getPreguntasReportadas(){
-        $sql = "SELECT * FROM preguntas_reportadas";
-        $preguntas = $this->database->query($sql);
-        $preguntasReportadas = array();
-        foreach ($preguntas as $pregunta){
-             $preguntaBuscada = $pregunta['pregunta_id'];
-             $sql = "SELECT * FROM pregunta Where id LIKE '$preguntaBuscada'";
-             $preguntasReportadas[] = $this->database->query($sql)[0];
-        }
-        return $preguntasReportadas;
+        $sql = "SELECT * FROM pregunta WHERE reportada = 1";
+        return $this->database->query($sql);
     }
     public function getCategorias(){
         $sql="SELECT DISTINCT categoria
@@ -91,12 +84,24 @@ class QuestionModel{
         $respuesta3=$data["respuesta3"];
         $respuesta4=$data["respuesta4"];
         //CREAR TABLA Y RESOLVER CATEGORIA NUEVA
-        $sql = "INSERT INTO preguntas_agregadas  (categoria,enunciado,respuesta1, respuesta2, respuesta3, respuesta4) 
-        values ('$categoria','$enunciado','$respuesta1','$respuesta2','$respuesta3','$respuesta4')";
+        $sql = "INSERT INTO pregunta(categoria, enunciado, dificultad, reportada, agregada)
+        values('$categoria', '$enunciado', 'facil', false, false);";
         $this->database->execute($sql);
+
+        $last_inserted_id = $this->database->getId();
+
+        $sql = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta1', '$last_inserted_id', false);";
+        $this->database->execute($sql);
+        $sql = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta2', '$last_inserted_id', false);";
+        $this->database->execute($sql);
+        $sql = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta3', '$last_inserted_id', false);";
+        $this->database->execute($sql);
+        $sql = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta4', '$last_inserted_id', true);";
+        $this->database->execute($sql);
+
     }
     public function getPreguntasNuevas(){
-        $sql = "SELECT * FROM preguntas_agregadas";
+        $sql = "SELECT * FROM pregunta WHERE agregada = 0";
         $preguntasAgregadas= $this->database->query($sql);
         return $preguntasAgregadas;
     }
