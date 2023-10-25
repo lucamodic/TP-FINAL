@@ -8,6 +8,7 @@ $(document).ready(function(){
             success: function(){
             }
         });
+        $('#reportar').hide();
     });
 
     setInterval(() => {
