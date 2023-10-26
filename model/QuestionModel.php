@@ -12,7 +12,7 @@ class QuestionModel{
         if($dif != 1000){
             return $this->getPreguntaByDif($dif);
         }
-        $sql = "SELECT * FROM pregunta WHERE agregada=1 AND preg_default = 1";
+        $sql = "SELECT * FROM pregunta WHERE agregada=0 AND preg_default = 1";
         $resultado = $this->database->query($sql);
         $random = rand(0, sizeof($resultado)-1);
         return $resultado[$random];
@@ -26,7 +26,7 @@ class QuestionModel{
     }
 
     public function getPreguntaDificil(){
-        $sql = "SELECT * FROM pregunta WHERE agregada=1 AND veces_respondida_bien * 100 / veces_respondida < 30 AND preg_default = 0";
+        $sql = "SELECT * FROM pregunta WHERE agregada=0 AND veces_respondida_bien * 100 / veces_respondida < 30 AND preg_default = 0";
         $resultado = $this->database->query($sql);
         $random = rand(0, sizeof($resultado)-1);
         if(sizeof($resultado) > 0){
@@ -34,7 +34,7 @@ class QuestionModel{
         }
     }
     public function getPreguntaFacil(){
-        $sql = "SELECT * FROM pregunta WHERE agregada=1 AND veces_respondida_bien * 100 / veces_respondida >= 30 AND preg_default = 0";
+        $sql = "SELECT * FROM pregunta WHERE agregada=0 AND veces_respondida_bien * 100 / veces_respondida >= 30 AND preg_default = 0";
         $resultado = $this->database->query($sql);
         $random = rand(0, sizeof($resultado)-1);
         if(sizeof($resultado) > 0){
@@ -83,7 +83,7 @@ class QuestionModel{
         $sql = "DELETE pu FROM preguntas_usadas pu
         JOIN pregunta p ON pu.pregunta_id = p.id
         WHERE pu.username LIKE '$usuario'
-        AND p.agregada = 1
+        AND p.agregada = 0
         AND (p.veces_respondida_bien * 100 / p.veces_respondida) < 30
        AND p.preg_default = false";
         $this->database->execute($sql);
@@ -93,7 +93,7 @@ class QuestionModel{
         $sql = "SELECT * FROM preguntas_usadas pu
          JOIN pregunta p ON pu.pregunta_id = p.id
          WHERE pu.username LIKE '$usuario'
-         AND p.agregada=1 AND p.veces_respondida_bien * 100 / p.veces_respondida >= 30
+         AND p.agregada=0 AND p.veces_respondida_bien * 100 / p.veces_respondida >= 30
          AND p.preg_default = false";
         return sizeof($this->database->query($sql));
     }
