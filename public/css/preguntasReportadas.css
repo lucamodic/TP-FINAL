@@ -20,14 +20,15 @@ td{
     background-color: #3f3e3e;
 }
 
-.botones-activo {
+.boton2{
+    margin-top: 1em;
     padding:1rem 1rem;
     font-size:1rem;
     border-radius:15px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    background-color: #252525;
+    background-color: #1a1a1a;
     border: 2px solid #945bc9;
 }
-.botones-activo:hover {
+.boton2:hover {
     background-color: #100f0f;
 }

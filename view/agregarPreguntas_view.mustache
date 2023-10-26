@@ -5,7 +5,7 @@
 <form action="/home/agregarPreguntaParaEditor" method="post" class="form2">
     <select id="categorias" name="categoria" class="select">
     {{#categorias}}
-        <option value="{{categoria}}">{{categoria}}</option>
+        <option value="{{nombre}}">{{nombre}}</option>
     {{/categorias}}
     </select>
     <input type="text" required name="enunciado" placeholder="Ingresar enunciado..." class="input2">

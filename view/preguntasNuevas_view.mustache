@@ -4,23 +4,26 @@
     <tr>
         <th>Pregunta</th>
         <th>Respuestas</th>
+        <th></th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     {{#preguntasNuevas}}
         <tr>
             <td>{{enunciado}}</td>
-            <td>{{categoria}}</td>
-    {{/preguntasNuevas}}
-    {{#respuestasNuevas}}
-            <td>{{texto}}</td>
+            <td>
+                {{#respuestasNuevas}}
+                    <p>{{texto}}</p>
+                {{/respuestasNuevas}}
+            </td>
             <form action="/home/eliminarAgregarNuevas" method="POST">
-                <input type="hidden" name="pregunta_id" value="{{id_pregunta}}">
-                <td><button type="submit" name="eliminar" value="eliminar" class="boton-activo">Eliminar</button></td>
-                <td><button type="submit" name="agregar" value="agregar" class="boton-activo">Agregar</button></td>
+                <input type="hidden" name="pregunta_id" value="{{id}}">
+                <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
+                <td><button type="submit" name="agregar" value="agregar" class="boton2">Agregar</button></td>
             </form>
         </tr>
-    {{/respuestasNuevas}}
+    {{/preguntasNuevas}}
 
     </tbody>
 </table>
@@ -29,19 +32,22 @@
     <tr>
         <th>Categorias</th>
         <th></th>
+        <th></th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     {{#categoriasNuevas}}
         <tr>
             <td>{{nombre}}</td>
-    {{/categoriasNuevas}}
-        <form action="/home/eliminarAgregarNuevasCategorias" method="POST">
-            <input type="hidden" name="id" value="{{id}}">
-            <td><button type="submit" name="eliminar" value="eliminar" class="boton-activo">Eliminar</button></td>
-            <td><button type="submit" name="agregar" value="agregar" class="boton-activo">Agregar</button></td>
-        </form>
+            <td></td>
+            <form action="/home/eliminarAgregarNuevasCategorias" method="POST">
+                <input type="hidden" name="id" value="{{id}}">
+                <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
+                <td><button type="submit" name="agregar" value="agregar" class="boton2">Agregar</button></td>
+            </form>
         </tr>
+    {{/categoriasNuevas}}
 
     </tbody>
 </table>

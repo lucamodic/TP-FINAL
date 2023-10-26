@@ -168,7 +168,7 @@ class QuestionModel{
         return $this->database->query($sql);
     }
     public function getCategorias(){
-        $sql="SELECT nombre FROM categoria;";
+        $sql="SELECT nombre FROM categoria";
         return $this->database->query($sql);
     }
 
@@ -176,25 +176,26 @@ class QuestionModel{
         $enunciado=$data["enunciado"];
         $categoriaNombre=$data["categoria"];
         $sql2="SELECT id FROM categoria WHERE nombre='$categoriaNombre'";
-        $categoria= $this->database->query($sql2);
+        $categoria= intval($this->database->query($sql2));
         $respuesta1=$data["respuesta1"];
         $respuesta2=$data["respuesta2"];
         $respuesta3=$data["respuesta3"];
         $respuesta4=$data["respuesta4"];
-        $sql = "INSERT INTO pregunta(categoria, enunciado, dificultad, reportada, agregada, veces_respondida)
+        $sql = "INSERT INTO pregunta(id_categoria, enunciado, dificultad, reportada, agregada, veces_respondida)
         values('$categoria', '$enunciado', 'facil', false, true, 0);";
         $this->database->execute($sql);
 
-        $last_inserted_id = $this->database->getId();
+        $sql7="SELECT id FROM pregunta WHERE enunciado='$enunciado'";
+        $id= intval($this->database->query($sql7));
 
-        $sql = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta1', '$last_inserted_id', false);";
-        $this->database->execute($sql);
-        $sql = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta2', '$last_inserted_id', false);";
-        $this->database->execute($sql);
-        $sql = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta3', '$last_inserted_id', false);";
-        $this->database->execute($sql);
-        $sql = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta4', '$last_inserted_id', true);";
-        $this->database->execute($sql);
+        $sql3 = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta1', '$id', false);";
+        $this->database->execute($sql3);
+        $sql4 = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta2', '$id', false);";
+        $this->database->execute($sql4);
+        $sql5 = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta3', '$id', false);";
+        $this->database->execute($sql5);
+        $sql6 = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta4', '$id', true);";
+        $this->database->execute($sql6);
 
     }
     public function getPreguntasNuevas(){
@@ -279,6 +280,5 @@ class QuestionModel{
             $this->deleteAllQuestions($user['username']);
         }
     }
-
 
 }

@@ -80,7 +80,6 @@ class HomeController
         $respuestas = $this->questionModel->getRespuestasNuevas();
         $categorias=$this->questionModel->getCategoriasNuevas();
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
