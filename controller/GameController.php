@@ -24,6 +24,21 @@ class GameController{
         }
     }
 
+    public function end(){
+        $partida = $this->partidaModel->getPartidaByUsername($_SESSION['usuario'])[0];
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $this->userModel->sumarPartidaRealizadas($_SESSION['usuario']);
+        $this->partidaModel->gameOver($partida['id']);
+        $data = [
+            'puntajeUsuario'=> $usuario['puntaje'],
+            'puntajeTotal' => $partida['puntaje'],
+            'username' => $usuario['username'],
+            'image' => $usuario['image']
+        ];
+
+        $this->renderer->render('end', $data);
+    }
+
     public function checkAnswer(){
         if(!isset($_POST['URL'])){
             $this->renderer->render('home', $this->getDataCheater());
@@ -53,21 +68,6 @@ class GameController{
         }
         $_SESSION['start_time'] = time();
         $_SESSION['tiempo'] = 10;
-    }
-
-    public function end(){
-        $partida = $this->partidaModel->getPartidaByUsername($_SESSION['usuario'])[0];
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        $this->userModel->sumarPartidaRealizadas($_SESSION['usuario']);
-        $this->partidaModel->gameOver($partida['id']);
-        $data = [
-            'puntajeUsuario'=> $usuario['puntaje'],
-            'puntajeTotal' => $partida['puntaje'],
-            'username' => $usuario['username'],
-            'image' => $usuario['image']
-        ];
-
-        $this->renderer->render('end', $data);
     }
 
     public function calcularTiempoQueQueda(){
