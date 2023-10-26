@@ -30,11 +30,12 @@ class GameController{
             exit();
         }
         $respuesta = $_POST['bool'];
+        $pregunta = $_POST['id_pregunta'];
         $tiempo = - ($_SESSION['start_time'] - time());
-        Logger::info('TIEMPO: ' . $tiempo);
         if($respuesta && $tiempo <= 10){
             $this->userModel->sumarPuntos($_SESSION['usuario']);
             $this->partidaModel->sumarPuntos($_POST['id_partida']);
+            $this->questionModel->sumarAcertada($pregunta);
             $this->createSession();
             $this->renderer->render('game', $this->getDataGame());
             exit();
@@ -79,22 +80,52 @@ class GameController{
     }
 
     public function checkQuestion($usuario){
-        $this->checkCount($usuario);
+        $dificultadUser = $this->userModel->getDifficulty($usuario);
+        $this->checkCount($usuario, $dificultadUser);
         $boolean = true;
         while($boolean){
-            $pregunta = $this->questionModel->getRandomQuestion();
+            $pregunta = $this->questionModel->getRandomQuestion($dificultadUser);
             $boolean = $this->questionModel->isAnswered($pregunta['id'], $usuario);
         }
         $this->questionModel->addQuestionToAnswered($pregunta['id'], $usuario);
+        $this->userModel->addRespondida($usuario);
         return $pregunta;
     }
 
-    public function checkCount($usuario){
-        $resultadoUsuario = $this->questionModel->getQuestionsAsked($usuario);
-        $resultadoPreguntas = $this->questionModel->getQuestions();
-        if($resultadoUsuario !== null && $resultadoPreguntas == $resultadoUsuario){
-            $this->questionModel->deleteUserAnsweredQuestions($usuario);
+    public function checkCount($usuario, $dif){
+        $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
+        $this->questionModel->checkAllQuestions($user);
+        if($dif == 1000){
+            $this->checkNoob($usuario, $dif);
         }
+        else {
+            $this->checkByDif($usuario,$dif);
+        }
+    }
+
+    public function checkByDif($usuario, $dif){
+        if($dif >= 50){
+            $resultadoUsuario = $this->questionModel->getQuestionsAskedHard($usuario);
+            $resultadoPreguntas = $this->questionModel->getQuestionsHard();
+            if($resultadoUsuario !== null && $resultadoPreguntas == $resultadoUsuario){
+                $this->questionModel->deleteUserAnsweredQuestionsHard($usuario);
+            }
+        }
+        else {
+            $resultadoUsuario = $this->questionModel->getQuestionsAskedEasy($usuario);
+            $resultadoPreguntas = $this->questionModel->getQuestionsEasy();
+            if($resultadoUsuario !== null && $resultadoPreguntas == $resultadoUsuario){
+                $this->questionModel->deleteUserAnsweredQuestionsEasy($usuario);
+            }
+        }
+    }
+
+    public function checkNoob($usuario, $dif){
+            $resultadoUsuario = $this->questionModel->getQuestionsAskedNoob($usuario);
+            $resultadoPreguntas = $this->questionModel->getQuestionsNoob();
+            if($resultadoUsuario !== null && $resultadoPreguntas == $resultadoUsuario){
+                $this->questionModel->deleteUserAnsweredQuestionsNoob($usuario);
+            }
     }
 
     public function getDataGame(){

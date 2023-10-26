@@ -149,6 +149,10 @@ class UserModel{
                 SET puntaje = puntaje + 1
                 WHERE username = '$username'";
         $this->database->execute($sql);
+        $sql = "UPDATE user 
+                SET veces_acertadas = veces_acertadas + 1 
+                WHERE username LIKE '$username'";
+        $this->database->execute($sql);
     }
     public function sumarPartidaRealizadas($username){
         $sql = "UPDATE user
@@ -156,7 +160,6 @@ class UserModel{
                 WHERE username = '$username'";
         $this->database->execute($sql);
     }
-
 
     public function buscarPerfilPorNombreUsuario($username){
         $sql =  "SELECT * FROM user WHERE username LIKE '%$username%'";
@@ -176,7 +179,7 @@ class UserModel{
             $portString = "";
         }
 
-        return $verificationLink = $_SERVER['SERVER_NAME'] . $portString . "/user/verify?token=" . $token;
+        return $verificationLink ="http://" . $_SERVER['SERVER_NAME'] . $portString . "/user/verify?token=" . $token;
     }
 
     public function verificar($token){
@@ -211,8 +214,9 @@ class UserModel{
             $mail->addAddress($address, $name);
             $mail->isHTML(true);
             $mail->Subject = 'Verifacion de correo QUESTIONARIO';
+
             $mail->Body = '<h1> Link para verificar tu correo </h1>
-                         Hace click aca <a href="' . $verificationLink . '"> Link para validar tu correo </a>';
+                         Hace click aca <a href="' . $verificationLink . '"> HAZ CLICK AQUI </a>';
 
             $mail->send();
 
@@ -228,7 +232,7 @@ class UserModel{
 
         $dir = '../public/images/qr/';
         if(!file_exists($dir)){
-            mkdir($dir);
+            mkdir($dir, 0755, true);
         }
         $filename  = $dir . $username. '.png';
         $tamanio = 10;
@@ -239,5 +243,16 @@ class UserModel{
         return $filename;
     }
 
+    public function getDifficulty($usuario){
+        $user = $this->getUserFromDatabaseWhereUsernameExists($usuario);
+        if($user['veces_respondidas'] >= 10){
+            return $user['veces_acertadas'] * 100 / $user['veces_respondidas'];
+        }
+        return 1000;
+    }
 
+    public function addRespondida($usuario){
+        $sql = "UPDATE user SET veces_respondidas = veces_respondidas + 1 WHERE username LIKE '$usuario'";
+        $this->database->execute($sql);
+    }
 }

@@ -14,7 +14,6 @@
     {{/preguntasNuevas}}
     {{#respuestasNuevas}}
             <td>{{texto}}</td>
-        </tr>
             <form action="/home/eliminarAgregarNuevas" method="POST">
                 <input type="hidden" name="pregunta_id" value="{{id_pregunta}}">
                 <td><button type="submit" name="eliminar" value="eliminar" class="boton-activo">Eliminar</button></td>
@@ -22,6 +21,27 @@
             </form>
         </tr>
     {{/respuestasNuevas}}
+
+    </tbody>
+</table>
+<table class="ranking">
+    <thead>
+    <tr>
+        <th>Categorias</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#categoriasNuevas}}
+        <tr>
+            <td>{{nombre}}</td>
+    {{/categoriasNuevas}}
+        <form action="/home/eliminarAgregarNuevasCategorias" method="POST">
+            <input type="hidden" name="id" value="{{id}}">
+            <td><button type="submit" name="eliminar" value="eliminar" class="boton-activo">Eliminar</button></td>
+            <td><button type="submit" name="agregar" value="agregar" class="boton-activo">Agregar</button></td>
+        </form>
+        </tr>
 
     </tbody>
 </table>

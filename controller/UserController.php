@@ -139,13 +139,19 @@ class UserController
     public function verify(){
         $token = $_GET['token'];
         $bool = $this->userModel->verificar($token);
-        $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION["usuario"]);
-        $data = [
-            'username' => $user['username'],
-            'image' => $user['image'],
-            'success' => $bool,
-            'its' => $bool
-        ];
+        if(isset($_SESSION["usuario"])){
+            $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION["usuario"]);
+            $data = [
+                'username' => $user['username'],
+                'image' => $user['image'],
+                'success' => $bool,
+                'its' => $bool
+            ];
+        }else {
+            $data = [
+                'success' => $bool
+            ];
+        }
         $this->renderer->render('verify', $data);
     }
 

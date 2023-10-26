@@ -55,8 +55,8 @@ class HomeController
     }
 
     public function agregarPreguntaParaEditor(){
+
         $data = array(
-            "categoriaNueva"=> $_POST["categoriaNueva"],
             "categoria" => $_POST["categoria"],
             "enunciado" => $_POST["enunciado"],
             "respuesta1" => $_POST["respuesta1"],
@@ -78,13 +78,15 @@ class HomeController
     public function mostrarPreguntasNuevas(){
         $preguntas = $this->questionModel->getPreguntasNuevas();
         $respuestas = $this->questionModel->getRespuestasNuevas();
+        $categorias=$this->questionModel->getCategoriasNuevas();
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
 
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'preguntasNuevas' => $preguntas,
-            'respuestasNueva' => $respuestas,
+            'respuestasNuevas' => $respuestas,
+            'categoriasNuevas' => $categorias
         ];
         $this->renderer->render('preguntasNuevas', $data);
     }
@@ -108,7 +110,7 @@ class HomeController
     }
     public function eliminarAgregarNuevas(){
         $eliminar = isset($_POST["eliminar"]);
-        $agregar = isset($_POST["reestablecer"]);
+        $agregar = isset($_POST["agregar"]);
         $pregunta_id=$_POST['pregunta_id'];
         if($eliminar){
             $this->questionModel->eliminarNueva($pregunta_id);
@@ -124,5 +126,42 @@ class HomeController
         ];
         $this->renderer->render('home', $data);
     }
-
+    public function mostrarAgregarCategoria(){
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $data=[
+            'username' => $usuario['username'],
+            'image' => $usuario['image']
+        ];
+        $this->renderer->render('agregarCategoria',$data);
+    }
+    public function agregarCategoria(){
+        $categoria=$_POST["categoria"];
+        $this->questionModel->setNuevaCategoria($categoria);
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $dataHome = [
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'esEditor' => $usuario['esEditor'],
+            'esAdmin' => $usuario['esAdmin']
+        ];
+        $this->renderer->render('home', $dataHome);
+    }
+    public function eliminarAgregarNuevasCategorias(){
+        $eliminar = isset($_POST["eliminar"]);
+        $agregar = isset($_POST["agregar"]);
+        $id=$_POST['id'];
+        if($eliminar){
+            $this->questionModel->eliminarNuevaCategoria($id);
+        }else if($agregar){
+            $this->questionModel->aceptarNuevaCategoria($id);
+        }
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $data = [
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'esEditor' => $usuario['esEditor'],
+            'esAdmin' => $usuario['esAdmin']
+        ];
+        $this->renderer->render('home', $data);
+    }
 }
