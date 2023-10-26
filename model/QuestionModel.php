@@ -9,7 +9,7 @@ class QuestionModel{
     }
 
     public function getRandomQuestion() {
-        $sql = "SELECT * FROM pregunta";
+        $sql = "SELECT * FROM pregunta WHERE agregada=0";
         $resultado = $this->database->query($sql);
         $random = rand(0, sizeof($resultado)-1);
         return $resultado[$random];
@@ -103,12 +103,33 @@ class QuestionModel{
         $preguntasAgregadas = $this->database->query($sql);
         $respuestasAgregadas = array();
         foreach($preguntasAgregadas as $pregunta){
-            $respuesta = $pregunta['id'];
-            $sql2 ="SELECT * FROM respuesta WHERE id_pregunta LIKE '$respuesta'";
-            $respuestasAgregadas[] = $this->database->query($sql2)[0];
+            $preguntaId = $pregunta['id'];
+            $sql2 ="SELECT * FROM respuesta WHERE id_pregunta = '$preguntaId'";
+            $respuestas = $this->database->query($sql2);
+            $respuestasAgregadas = array_merge($respuestasAgregadas, $respuestas);
         }
         return $respuestasAgregadas;
     }
 
+    public function eliminarReportada($id){
+        $sql="DELETE FROM pregunta WHERE id='$id'";
+        $this->database->execute($sql);
+        $sql2="DELETE FROM respuesta WHERE id_pregunta='$id'";
+        $this->database->execute($sql2);
+    }
+    public function reestablecerReportada($id){
+        $sql = "UPDATE pregunta SET reportada = 0 WHERE id = '$id'";
+        $this->database->execute($sql);
+    }
 
+    public function eliminarNueva($id){
+        $sql="DELETE FROM pregunta WHERE id='$id'";
+        $this->database->execute($sql);
+        $sql2="DELETE FROM respuesta WHERE id_pregunta='$id'";
+        $this->database->execute($sql2);
+    }
+    public function aceptarNueva($id){
+        $sql = "UPDATE pregunta SET agregada = 0 WHERE id = '$id'";
+        $this->database->execute($sql);
+    }
 }

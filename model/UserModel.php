@@ -157,12 +157,6 @@ class UserModel{
         $this->database->execute($sql);
     }
 
-    public function cambiarImagen($imagen, $username){
-        $sql = "UPDATE user
-                SET image = '$imagen'
-                WHERE username = '$username';";
-        $this->database->execute($sql);
-    }
 
     public function buscarPerfilPorNombreUsuario($username){
         $sql =  "SELECT * FROM user WHERE username LIKE '%$username%'";

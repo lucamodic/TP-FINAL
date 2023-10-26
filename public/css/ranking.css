@@ -1,10 +1,4 @@
-.ranking{
-    height:90vh;
-    display:flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction:column;
-}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -14,11 +8,16 @@ table {
 thead {
     background-color: #333;
     color: #fff;
+    text-align: left;
 }
 
 
 th, td {
     padding: 20px;
     border-bottom: 1px solid #ccc;
+
+}
+td{
+    background-color: #3f3e3e;
 }
 

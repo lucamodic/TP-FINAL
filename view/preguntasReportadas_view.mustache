@@ -3,14 +3,19 @@
     <thead>
     <tr>
         <th>Pregunta</th>
+        <th></th>
+        <th></th>
     </tr>
     </thead>
     <tbody>
     {{#preguntasReportadas}}
         <tr>
             <td>{{enunciado}}</td>
-            <td><button>Eliminar</button></td>
-            <td><button>Reestablecer</button></td>
+            <form action="/home/eliminarReestablecerReportadas" method="POST">
+                <input type="hidden" name="pregunta_id" value="{{id}}">
+                <td><button type="submit" name="eliminar" value="eliminar" class="botones-activo">Eliminar</button></td>
+                <td><button type="submit" name="reestablecer" value="reestablecer" class="botones-activo">Reestablecer</button></td>
+            </form>
         </tr>
     {{/preguntasReportadas}}
     </tbody>

@@ -64,7 +64,7 @@ a {
     transition: background-color 0.3s ease, transform 0.3s ease;
     background-color: #252525;
     border: 2px solid #945bc9;
-    width:15rem;
+    width:25rem;
     text-align: center;
 }
 
@@ -103,6 +103,7 @@ a {
     padding: 0.5em;
     color:white;
     background-color: #444040;
+    border-radius: 5px;
 }
 
 
@@ -112,7 +113,7 @@ a {
         font-size:3rem;
         background-color: #252525;
         margin:0.7rem;
-        width:40%;
+        width:50%;
     }
     .logo{
         width:70%;

@@ -35,7 +35,9 @@ class UserController
             $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
             $data = [
                 'username' => $user['username'],
-                'image' => $user['image']
+                'image' => $user['image'],
+                 'esEditor' => $user['esEditor'],
+                 'esAdmin' => $user['esAdmin']
             ];
             $this->renderer->render('home', $data);
             exit();
@@ -80,12 +82,6 @@ class UserController
             exit();
         }
     }
-    public function cambiarImagen(){
-        $imagen=$_POST['imagen'];
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        $this->userModel->cambiarImagen($imagen, $usuario);
-        $this->renderer->render('user');
-    }
     public function mostrarPerfil(){
         $nombre = $_SESSION['usuario'];
         if(isset($_GET['user'])){
@@ -129,11 +125,14 @@ class UserController
         }
         else{
 
+            $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
             $data = [
                 'username' => $usuario['username'],
-                'image' => $usuario['image']
+                'image' => $usuario['image'],
+                'esEditor' => $usuario['esEditor'],
+                'esAdmin' => $usuario['esAdmin']
             ];
-            $this->renderer->render('home',$data);
+            $this->renderer->render('home', $data);
         }
     }
 

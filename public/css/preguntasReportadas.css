@@ -1,0 +1,33 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+
+}
+
+
+th, td {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+td{
+    background-color: #3f3e3e;
+}
+
+.botones-activo {
+    padding:1rem 1rem;
+    font-size:1rem;
+    border-radius:15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+}
+.botones-activo:hover {
+    background-color: #100f0f;
+}

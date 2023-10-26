@@ -1,15 +1,20 @@
-<form action="/home/agregarPreguntaParaEditor" method="post">
-    <select id="categorias" name="categoria">
-        <option >Nueva categoria</option>
+<link rel="stylesheet" href="../public/css/agregarPregunta.css">
+<div class="div-entero">
+<div class="div-todo">
+<h3>Agregar Pregunta</h3>
+<form action="/home/agregarPreguntaParaEditor" method="post" class="form2">
+    <select id="categorias" name="categoria" class="select">
     {{#categorias}}
         <option value="{{categoria}}">{{categoria}}</option>
     {{/categorias}}
     </select>
-    <input type="text" name="categoriaNueva" placeholder="Ingresar nueva categoria...">
-    <input type="text" required name="enunciado" placeholder="Ingresar enunciado...">
-    <input type="text" required name="respuesta1" placeholder="Ingresar respuesta 1...">
-    <input type="text" required name="respuesta2" placeholder="Ingresar respuesta 2...">
-    <input type="text" required name="respuesta3" placeholder="Ingresar respuesta 3...">
-    <input type="text" required name="respuesta4" placeholder="Ingresar respuesta correcta...">
-    <input type="submit" value="Agregar">
+    <input type="text" name="categoriaNueva" placeholder="Ingresar nueva categoria..." class="input2">
+    <input type="text" required name="enunciado" placeholder="Ingresar enunciado..." class="input2">
+    <input type="text" required name="respuesta1" placeholder="Ingresar respuesta 1..." class="input2">
+    <input type="text" required name="respuesta2" placeholder="Ingresar respuesta 2..." class="input2">
+    <input type="text" required name="respuesta3" placeholder="Ingresar respuesta 3..." class="input2">
+    <input type="text" required name="respuesta4" placeholder="Ingresar respuesta correcta..." class="input2">
+    <input type="submit" value="Agregar" class="boton2">
 </form>
+</div>
+</div>

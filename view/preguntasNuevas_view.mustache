@@ -3,6 +3,7 @@
     <thead>
     <tr>
         <th>Pregunta</th>
+        <th>Respuestas</th>
     </tr>
     </thead>
     <tbody>
@@ -14,8 +15,12 @@
     {{#respuestasNuevas}}
             <td>{{texto}}</td>
         </tr>
-        <td><button>Eliminar</button></td>
-        <td><button>Agregar</button></td>
+            <form action="/home/eliminarAgregarNuevas" method="POST">
+                <input type="hidden" name="pregunta_id" value="{{id_pregunta}}">
+                <td><button type="submit" name="eliminar" value="eliminar" class="boton-activo">Eliminar</button></td>
+                <td><button type="submit" name="agregar" value="agregar" class="boton-activo">Agregar</button></td>
+            </form>
+        </tr>
     {{/respuestasNuevas}}
 
     </tbody>

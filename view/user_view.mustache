@@ -4,13 +4,6 @@
     <div class="usuario">
         <img class="img-usuario" src="../{{image}}" alt="" >
         {{#editar}}
-            <form action="/user/cambiarImagen" method="post">
-                <label for="file-upload" class="custom-file-upload">
-                    <i class="fa fa-cloud-upload"></i> Subir Archivo
-                </label>
-                <input id="file-upload" type="file" style="display:none;" name="imagen" >
-                <button type="submit" class="boton-activo">cambiar imagen</button>
-            </form>
 
             {{#verificado}}
                 <form action="/user/enviarCorreo" method="POST">
