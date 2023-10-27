@@ -30,15 +30,19 @@ class QuestionModel{
         $resultado = $this->database->query($sql);
         $random = rand(0, sizeof($resultado)-1);
         if(sizeof($resultado) > 0){
-            return $resultado[$random];
+            $pregunta = $resultado[$random];
+            return $pregunta;
         }
+        return $this->getPreguntaFacil();
     }
     public function getPreguntaFacil(){
         $sql = "SELECT * FROM pregunta WHERE agregada=0 AND veces_respondida_bien * 100 / veces_respondida >= 30 AND preg_default = 0";
         $resultado = $this->database->query($sql);
         $random = rand(0, sizeof($resultado)-1);
         if(sizeof($resultado) > 0){
-            return $resultado[$random];
+            $pregunta = $resultado[$random];
+            Logger::info('------------------------' . $pregunta['enunciado']);
+            return $pregunta;
         }
         return $this->getPreguntaDificil();
     }
@@ -139,6 +143,7 @@ class QuestionModel{
         $sql = "SELECT * FROM preguntas_usadas pu
          JOIN pregunta p ON pu.pregunta_id = p.id
          WHERE pu.username LIKE '$usuario'
+         AND p.agregada = false
          AND p.preg_default = false";
         return sizeof($this->database->query($sql));
     }
@@ -185,8 +190,8 @@ class QuestionModel{
         values('$categoria', '$enunciado', 'facil', false, true, 0);";
         $this->database->execute($sql);
 
-        $sql7="SELECT id FROM pregunta WHERE enunciado='$enunciado'";
-        $id= intval($this->database->query($sql7));
+        $sql7="SELECT * FROM pregunta WHERE enunciado='$enunciado'";
+        $id= $this->database->query($sql7)[0]['id'];
 
         $sql3 = "INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('$respuesta1', '$id', false);";
         $this->database->execute($sql3);
@@ -263,7 +268,7 @@ class QuestionModel{
     }
 
     public function getQuestionsAvailable(){
-        $sql = "SELECT * FROM pregunta WHERE agregada = true AND preg_default = false";
+        $sql = "SELECT * FROM pregunta WHERE agregada = false AND preg_default = false";
         return sizeof($this->database->query($sql));
     }
 

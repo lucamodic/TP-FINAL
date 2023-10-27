@@ -232,7 +232,7 @@ class UserModel{
 
         $dir = '../public/images/qr/';
         if(!file_exists($dir)){
-            mkdir($dir, 0755, true);
+            mkdir($dir);
         }
         $filename  = $dir . $username. '.png';
         $tamanio = 10;
