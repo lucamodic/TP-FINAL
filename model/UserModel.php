@@ -133,6 +133,15 @@ class UserModel{
         return false;
     }
 
+    public function buscarPrefilPorNombre($usernameBuscado){
+        if(empty($usernameBuscado)){
+            return false;
+        } else{
+            $sql = "SELECT * FROM user WHERE username LIKE '%$usernameBuscado%'";
+            return  $this->database->query($sql);
+        }
+    }
+
     public  function  getAllUsersOrdenados(){
         $sql = "SELECT * FROM user 
         ORDER BY puntaje DESC";
@@ -230,15 +239,15 @@ class UserModel{
     }
     public function generarQr($username){
 
-        $dir = '../public/images/qr/';
+        $dir = 'public/images/qr/';
         if(!file_exists($dir)){
-            mkdir($dir);
+            mkdir($dir, 0777, true);
         }
-        $filename  = $dir . $username. '.png';
+        $filename  = $dir. $username. '.png';
         $tamanio = 10;
         $level = 'M';
         $fraimSize = 3;
-        $contenido = "http://localhost/user/mostrarPerfil?user='$username'";
+        $contenido = "http://localhost/user/mostrarPerfil?user=$username";
         QRcode::png($contenido, $filename, $level, $tamanio, $fraimSize);
         return $filename;
     }

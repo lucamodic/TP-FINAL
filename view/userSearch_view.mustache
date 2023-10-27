@@ -1,27 +1,33 @@
-<link rel="stylesheet" href="../public/css/perfil.css">
+<link rel="stylesheet" href="../public/css/userSerch.css">
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY&callback=initMap" async defer></script>
-<div class="usuario-entero">
-    <div class="usuario">
-        <img class="img-usuario" src="../{{imagenBuscado}}" alt="" >
-        {{#editar}}
-            <form action="/user/cambiarImagen" method="post">
-                <label for="file-upload" class="custom-file-upload">
-                    <i class="fa fa-cloud-upload"></i> Subir Archivo
-                </label>
-                <input id="file-upload" type="file" style="display:none;" name="imagen" >
-                <button type="submit" class="boton-activo">cambiar imagen</button>
-            </form>
-        {{/editar}}
-        <h3>USERNAME: {{usernameBuscado}}</h3>
-        <p>PUNTAJE: {{puntaje}}</p>
-        <p>PARTIDAS JUGADAS: {{partidasRealizadas}}</p>
-        <div id="mapa" style="height:400px;"></div>
-    </div>
-
-    <input type="hidden" name="latitud" id="latitud" value="{{latitud}}">
-    <input type="hidden" name="longitud" id="longitud" value="{{longitud}}">
+<div class="tabla">
+    <table class="usuarioBuscado">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>Nombre</th>
+            <th>Partidas Jugadas</th>
+            <th>Puntaje</th>
+            <th>Ver Perfil</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#resultadoBusqueda}}
+            <tr>
+                <td><a href="/user/mostrarPerfil?user={{username}}">{{username}}</a></td>
+                <td><a href="/user/mostrarPerfil?user={{username}}">{{name}}</a></td>
+                <td><a href="/user/mostrarPerfil?user={{username}}">{{partidasRealizadas}}</a></td>
+                <td><a href="/user/mostrarPerfil?user={{username}}">{{puntaje}}</a></td>
+                <td><a href="/user/mostrarPerfil?user={{username}}"><button class="boton-activo" >Ver</button></td>
+            </tr>
+        {{/resultadoBusqueda}}
+        </tbody>
+    </table>
 
 </div>
+
+
+<!--
 <script>
     var lat = parseFloat(document.getElementById("latitud").value);
     var lng = parseFloat(document.getElementById("longitud").value);

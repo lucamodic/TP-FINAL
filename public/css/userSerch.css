@@ -1,0 +1,43 @@
+.tabla{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-top: 2em;
+}
+table {
+    width: 80%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+}
+.centrado{
+    display: flex;
+    justify-content: center;
+}
+
+th, td {
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+
+}
+td{
+    background-color: #3f3e3e;
+}
+.boton-activo {
+    padding:0.5rem;
+    font-size:1rem;
+    margin:0.2rem;
+    border-radius:15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    text-align: center;
+    width: 10rem;
+}

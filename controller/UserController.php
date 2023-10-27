@@ -20,6 +20,7 @@ class UserController
 
     public function errorLogin($data){
         $this->renderer->render('login', $data);
+        $this->renderer->render('login', $data);
     }
 
     public function register($datos){
@@ -109,18 +110,22 @@ class UserController
     public function buscarPerfil(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $usernameBuscado = $_POST['username'];
-        $resultadoBusqueda = $this->userModel->getUserFromDatabaseWhereUsernameExists($usernameBuscado);
+
+        $resultadoBusqueda = $this->userModel->buscarPrefilPorNombre($usernameBuscado);
         if($resultadoBusqueda){
             $data = [
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
-                'imagenBuscado' => $resultadoBusqueda['image'],
+                'resultadoBusqueda' => $resultadoBusqueda,
+            ];
+            /*
+             * 'imagenBuscado' => $resultadoBusqueda['image'],
                 'usernameBuscado' => $resultadoBusqueda['username'],
                 'puntaje' => $resultadoBusqueda['puntaje'],
                 'partidasRealizadas' => $resultadoBusqueda['partidasRealizadas'],
                 'latitud' => $resultadoBusqueda['latitud'],
                 'longitud' => $resultadoBusqueda['longitud']
-            ];
+             * */
             $this->renderer->render('userSearch',$data);
         }
         else{
