@@ -221,23 +221,11 @@ class QuestionModel{
         return $respuestasAgregadas;
     }
 
-    public function eliminarReportada($id){
-        $sql="DELETE FROM pregunta WHERE id='$id'";
-        $this->database->execute($sql);
-        $sql2="DELETE FROM respuesta WHERE id_pregunta='$id'";
-        $this->database->execute($sql2);
-    }
     public function reestablecerReportada($id){
         $sql = "UPDATE pregunta SET reportada = 0 WHERE id = '$id'";
         $this->database->execute($sql);
     }
 
-    public function eliminarNueva($id){
-        $sql="DELETE FROM pregunta WHERE id='$id'";
-        $this->database->execute($sql);
-        $sql2="DELETE FROM respuesta WHERE id_pregunta='$id'";
-        $this->database->execute($sql2);
-    }
     public function aceptarNueva($id){
         $sql = "UPDATE pregunta SET agregada = 0 WHERE id = '$id'";
         $this->database->execute($sql);
@@ -285,5 +273,27 @@ class QuestionModel{
             $this->deleteAllQuestions($user['username']);
         }
     }
+    public function mostrarTodasLasPreguntas(){
+        $sql="SELECT * FROM pregunta";
+        return $this->database->query($sql);
+    }
+    public function eliminar($id){
+        $sql="DELETE FROM pregunta WHERE id='$id'";
+        $this->database->execute($sql);
+        $sql2="DELETE FROM respuesta WHERE id_pregunta='$id'";
+        $this->database->execute($sql2);
+    }
+    public function buscarPreguntaParaEditar($id){
+        $sql = "SELECT * FROM pregunta WHERE id='$id'";
+        return $this->database->query($sql);
+    }
+    public function editarPregunta($data){
+        $id=$data['id'];
+        $enunciado = $data['enunciado'];
 
+        if($enunciado){
+            $sql="UPDATE pregunta SET enunciado='$enunciado' WHERE id='$id'";
+            $this->database->execute($sql);
+        }
+    }
 }

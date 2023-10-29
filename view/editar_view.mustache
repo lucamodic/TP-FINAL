@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="../public/css/agregarPregunta.css">
+<div class="div-entero">
+    <div class="div-todo2">
+        <h3>Editar Pregunta</h3>
+        <table class="ranking">
+            <thead>
+            <tr>
+                {{#pregunta}}
+                <th>{{id_categoria}}</th>
+                <th>{{enunciado}}</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                 {{/pregunta}}
+            </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <form action="/home/editarPregunta" method="post" class="form2">
+                        {{#pregunta}}
+                        <input type="hidden" name="id" value="{{id}}">
+                        {{/pregunta}}
+                    <td><select id="categorias" name="categoria" class="select">
+                        {{#categorias}}
+                            <option value="{{nombre}}">{{nombre}}</option>
+                        {{/categorias}}
+                    </select></td>
+                    <td><input type="text" name="enunciado" placeholder="Ingresar enunciado..." class="input3"></td>
+                    <td><input type="text" name="respuesta1" placeholder="Ingresar respuesta 1..." class="input3"></td>
+                    <td><input type="text" name="respuesta2" placeholder="Ingresar respuesta 2..." class="input3"></td>
+                    <td><input type="text" name="respuesta3" placeholder="Ingresar respuesta 3..." class="input3"></td>
+                    <td><input type="text" name="respuesta4" placeholder="Ingresar respuesta correcta..." class="input3"></td>
+                </tr>
+            </tbody>
+        </table>
+        <input type="submit" value="Editar" class="boton2">
+        </form>
+    </div>
+</div>

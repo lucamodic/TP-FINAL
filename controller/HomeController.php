@@ -94,7 +94,7 @@ class HomeController
         $reestablecer = isset($_POST["reestablecer"]);
         $pregunta_id=$_POST['pregunta_id'];
         if($eliminar){
-            $this->questionModel->eliminarReportada($pregunta_id);
+            $this->questionModel->eliminar($pregunta_id);
         }else if($reestablecer){
             $this->questionModel->reestablecerReportada($pregunta_id);
         }
@@ -112,7 +112,7 @@ class HomeController
         $agregar = isset($_POST["agregar"]);
         $pregunta_id=$_POST['pregunta_id'];
         if($eliminar){
-            $this->questionModel->eliminarNueva($pregunta_id);
+            $this->questionModel->eliminar($pregunta_id);
         }else if($agregar){
             $this->questionModel->aceptarNueva($pregunta_id);
         }
@@ -162,5 +162,61 @@ class HomeController
             'esAdmin' => $usuario['esAdmin']
         ];
         $this->renderer->render('home', $data);
+    }
+    public function mostrarModoEditor(){
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $preguntas=$this->questionModel->mostrarTodasLasPreguntas();
+        $data=[
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'preguntas'=> $preguntas,
+        ];
+        $this->renderer->render('modoEditor',$data);
+    }
+    public function editarEliminar(){
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $eliminar = isset($_POST["eliminar"]);
+        $editar = isset($_POST["editar"]);
+        $pregunta_id=$_POST['pregunta_id'];
+        if($eliminar){
+            $this->questionModel->eliminar($pregunta_id);
+            $data = [
+                'username' => $usuario['username'],
+                'image' => $usuario['image'],
+                'esEditor' => $usuario['esEditor'],
+                'esAdmin' => $usuario['esAdmin']
+            ];
+            $this->renderer->render('home', $data);
+        }else if($editar){
+            $pregunta=$this->questionModel->buscarPreguntaParaEditar($pregunta_id);
+            $categorias= $this->questionModel->getCategorias();
+            $data=[
+                'username' => $usuario['username'],
+                'image' => $usuario['image'],
+                'pregunta'=>$pregunta,
+                'categorias' => $categorias
+            ];
+            $this->renderer->render('editar', $data);
+        }
+    }
+    public function editarPregunta(){
+        $data = array(
+            "id"=>$_POST["id"],
+            "categoria" =>$_POST["categoria"],
+            "enunciado" =>$_POST["enunciado"],
+            "respuesta1" =>$_POST["respuesta1"],
+            "respuesta2" =>$_POST["respuesta2"],
+            "respuesta3" =>$_POST["respuesta3"],
+            "respuesta4" =>$_POST["respuesta4"]
+        );
+        $this->questionModel->editarPregunta($data);
+        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $dataHome = [
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'esEditor' => $usuario['esEditor'],
+            'esAdmin' => $usuario['esAdmin']
+        ];
+        $this->renderer->render('home', $dataHome);
     }
 }

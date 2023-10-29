@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="../public/css/preguntasReportadas.css">
+<table class="ranking">
+    <thead>
+    <tr>
+        <th>Pregunta</th>
+        <th>Respuestas</th>
+        <th>Categoria</th>
+        <th></th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#preguntas}}
+        <tr>
+            <td>{{enunciado}}</td>
+            <td>
+                {{#respuestas}}
+                    <p>{{texto}}</p>
+                {{/respuestas}}
+            </td>
+            <td>{{id_categoria}}</td>
+            <form action="/home/editarEliminar" method="POST">
+                <input type="hidden" name="pregunta_id" value="{{id}}">
+                <td><button type="submit" name="editar" value="editar" class="boton2">Editar</button></td>
+                <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
+            </form>
+        </tr>
+    {{/preguntas}}
+
+    </tbody>
+</table>

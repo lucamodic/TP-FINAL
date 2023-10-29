@@ -51,6 +51,29 @@
 h3{
     margin-bottom: 1em;
 }
+.div-todo2{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+    margin:6rem;
+    width:100%;
+    background-color: #252525;
+    padding: 3em;
+    border-radius: 20px;
+    border: 2px solid #945bc9;
+}
+.input3{
+    margin-right: 5em;
+    padding: 0.5em;
+    border-radius: 3px;
+    border: 2px solid #898191;
+    background-color: #3a3636;
+    color: white;
+    width: 100%;
+}
+.input3::placeholder {
+    color: #d3cccc
+}
 @media screen and (max-width: 1700px) {
 
     .div-todo{
