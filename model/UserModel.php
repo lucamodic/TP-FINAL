@@ -264,4 +264,21 @@ class UserModel{
         $sql = "UPDATE user SET veces_respondidas = veces_respondidas + 1 WHERE username LIKE '$usuario'";
         $this->database->execute($sql);
     }
+
+    public function buscarPartidas($usuario){
+        $sql =  "SELECT * FROM partida WHERE username LIKE '$usuario'";
+        return $this->database->query($sql);
+    }
+
+    public function getNumeroRanking($usuario){
+        $ranking = $this->getAllUsersOrdenados();
+        $posicion = 1;
+        foreach ($ranking as $usuarioRanking){
+            if($usuarioRanking['username'] == $usuario){
+                return $posicion;
+            }
+            $posicion++;
+        }
+        return false;
+    }
 }

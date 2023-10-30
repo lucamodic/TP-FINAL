@@ -14,21 +14,25 @@ class HomeController
 
     public function mostrar(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin']
+            'esAdmin' => $usuario['esAdmin'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $data);
     }
     public function mostrarRanking(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $usuarios = $this->userModel->getAllUsersOrdenados();
+        $partidas = $this->userModel->buscarPartidas( $usuario['username']);
         $data = [
             'usuarios' => $usuarios,
             'username' => $usuario['username'],
-            'image' => $usuario['image']
+            'image' => $usuario['image'],
+            'partidas' =>$partidas
         ];
         $this->renderer->render('ranking', $data);
     }

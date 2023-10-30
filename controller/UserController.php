@@ -20,7 +20,6 @@ class UserController
 
     public function errorLogin($data){
         $this->renderer->render('login', $data);
-        $this->renderer->render('login', $data);
     }
 
     public function register($datos){
@@ -34,11 +33,13 @@ class UserController
         if($this->userModel->checkearLogin($usuario, $password)) {
             $_SESSION["usuario"] = $usuario;
             $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
+            $numeroRanking = $this->userModel->getNumeroRanking($user['username']);
             $data = [
                 'username' => $user['username'],
                 'image' => $user['image'],
                  'esEditor' => $user['esEditor'],
-                 'esAdmin' => $user['esAdmin']
+                 'esAdmin' => $user['esAdmin'],
+                'numeroRanking' => $numeroRanking
             ];
             $this->renderer->render('home', $data);
             exit();
@@ -46,6 +47,7 @@ class UserController
 
         $data = array("suceso" => "Usuario o contraseña incorrectos");
         $this->errorLogin($data);
+
     }
 
     public function add(){
