@@ -182,10 +182,10 @@ class QuestionModel{
         $categoriaNombre=$data["categoria"];
         $sql2="SELECT id FROM categoria WHERE nombre='$categoriaNombre'";
         $categoria= intval($this->database->query($sql2));
-        $respuesta1=$data["respuesta1"];
-        $respuesta2=$data["respuesta2"];
-        $respuesta3=$data["respuesta3"];
-        $respuesta4=$data["respuesta4"];
+        $respuesta1 = $data["respuesta1"];
+        $respuesta2 = $data["respuesta2"];
+        $respuesta3 = $data["respuesta3"];
+        $respuesta4 = $data["respuesta4"];
         $sql = "INSERT INTO pregunta(id_categoria, enunciado, dificultad, reportada, agregada, veces_respondida)
         values('$categoria', '$enunciado', 'facil', false, true, 0);";
         $this->database->execute($sql);
@@ -205,20 +205,29 @@ class QuestionModel{
     }
     public function getPreguntasNuevas(){
         $sql = "SELECT * FROM pregunta WHERE agregada = 1";
-        $preguntasAgregadas = $this->database->query($sql);
-        return $preguntasAgregadas;
+        return $this->database->query($sql);
+
     }
     public function getRespuestasNuevas(){
-        $sql = "SELECT * FROM pregunta WHERE agregada = 1";
-        $preguntasAgregadas = $this->database->query($sql);
-        $respuestasAgregadas = array();
-        foreach($preguntasAgregadas as $pregunta){
+        $preguntas = $this->getPreguntasNuevas();
+        $sql = "SELECT * FROM respuesta";
+        $respuestas = $this->database->query($sql);
+
+        foreach ($preguntas as $pregunta) {
             $preguntaId = $pregunta['id'];
-            $sql2 ="SELECT * FROM respuesta WHERE id_pregunta = '$preguntaId'";
-            $respuestas = $this->database->query($sql2);
-            $respuestasAgregadas = array_merge($respuestasAgregadas, $respuestas);
+            $preguntasYRespuestas[$preguntaId] = $pregunta;
+            $preguntasYRespuestas[$preguntaId]['respuestas'] = [];
+
+            foreach ($respuestas as $respuesta) {
+                if ($respuesta['id_pregunta'] === $preguntaId) {
+                    $preguntasYRespuestas[$preguntaId]['respuestas'][] = $respuesta;
+                }
+            }
         }
-        return $respuestasAgregadas;
+
+        return $preguntasYRespuestas;
+
+
     }
 
     public function reestablecerReportada($id){
@@ -230,9 +239,9 @@ class QuestionModel{
         $sql = "UPDATE pregunta SET agregada = 0 WHERE id = '$id'";
         $this->database->execute($sql);
     }
-    public function setNuevaCategoria($categoria){
-        $sql = "INSERT INTO categoria(nombre,agregada)
-        values('$categoria',1)";
+    public function setNuevaCategoria($categoria, $color){
+        $sql = "INSERT INTO categoria(nombre,agregada,color)
+        values('$categoria',1,'$color')";
         $this->database->execute($sql);
     }
     public function getCategoriasNuevas(){
@@ -275,6 +284,10 @@ class QuestionModel{
     }
     public function mostrarTodasLasPreguntas(){
         $sql="SELECT * FROM pregunta";
+        return $this->database->query($sql);
+    }
+    public function mostrarTodasLasRespuestas(){
+        $sql="SELECT * FROM respuesta";
         return $this->database->query($sql);
     }
     public function eliminar($id){

@@ -106,25 +106,25 @@ a {
     border-radius: 5px;
 }
 .ranking{
-    position: absolute;
-    right: 4rem;
-    top: 8rem;
-    justify-content: center;
+    margin-right: 14em;
     padding:0.5rem;
-    font-size:1.2rem;
-    border-radius:15px;
+    font-size:1rem;
+    border-radius:8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    background-color: #252525;
-    border: 2px solid #945bc9;
-    width:10rem;
+    background-color: #413c3c;
+    border: 2px solid #c9aa5b;
+    width:9rem;
     text-align: center;
 }
 .ranking p{
-    font-size:1.4rem;
+    font-size:1rem;
 }
 
 
 @media screen and (max-width: 800px) {
+    .botones-cont{
+    //si se achica el largo, los botones se van por encima
+    }
     .boton-activo {
         padding:1.5rem 4rem;
         font-size:3rem;

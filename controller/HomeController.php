@@ -28,21 +28,25 @@ class HomeController
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $usuarios = $this->userModel->getAllUsersOrdenados();
         $partidas = $this->userModel->buscarPartidas( $usuario['username']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'usuarios' => $usuarios,
             'username' => $usuario['username'],
             'image' => $usuario['image'],
-            'partidas' =>$partidas
+            'partidas' =>$partidas,
+             'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('ranking', $data);
     }
     public function mostrarPreguntasReportadas(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $preguntas = $this->questionModel->getPreguntasReportadas();
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
-            'preguntasReportadas' => $preguntas
+            'preguntasReportadas' => $preguntas,
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('preguntasReportadas', $data);
     }
@@ -50,10 +54,12 @@ class HomeController
     public function mostrarAgregarPregunta(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $categorias= $this->questionModel->getCategorias();
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data=[
             'categorias'=> $categorias,
              'username' => $usuario['username'],
-             'image' => $usuario['image']
+             'image' => $usuario['image'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('agregarPreguntas',$data);
     }
@@ -70,11 +76,13 @@ class HomeController
             );
         $this->questionModel->setPreguntasAgregadas($data);
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $dataHome = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin']
+            'esAdmin' => $usuario['esAdmin'],
+             'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $dataHome);
     }
@@ -84,12 +92,14 @@ class HomeController
         $respuestas = $this->questionModel->getRespuestasNuevas();
         $categorias=$this->questionModel->getCategoriasNuevas();
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'preguntasNuevas' => $preguntas,
             'respuestasNuevas' => $respuestas,
-            'categoriasNuevas' => $categorias
+            'categoriasNuevas' => $categorias,
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('preguntasNuevas', $data);
     }
@@ -103,11 +113,13 @@ class HomeController
             $this->questionModel->reestablecerReportada($pregunta_id);
         }
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin']
+            'esAdmin' => $usuario['esAdmin'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $data);
     }
@@ -121,31 +133,38 @@ class HomeController
             $this->questionModel->aceptarNueva($pregunta_id);
         }
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin']
+            'esAdmin' => $usuario['esAdmin'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $data);
     }
     public function mostrarAgregarCategoria(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data=[
             'username' => $usuario['username'],
-            'image' => $usuario['image']
+            'image' => $usuario['image'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('agregarCategoria',$data);
     }
     public function agregarCategoria(){
         $categoria=$_POST["categoria"];
-        $this->questionModel->setNuevaCategoria($categoria);
+        $color=$_POST["color"];
+        $this->questionModel->setNuevaCategoria($categoria,$color);
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $dataHome = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin']
+            'esAdmin' => $usuario['esAdmin'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $dataHome);
     }
@@ -159,26 +178,33 @@ class HomeController
             $this->questionModel->aceptarNuevaCategoria($id);
         }
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin']
+            'esAdmin' => $usuario['esAdmin'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $data);
     }
     public function mostrarModoEditor(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $preguntas=$this->questionModel->mostrarTodasLasPreguntas();
+        $respuestas=$this->questionModel->mostrarTodasLasRespuestas();
         $data=[
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'preguntas'=> $preguntas,
+            'respuestas'=>$respuestas,
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('modoEditor',$data);
     }
     public function editarEliminar(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $eliminar = isset($_POST["eliminar"]);
         $editar = isset($_POST["editar"]);
         $pregunta_id=$_POST['pregunta_id'];
@@ -188,7 +214,8 @@ class HomeController
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
                 'esEditor' => $usuario['esEditor'],
-                'esAdmin' => $usuario['esAdmin']
+                'esAdmin' => $usuario['esAdmin'],
+                'numeroRanking' => $numeroRanking
             ];
             $this->renderer->render('home', $data);
         }else if($editar){
@@ -198,7 +225,8 @@ class HomeController
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
                 'pregunta'=>$pregunta,
-                'categorias' => $categorias
+                'categorias' => $categorias,
+                'numeroRanking' => $numeroRanking
             ];
             $this->renderer->render('editar', $data);
         }
@@ -215,11 +243,13 @@ class HomeController
         );
         $this->questionModel->editarPregunta($data);
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $dataHome = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin']
+            'esAdmin' => $usuario['esAdmin'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $dataHome);
     }

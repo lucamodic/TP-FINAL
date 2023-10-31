@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="../public/css/preguntasReportadas.css">
-<table class="ranking">
+<link rel="stylesheet" href="../public/css/tablas.css">
+<table>
     <thead>
     <tr>
         <th>Pregunta</th>
@@ -14,7 +14,12 @@
             <td>{{enunciado}}</td>
             <td>
                 {{#respuestasNuevas}}
-                    <p>{{texto}}</p>
+                    {{^es_correcta}}
+                        <p class="red">{{texto}}</p>
+                    {{/es_correcta}}
+                    {{#es_correcta}}
+                        <p class="green">{{texto}}</p>
+                    {{/es_correcta}}
                 {{/respuestasNuevas}}
             </td>
             <form action="/home/eliminarAgregarNuevas" method="POST">
@@ -24,10 +29,9 @@
             </form>
         </tr>
     {{/preguntasNuevas}}
-
     </tbody>
 </table>
-<table class="ranking">
+<table>
     <thead>
     <tr>
         <th>Categorias</th>

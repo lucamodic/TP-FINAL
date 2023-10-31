@@ -14,6 +14,10 @@
         <a href="/home"><img src="../public/images/LOGO.png" alt="LOGO" class="logo" width="250em"></a>
     </div>
     <div class="header-right">
+        <div class="ranking">
+            <h4>N° Ranking</h4>
+            <p>{{numeroRanking}}</p>
+        </div>
         <div class="busqueda">
             <form class="form" action="/user/buscarPerfil" method="post">
                 <input type="text" class="buscador" placeholder="buscar usuarios..." id="username" name="username">
@@ -24,5 +28,6 @@
             <a href="/user/mostrarPerfil?user={{username}}"><img class="pfp" src="../{{image}}" alt=""></a>
             <a class="username" href="/user/mostrarPerfil?user={{username}}">{{username}}</a>
         </div>
+
     </div>
 </header>
