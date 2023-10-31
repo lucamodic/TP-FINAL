@@ -89,18 +89,19 @@ class HomeController
 
     public function mostrarPreguntasNuevas(){
         $preguntas = $this->questionModel->getPreguntasNuevas();
-        $respuestas = $this->questionModel->getRespuestasNuevas();
-        $categorias=$this->questionModel->getCategoriasNuevas();
+        $preguntasConRespuestas= $this->questionModel->getRespuestasNuevas();
+        $categorias = $this->questionModel->getCategoriasNuevas();
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'preguntasNuevas' => $preguntas,
-            'respuestasNuevas' => $respuestas,
             'categoriasNuevas' => $categorias,
-            'numeroRanking' => $numeroRanking
+            'numeroRanking' => $numeroRanking,
+            'preguntasConRespuestas' => $preguntasConRespuestas
         ];
+
         $this->renderer->render('preguntasNuevas', $data);
     }
     public function eliminarReestablecerReportadas(){
@@ -126,7 +127,7 @@ class HomeController
     public function eliminarAgregarNuevas(){
         $eliminar = isset($_POST["eliminar"]);
         $agregar = isset($_POST["agregar"]);
-        $pregunta_id=$_POST['pregunta_id'];
+        $pregunta_id = $_POST['pregunta_id'];
         if($eliminar){
             $this->questionModel->eliminar($pregunta_id);
         }else if($agregar){
@@ -191,14 +192,14 @@ class HomeController
     public function mostrarModoEditor(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
-        $preguntas=$this->questionModel->mostrarTodasLasPreguntas();
-        $respuestas=$this->questionModel->mostrarTodasLasRespuestas();
+        $preguntasConRespuestas = $this->questionModel->getPreguntasEditor();
+
         $data=[
             'username' => $usuario['username'],
             'image' => $usuario['image'],
-            'preguntas'=> $preguntas,
-            'respuestas'=>$respuestas,
-            'numeroRanking' => $numeroRanking
+            'numeroRanking' => $numeroRanking,
+            'preguntasConRespuestas'=> $preguntasConRespuestas,
+
         ];
         $this->renderer->render('modoEditor',$data);
     }

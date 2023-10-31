@@ -35,7 +35,6 @@ class GameController{
             'username' => $usuario['username'],
             'image' => $usuario['image']
         ];
-
         $this->renderer->render('end', $data);
     }
 
@@ -81,51 +80,16 @@ class GameController{
 
     public function checkQuestion($usuario){
         $dificultadUser = $this->userModel->getDifficulty($usuario);
-        $this->checkCount($usuario, $dificultadUser);
-        $boolean = true;
-        while($boolean){
-            $pregunta = $this->questionModel->getRandomQuestion($dificultadUser);
-            $boolean = $this->questionModel->isAnswered($pregunta['id'], $usuario);
-        }
+        $this->checkCount($usuario);
+        $pregunta = $this->questionModel->getRandomQuestion($dificultadUser);
         $this->questionModel->addQuestionToAnswered($pregunta['id'], $usuario);
         $this->userModel->addRespondida($usuario);
         return $pregunta;
     }
 
-    public function checkCount($usuario, $dif){
+    public function checkCount($usuario){
         $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
         $this->questionModel->checkAllQuestions($user);
-        if($dif == 1000){
-            $this->checkNoob($usuario, $dif);
-        }
-        else {
-            $this->checkByDif($usuario,$dif);
-        }
-    }
-
-    public function checkByDif($usuario, $dif){
-        if($dif >= 50){
-            $resultadoUsuario = $this->questionModel->getQuestionsAskedHard($usuario);
-            $resultadoPreguntas = $this->questionModel->getQuestionsHard();
-            if($resultadoUsuario !== null && $resultadoPreguntas == $resultadoUsuario){
-                $this->questionModel->deleteUserAnsweredQuestionsHard($usuario);
-            }
-        }
-        else {
-            $resultadoUsuario = $this->questionModel->getQuestionsAskedEasy($usuario);
-            $resultadoPreguntas = $this->questionModel->getQuestionsEasy();
-            if($resultadoUsuario !== null && $resultadoPreguntas == $resultadoUsuario){
-                $this->questionModel->deleteUserAnsweredQuestionsEasy($usuario);
-            }
-        }
-    }
-
-    public function checkNoob($usuario, $dif){
-            $resultadoUsuario = $this->questionModel->getQuestionsAskedNoob($usuario);
-            $resultadoPreguntas = $this->questionModel->getQuestionsNoob();
-            if($resultadoUsuario !== null && $resultadoPreguntas == $resultadoUsuario){
-                $this->questionModel->deleteUserAnsweredQuestionsNoob($usuario);
-            }
     }
 
     public function getDataGame(){
@@ -133,12 +97,15 @@ class GameController{
         $pregunta = $this->checkQuestion($usuario['username']);
         $respuestas = $this->respuestaModel->getRespuestas($pregunta['id']);
         $partida = $_POST['id_partida'];
+        $idCategoria = $pregunta['id_categoria'];
+        $categoria = $this->questionModel->getColor($idCategoria);
         return $data = [
             'partida' => $partida,
             'pregunta' => $pregunta,
             'respuestas' => $respuestas,
             'username' => $usuario['username'],
-            'image' => $usuario['image']
+            'image' => $usuario['image'],
+            'categoria' => $categoria
         ];
     }
 
@@ -170,12 +137,15 @@ class GameController{
             $partida = $this->partidaModel->crearPartida($username);
         }
         $respuestas = $this->respuestaModel->getRespuestas($pregunta['id']);
+        $idCategoria = $pregunta['id_categoria'];
+        $categoria = $this->questionModel->getColor($idCategoria);
         return $data = [
             'partida' => $partida[0]['id'],
             'pregunta' => $pregunta,
             'respuestas' => $respuestas,
             'username' => $username,
-            'image' => $usuario['image']
+            'image' => $usuario['image'],
+            'categoria' => $categoria
         ];
     }
 

@@ -31,6 +31,10 @@ class UserController
         $password = $_POST['password'];
 
         if($this->userModel->checkearLogin($usuario, $password)) {
+            if($this->userModel->checkearSiEsAdmin($usuario)){
+                $this->renderer->render('admin');
+            }
+            else{
             $_SESSION["usuario"] = $usuario;
             $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
             $numeroRanking = $this->userModel->getNumeroRanking($user['username']);
@@ -43,7 +47,7 @@ class UserController
             ];
             $this->renderer->render('home', $data);
             exit();
-        }
+        }}
 
         $data = array("suceso" => "Usuario o contraseña incorrectos");
         $this->errorLogin($data);
@@ -85,6 +89,7 @@ class UserController
             exit();
         }
     }
+
     public function mostrarPerfil(){
         $nombre = $_SESSION['usuario'];
         if(isset($_GET['user'])){
@@ -95,7 +100,7 @@ class UserController
         if($nombre === $_SESSION['usuario']){
             $editar = true;
         }
-
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'image' => $usuario['image'],
             'username' => $usuario['username'],
@@ -105,20 +110,23 @@ class UserController
             'latitud' => $usuario['latitud'],
             'longitud' => $usuario['longitud'],
             'verificado' => $usuario['esta_verificado'],
-            'qr'=>$usuario['qr']
+            'qr'=>$usuario['qr'],
+            'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('user', $data);
     }
+
     public function buscarPerfil(){
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $usernameBuscado = $_POST['username'];
-
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $resultadoBusqueda = $this->userModel->buscarPrefilPorNombre($usernameBuscado);
         if($resultadoBusqueda){
             $data = [
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
                 'resultadoBusqueda' => $resultadoBusqueda,
+                'numeroRanking' => $numeroRanking
             ];
             /*
              * 'imagenBuscado' => $resultadoBusqueda['image'],
@@ -137,7 +145,8 @@ class UserController
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
                 'esEditor' => $usuario['esEditor'],
-                'esAdmin' => $usuario['esAdmin']
+                'esAdmin' => $usuario['esAdmin'],
+                'numeroRanking' => $numeroRanking
             ];
             $this->renderer->render('home', $data);
         }

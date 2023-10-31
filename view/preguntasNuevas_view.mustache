@@ -9,26 +9,26 @@
     </tr>
     </thead>
     <tbody>
-    {{#preguntasNuevas}}
+    {{#preguntasConRespuestas}}
         <tr>
-            <td>{{enunciado}}</td>
+            <td>{{pregunta.enunciado}}</td>
             <td>
-                {{#respuestasNuevas}}
+                {{#respuestas}}
                     {{^es_correcta}}
                         <p class="red">{{texto}}</p>
                     {{/es_correcta}}
                     {{#es_correcta}}
                         <p class="green">{{texto}}</p>
                     {{/es_correcta}}
-                {{/respuestasNuevas}}
+                {{/respuestas}}
             </td>
             <form action="/home/eliminarAgregarNuevas" method="POST">
-                <input type="hidden" name="pregunta_id" value="{{id}}">
+                <input type="hidden" name="pregunta_id" value="{{pregunta.id}}">
                 <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
                 <td><button type="submit" name="agregar" value="agregar" class="boton2">Agregar</button></td>
             </form>
         </tr>
-    {{/preguntasNuevas}}
+    {{/preguntasConRespuestas}}
     </tbody>
 </table>
 <table>

@@ -3,95 +3,82 @@
 class QuestionModel{
 
     private $database;
+    private $pregunta_facil;
+    private $pregunta_dificil;
+    private $pregunta_default;
 
     public function __construct($database) {
         $this->database = $database;
-    }
+        $this->pregunta_default = "SELECT * FROM pregunta WHERE agregada = 0 AND preg_default = 1";
+        $this->pregunta_dificil = "SELECT * FROM pregunta WHERE agregada = 0 AND veces_respondida_bien * 100 / veces_respondida < 30 AND preg_default = 0";
+        $this->pregunta_facil= "SELECT * FROM pregunta WHERE agregada=0 AND veces_respondida_bien * 100 / veces_respondida >= 30 AND preg_default = 0";    }
 
-    public function getRandomQuestion($dif) {
-        if($dif != 1000){
-            return $this->getPreguntaByDif($dif);
+    public function getRandomQuestion($nivelUsuario) {
+        if($nivelUsuario != 1000){
+            return $this->getPreguntaByDif($nivelUsuario);
         }
-        $sql = "SELECT * FROM pregunta WHERE agregada=0 AND preg_default = 1";
-        $resultado = $this->database->query($sql);
-        $random = rand(0, sizeof($resultado)-1);
-        return $resultado[$random];
+        return $this->loopWhilePreguntas($this->pregunta_default);
+    }
+    public function loopWhilePreguntas($sqlQuery){
+        $x = true;
+        while($x){
+            $resultado = $this->database->query($sqlQuery);
+            $random = rand(0, sizeof($resultado)-1);
+            $pregunta = $resultado[$random];
+            $x = $this->isAnswered($pregunta['id'], $_SESSION['usuario']);
+        }
+        return $pregunta;
     }
 
-    public function getPreguntaByDif($dif){
-        if($dif >= 50){
+    public function getPreguntaByDif($nivelUsuario){
+        if($nivelUsuario >= 50){
             return $this->getPreguntaDificil();
         }
         return $this->getPreguntaFacil();
     }
 
     public function getPreguntaDificil(){
-        $sql = "SELECT * FROM pregunta WHERE agregada=0 AND veces_respondida_bien * 100 / veces_respondida < 30 AND preg_default = 0";
-        $resultado = $this->database->query($sql);
-        $random = rand(0, sizeof($resultado)-1);
-        if(sizeof($resultado) > 0){
-            $pregunta = $resultado[$random];
-            return $pregunta;
+        if($this->getQuestionsHard() > 0){
+            if($this->getQuestionsHard() != $this->getQuestionsAskedHard($_SESSION['usuario'])){
+                return $this->loopWhilePreguntas($this->pregunta_dificil);
+            }
         }
         return $this->getPreguntaFacil();
     }
+
     public function getPreguntaFacil(){
-        $sql = "SELECT * FROM pregunta WHERE agregada=0 AND veces_respondida_bien * 100 / veces_respondida >= 30 AND preg_default = 0";
-        $resultado = $this->database->query($sql);
-        $random = rand(0, sizeof($resultado)-1);
-        if(sizeof($resultado) > 0){
-            $pregunta = $resultado[$random];
-            Logger::info('------------------------' . $pregunta['enunciado']);
-            return $pregunta;
+        if($this->getQuestionsEasy() > 0) {
+            if($this->getQuestionsEasy() != $this->getQuestionsAskedEasy($_SESSION['usuario'])){
+                return $this->loopWhilePreguntas($this->pregunta_facil);
+            }
         }
         return $this->getPreguntaDificil();
-    }
-
-    public function getQuestionsAskedNoob($usuario){
-        $sql = "SELECT * FROM preguntas_usadas pu
-         JOIN pregunta p ON pu.pregunta_id = p.id
-         WHERE pu.username LIKE '$usuario'
-         AND p.preg_default = true";
-        return sizeof($this->database->query($sql));
-    }
-
-    public function getQuestionsNoob(){
-        $sql = "SELECT * FROM pregunta p WHERE p.preg_default = true";
-        return sizeof($this->database->query($sql));
-    }
-
-    public function deleteUserAnsweredQuestionsNoob($usuario){
-        $sql = "DELETE FROM preguntas_usadas
-        WHERE username = '$usuario'
-        AND pregunta_id IN (SELECT id FROM pregunta WHERE preg_default = true)";
-        $this->database->execute($sql);
     }
 
     public function getQuestionsAskedHard($usuario){
         $sql = "SELECT * FROM preguntas_usadas pu
          JOIN pregunta p ON pu.pregunta_id = p.id
          WHERE pu.username LIKE '$usuario'
-         AND p.agregada=1 AND p.veces_respondida_bien * 100 / p.veces_respondida < 30
+         AND p.agregada = 0 AND p.veces_respondida_bien * 100 / p.veces_respondida < 30
          AND p.preg_default = false";
         return sizeof($this->database->query($sql));
     }
 
     public function getQuestionsHard(){
         $sql = "SELECT * FROM pregunta p 
-         WHERE  p.agregada=1 AND p.veces_respondida_bien * 100 / p.veces_respondida < 30
+         WHERE  p.agregada = 0 AND p.veces_respondida_bien * 100 / p.veces_respondida < 30
          AND p.preg_default = false";
         return sizeof($this->database->query($sql));
     }
-
-    public function deleteUserAnsweredQuestionsHard($usuario){
-        $sql = "DELETE pu FROM preguntas_usadas pu
-        JOIN pregunta p ON pu.pregunta_id = p.id
-        WHERE pu.username LIKE '$usuario'
-        AND p.agregada = 0
-        AND (p.veces_respondida_bien * 100 / p.veces_respondida) < 30
-       AND p.preg_default = false";
-        $this->database->execute($sql);
-    }
+//    public function deleteUserAnsweredQuestionsHard($usuario){
+//        $sql = "DELETE pu FROM preguntas_usadas pu
+//        JOIN pregunta p ON pu.pregunta_id = p.id
+//        WHERE pu.username LIKE '$usuario'
+//        AND p.agregada = 0
+//        AND (p.veces_respondida_bien * 100 / p.veces_respondida) < 30
+//       AND p.preg_default = false";
+//        $this->database->execute($sql);
+//    }
 
     public function getQuestionsAskedEasy($usuario){
         $sql = "SELECT * FROM preguntas_usadas pu
@@ -104,20 +91,20 @@ class QuestionModel{
 
     public function getQuestionsEasy(){
         $sql = "SELECT * FROM pregunta p 
-         WHERE  p.agregada=1 AND p.veces_respondida_bien * 100 / p.veces_respondida >= 30
+         WHERE  p.agregada=0 AND p.veces_respondida_bien * 100 / p.veces_respondida >= 30
          AND p.preg_default = false";
         return sizeof($this->database->query($sql));
     }
 
-    public function deleteUserAnsweredQuestionsEasy($usuario){
-        $sql = "DELETE pu FROM preguntas_usadas pu
-        JOIN pregunta p ON pu.pregunta_id = p.id
-        WHERE pu.username LIKE '$usuario'
-        AND p.agregada = 1
-        AND (p.veces_respondida_bien * 100 / p.veces_respondida) >= 30
-       AND p.preg_default = false";
-        $this->database->execute($sql);
-    }
+//    public function deleteUserAnsweredQuestionsEasy($usuario){
+//        $sql = "DELETE pu FROM preguntas_usadas pu
+//        JOIN pregunta p ON pu.pregunta_id = p.id
+//        WHERE pu.username LIKE '$usuario'
+//        AND p.agregada = 1
+//        AND (p.veces_respondida_bien * 100 / p.veces_respondida) >= 30
+//       AND p.preg_default = false";
+//        $this->database->execute($sql);
+//    }
 
     public function addQuestionToAnswered($pregunta, $usuario){
         $sql = "INSERT INTO preguntas_usadas (username, pregunta_id) values ('$usuario', '$pregunta')";
@@ -153,11 +140,6 @@ class QuestionModel{
         return sizeof($this->database->query($sql));
     }
 
-    public function agarrarUltimaPregunta($usuario){
-        $result = $this->buscarPreguntaActual($usuario);
-        return $this->getPreguntaById($result[0]['pregunta_id']);
-    }
-
     public function getPreguntaById($id){
         $sql = "SELECT * FROM pregunta 
          WHERE id = '$id'";
@@ -173,7 +155,7 @@ class QuestionModel{
         return $this->database->query($sql);
     }
     public function getCategorias(){
-        $sql="SELECT nombre FROM categoria";
+        $sql="SELECT nombre FROM categoria WHERE agregada = 0";
         return $this->database->query($sql);
     }
 
@@ -210,24 +192,42 @@ class QuestionModel{
     }
     public function getRespuestasNuevas(){
         $preguntas = $this->getPreguntasNuevas();
-        $sql = "SELECT * FROM respuesta";
-        $respuestas = $this->database->query($sql);
+        $preguntasConRespuestas = [];
 
-        foreach ($preguntas as $pregunta) {
-            $preguntaId = $pregunta['id'];
-            $preguntasYRespuestas[$preguntaId] = $pregunta;
-            $preguntasYRespuestas[$preguntaId]['respuestas'] = [];
+        foreach ($preguntas as $pregunta){
+            $idPregunta = $pregunta['id'];
+            $sql = "SELECT * FROM respuesta WHERE id_pregunta = '$idPregunta'";
+            $respuestas = $this->database->query($sql);
 
-            foreach ($respuestas as $respuesta) {
-                if ($respuesta['id_pregunta'] === $preguntaId) {
-                    $preguntasYRespuestas[$preguntaId]['respuestas'][] = $respuesta;
-                }
-            }
+            $preguntaConRespuestas = [
+                'pregunta' => $pregunta,
+                'respuestas' => $respuestas,
+            ];
+
+            $preguntasConRespuestas[] = $preguntaConRespuestas;
         }
+        return $preguntasConRespuestas;
+    }
 
-        return $preguntasYRespuestas;
+    public function getPreguntasEditor(){
+        $sql = "SELECT * FROM pregunta WHERE agregada = 0";
+        $preguntas = $this->database->query($sql);
+        $preguntasConRespuestas = [];
 
+        foreach ($preguntas as $pregunta){
+            $idPregunta = $pregunta['id'];
+            $sql = "SELECT * FROM respuesta WHERE id_pregunta = '$idPregunta'";
+            $respuestas = $this->database->query($sql);
 
+            $preguntaConRespuestas = [
+                'pregunta' => $pregunta,
+                'respuestas' => $respuestas,
+                'categorias'=> $this->getCategoria($pregunta['id_categoria'])
+            ];
+
+            $preguntasConRespuestas[] = $preguntaConRespuestas;
+        }
+        return $preguntasConRespuestas;
     }
 
     public function reestablecerReportada($id){
@@ -275,9 +275,6 @@ class QuestionModel{
     }
 
     public function checkAllQuestions($user){
-        if($user['veces_respondidas'] = 10){
-            $this->deleteUserAnsweredQuestionsNoob($user['username']);
-        }
         if($this->getQuestionsAvailable() == $this->getQuestionsAskedNotDefault($user['username'])){
             $this->deleteAllQuestions($user['username']);
         }
@@ -291,10 +288,12 @@ class QuestionModel{
         return $this->database->query($sql);
     }
     public function eliminar($id){
-        $sql="DELETE FROM pregunta WHERE id='$id'";
-        $this->database->execute($sql);
         $sql2="DELETE FROM respuesta WHERE id_pregunta='$id'";
         $this->database->execute($sql2);
+        $sql3="DELETE FROM preguntas_usadas WHERE pregunta_id='$id'";
+        $this->database->execute($sql3);
+        $sql="DELETE FROM pregunta WHERE id = '$id'";
+        $this->database->execute($sql);
     }
     public function buscarPreguntaParaEditar($id){
         $sql = "SELECT * FROM pregunta WHERE id='$id'";
@@ -305,8 +304,16 @@ class QuestionModel{
         $enunciado = $data['enunciado'];
 
         if($enunciado){
-            $sql="UPDATE pregunta SET enunciado='$enunciado' WHERE id='$id'";
+            $sql = "UPDATE pregunta SET enunciado='$enunciado' WHERE id = '$id'";
             $this->database->execute($sql);
         }
+    }
+    public function getCategoria($idCategoria){
+        $sql = "SELECT * FROM categoria WHERE id = '$idCategoria'";
+        return $this->database->query($sql);
+    }
+        public function getColor($idCategoria){
+        $sql = "SELECT * FROM categoria WHERE id = '$idCategoria'";
+        return $this->database->query($sql);
     }
 }

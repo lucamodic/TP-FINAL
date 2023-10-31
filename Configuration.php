@@ -12,6 +12,7 @@ include_once ("model/RespuestaModel.php");
 include_once ("model/PartidaModel.php");
 include_once('controller/HomeController.php');
 include_once('controller/UserController.php');
+include_once('controller/AdminController.php');
 include_once('controller/GameController.php');
 include_once('third-party/mustache/src/Mustache/Autoloader.php');
 include_once('helpers/Session.php');
@@ -30,7 +31,12 @@ class Configuration {
             $this->getRenderer()
         );
     }
-
+    public function getAdminController(){
+        return new AdminController(
+            new UserModel($this->getDatabase()),
+            $this->getRenderer()
+        );
+    }
     public function getGameController(){
         return new GameController(
             new QuestionModel($this->getDatabase()),

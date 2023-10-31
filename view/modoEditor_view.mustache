@@ -10,22 +10,32 @@
     </tr>
     </thead>
     <tbody>
-    {{#preguntas}}
+    {{#preguntasConRespuestas}}
         <tr>
-            <td>{{enunciado}}</td>
+            <td>{{pregunta.enunciado}}</td>
             <td>
                 {{#respuestas}}
-                    <p>{{texto}}</p>
+                    {{^es_correcta}}
+                        <p class="red">{{texto}}</p>
+                    {{/es_correcta}}
+                    {{#es_correcta}}
+                        <p class="green">{{texto}}</p>
+                    {{/es_correcta}}
                 {{/respuestas}}
             </td>
-            <td>{{id_categoria}}</td>
+
+            <td>
+            {{#categorias}}
+                {{nombre}}
+            {{/categorias}}
+            </td>
             <form action="/home/editarEliminar" method="POST">
-                <input type="hidden" name="pregunta_id" value="{{id}}">
+                <input type="hidden" name="pregunta_id" value="{{pregunta.id}}">
                 <td><button type="submit" name="editar" value="editar" class="boton2">Editar</button></td>
                 <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
             </form>
         </tr>
-    {{/preguntas}}
+    {{/preguntasConRespuestas}}
 
     </tbody>
 </table>

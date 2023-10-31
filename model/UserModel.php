@@ -144,7 +144,7 @@ class UserModel{
 
     public  function  getAllUsersOrdenados(){
         $sql = "SELECT * FROM user 
-        ORDER BY puntaje DESC";
+        ORDER BY puntaje DESC LIMIT 10";
         return $this->database->query($sql);
     }
 
@@ -265,8 +265,8 @@ class UserModel{
         $this->database->execute($sql);
     }
 
-    public function buscarPartidas($usuario){
-        $sql =  "SELECT * FROM partida WHERE username LIKE '$usuario'";
+    public function buscarPartidas($usuario) {
+        $sql = "SELECT * FROM partida WHERE username = '$usuario' ORDER BY tiempo DESC LIMIT 10";
         return $this->database->query($sql);
     }
 
@@ -280,5 +280,10 @@ class UserModel{
             $posicion++;
         }
         return false;
+    }
+
+    public function checkearSiEsAdmin($usuario){
+        $sql="SELECT esAdmin FROM user WHERE username='$usuario'";
+        return $this->database->query($sql);
     }
 }
