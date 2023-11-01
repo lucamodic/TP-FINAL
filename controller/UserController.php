@@ -29,20 +29,20 @@ class UserController
     public function ingresar(){
         $usuario = $_POST['usuario'];
         $password = $_POST['password'];
-
         if($this->userModel->checkearLogin($usuario, $password)) {
+            $_SESSION["usuario"] = $usuario;
             if($this->userModel->checkearSiEsAdmin($usuario)){
+                $_SESSION["admin"] = true;
                 $this->renderer->render('admin');
+                exit();
             }
             else{
-            $_SESSION["usuario"] = $usuario;
             $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
             $numeroRanking = $this->userModel->getNumeroRanking($user['username']);
             $data = [
                 'username' => $user['username'],
                 'image' => $user['image'],
                  'esEditor' => $user['esEditor'],
-                 'esAdmin' => $user['esAdmin'],
                 'numeroRanking' => $numeroRanking
             ];
             $this->renderer->render('home', $data);
@@ -91,6 +91,9 @@ class UserController
     }
 
     public function mostrarPerfil(){
+        if(!isset($_SESSION['usuario'])){
+            $this->renderer->render('login');
+        }
         $nombre = $_SESSION['usuario'];
         if(isset($_GET['user'])){
             $nombre = $_GET['user'];
@@ -117,6 +120,9 @@ class UserController
     }
 
     public function buscarPerfil(){
+        if(!isset($_SESSION['usuario'])){
+            $this->renderer->render('login');
+        }
         $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
         $usernameBuscado = $_POST['username'];
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);

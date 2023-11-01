@@ -5,12 +5,12 @@ function conectar($module, $router){
         $router->route('user', 'login');
         exit();
     }
-    else if ($module == "admin" && !isset($_SEESION['admin'])){
-        $router->route('home','home');
+    else if ($module == "admin" && !isset($_SESSION['admin'])){
+        $router->route('home', 'mostrar');
         exit();
     }
-    else if ($module == "admin" && !isset($_SEESION['admin'])){
-        $router->route('admin','admin');
+    else if ($module != "admin" && isset($_SESSION['admin'])){
+        $router->route('admin', 'admin');
         exit();
     }
 

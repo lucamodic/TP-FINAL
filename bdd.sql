@@ -48,15 +48,11 @@ CREATE TABLE categoria (
 ALTER TABLE partida
     ADD esta_activa BOOLEAN;
 
-ALTER TABLE preguntas_usadas
-    ADD tiempo TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
-
 ALTER TABLE partida
     ADD tiempo TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
 ALTER TABLE partida
     ADD tiempo_pregunta INT;
-
 
 ALTER TABLE user
     ADD COLUMN latitud DECIMAL(10, 6),
@@ -90,6 +86,14 @@ ALTER TABLE user
 ALTER TABLE categoria
     ADD COLUMN color VARCHAR(100);
 
+ALTER TABLE pregunta
+    ADD COLUMN preguntaCreadaPorUsuario BOOLEAN DEFAULT FALSE;
+
+ALTER TABLE pregunta
+    ADD COLUMN fecha_de_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+ALTER TABLE user
+    ADD COLUMN fecha_de_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
 INSERT INTO pregunta(id_categoria, enunciado)values(1, '¿Cuál es el nombre del actor que interpreta a Tony Stark/Iron Man en el Universo Cinematográfico de Marvel?';
 INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Robert Downey Jr.', 1, true);

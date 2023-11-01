@@ -163,6 +163,7 @@ class UserModel{
                 WHERE username LIKE '$username'";
         $this->database->execute($sql);
     }
+
     public function sumarPartidaRealizadas($username){
         $sql = "UPDATE user
                 SET partidasRealizadas = partidasRealizadas + 1
@@ -202,7 +203,6 @@ class UserModel{
         }
     }
 
-
     public function enviarMail($verificationLink, $address, $name){
             $mail = new PHPMailer;
 
@@ -237,6 +237,7 @@ class UserModel{
     public function checkVerification($usuario){
         return $this->getUserFromDatabaseWhereUsernameExists($usuario)['esta_verificado'];
     }
+
     public function generarQr($username){
 
         $dir = 'public/images/qr/';
@@ -283,7 +284,13 @@ class UserModel{
     }
 
     public function checkearSiEsAdmin($usuario){
-        $sql="SELECT esAdmin FROM user WHERE username='$usuario'";
-        return $this->database->query($sql);
+        $sql="SELECT esAdmin FROM user WHERE username = '$usuario'";
+        Logger::info('que carajos me trae---------: ' . json_encode($this->database->query($sql)));
+        $queryResult = json_encode($this->database->query($sql));
+        $data = json_decode($queryResult, true);
+        $esAdminValue = $data[0]['esAdmin'];
+        return $esAdminValue;
     }
+
+
 }

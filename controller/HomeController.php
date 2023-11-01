@@ -19,7 +19,6 @@ class HomeController
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin'],
             'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $data);
@@ -81,7 +80,6 @@ class HomeController
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin'],
              'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $dataHome);
@@ -119,7 +117,6 @@ class HomeController
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin'],
             'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $data);
@@ -139,7 +136,6 @@ class HomeController
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin'],
             'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $data);
@@ -164,7 +160,6 @@ class HomeController
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin'],
             'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $dataHome);
@@ -184,7 +179,6 @@ class HomeController
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin'],
             'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $data);
@@ -215,7 +209,6 @@ class HomeController
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
                 'esEditor' => $usuario['esEditor'],
-                'esAdmin' => $usuario['esAdmin'],
                 'numeroRanking' => $numeroRanking
             ];
             $this->renderer->render('home', $data);
@@ -249,7 +242,6 @@ class HomeController
             'username' => $usuario['username'],
             'image' => $usuario['image'],
             'esEditor' => $usuario['esEditor'],
-            'esAdmin' => $usuario['esAdmin'],
             'numeroRanking' => $numeroRanking
         ];
         $this->renderer->render('home', $dataHome);

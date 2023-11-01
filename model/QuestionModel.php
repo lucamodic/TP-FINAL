@@ -6,12 +6,12 @@ class QuestionModel{
     private $pregunta_facil;
     private $pregunta_dificil;
     private $pregunta_default;
-
     public function __construct($database) {
         $this->database = $database;
         $this->pregunta_default = "SELECT * FROM pregunta WHERE agregada = 0 AND preg_default = 1";
         $this->pregunta_dificil = "SELECT * FROM pregunta WHERE agregada = 0 AND veces_respondida_bien * 100 / veces_respondida < 30 AND preg_default = 0";
-        $this->pregunta_facil= "SELECT * FROM pregunta WHERE agregada=0 AND veces_respondida_bien * 100 / veces_respondida >= 30 AND preg_default = 0";    }
+        $this->pregunta_facil= "SELECT * FROM pregunta WHERE agregada=0 AND veces_respondida_bien * 100 / veces_respondida >= 30 AND preg_default = 0";
+    }
 
     public function getRandomQuestion($nivelUsuario) {
         if($nivelUsuario != 1000){
@@ -70,15 +70,6 @@ class QuestionModel{
          AND p.preg_default = false";
         return sizeof($this->database->query($sql));
     }
-//    public function deleteUserAnsweredQuestionsHard($usuario){
-//        $sql = "DELETE pu FROM preguntas_usadas pu
-//        JOIN pregunta p ON pu.pregunta_id = p.id
-//        WHERE pu.username LIKE '$usuario'
-//        AND p.agregada = 0
-//        AND (p.veces_respondida_bien * 100 / p.veces_respondida) < 30
-//       AND p.preg_default = false";
-//        $this->database->execute($sql);
-//    }
 
     public function getQuestionsAskedEasy($usuario){
         $sql = "SELECT * FROM preguntas_usadas pu
@@ -95,16 +86,6 @@ class QuestionModel{
          AND p.preg_default = false";
         return sizeof($this->database->query($sql));
     }
-
-//    public function deleteUserAnsweredQuestionsEasy($usuario){
-//        $sql = "DELETE pu FROM preguntas_usadas pu
-//        JOIN pregunta p ON pu.pregunta_id = p.id
-//        WHERE pu.username LIKE '$usuario'
-//        AND p.agregada = 1
-//        AND (p.veces_respondida_bien * 100 / p.veces_respondida) >= 30
-//       AND p.preg_default = false";
-//        $this->database->execute($sql);
-//    }
 
     public function addQuestionToAnswered($pregunta, $usuario){
         $sql = "INSERT INTO preguntas_usadas (username, pregunta_id) values ('$usuario', '$pregunta')";
@@ -168,8 +149,9 @@ class QuestionModel{
         $respuesta2 = $data["respuesta2"];
         $respuesta3 = $data["respuesta3"];
         $respuesta4 = $data["respuesta4"];
-        $sql = "INSERT INTO pregunta(id_categoria, enunciado, dificultad, reportada, agregada, veces_respondida)
-        values('$categoria', '$enunciado', 'facil', false, true, 0);";
+
+        $sql = "INSERT INTO pregunta(id_categoria, enunciado, reportada, agregada, veces_respondida, preguntaCreadaPorUsuario)
+        values('$categoria', '$enunciado', false, true, 0, true);";
         $this->database->execute($sql);
 
         $sql7="SELECT * FROM pregunta WHERE enunciado='$enunciado'";
@@ -312,7 +294,7 @@ class QuestionModel{
         $sql = "SELECT * FROM categoria WHERE id = '$idCategoria'";
         return $this->database->query($sql);
     }
-        public function getColor($idCategoria){
+    public function getColor($idCategoria){
         $sql = "SELECT * FROM categoria WHERE id = '$idCategoria'";
         return $this->database->query($sql);
     }

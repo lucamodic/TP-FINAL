@@ -10,6 +10,7 @@ include_once ("model/UserModel.php");
 include_once ("model/QuestionModel.php");
 include_once ("model/RespuestaModel.php");
 include_once ("model/PartidaModel.php");
+include_once ("model/AdminModel.php");
 include_once('controller/HomeController.php');
 include_once('controller/UserController.php');
 include_once('controller/AdminController.php');
@@ -33,7 +34,7 @@ class Configuration {
     }
     public function getAdminController(){
         return new AdminController(
-            new UserModel($this->getDatabase()),
+            new  AdminModel($this->getDatabase()),
             $this->getRenderer()
         );
     }
