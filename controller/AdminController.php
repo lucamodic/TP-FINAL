@@ -12,8 +12,6 @@ class AdminController
     }
 
     public function admin (){
-        $this->adminModel->crearGraficoPaises();
-
         $this->renderer->render('admin');
     }
 
@@ -22,17 +20,56 @@ class AdminController
         $user = $this->adminModel->contarCantidadDe('user');
         $preguntasEnElJuego = $this->adminModel->contarCantidadDe('pregunta');
         $preguntasCreadas = $this->adminModel->cantidadDePreguntasCreadas();
+        $jugadoresNuevos = $this->adminModel->cantidadDeUsuariosNuevos();
         $data = [
-          "cantidadPartidas" => $partida['0'],
+          "cantidadPartidas" => $partida,
           "cantidadUsuarios" => $user,
           "cantidadPreguntasEnElJuego" => $preguntasEnElJuego,
-          "cantidadPreguntasCreadas" => $preguntasCreadas
+          "cantidadPreguntasCreadas" => $preguntasCreadas,
+          "cantidadJugadoresNuevos" => $jugadoresNuevos
         ];
-
         $this->renderer->render('mostrarDatos', $data);
     }
+
     public function mostrarGraficoPaises(){
-        $this->adminModel->crearGraficoPaises();
-        $this->renderer->render('grafico');
+        $this->adminModel->crearGraficoPaises($_POST['tiempo'],"Temporal");
+        $data = [
+          'ruta' => '../public/images/graficos/graficoPaisesTemporal.png'
+        ];
+        $this->renderer->render('grafico',$data);
+    }
+
+    public function mostrarGraficoPorSexo(){
+        $this->adminModel->crearGraficoPorSexo($_POST['tiempo']);
+        $data = [
+            'ruta' => '../public/images/graficos/graficoPorSexo.png'
+        ];
+        $this->renderer->render('grafico',$data);
+    }
+
+    public function mostrarGraficoPorEdad(){
+        $this->adminModel->crearGraficoPorEdad($_POST['tiempo']);
+        $data = [
+            'ruta' => '../public/images/graficos/graficoPorEdad.png'
+        ];
+        $this->renderer->render('grafico',$data);
+    }
+
+    public function mostrarGraficoPreguntasRespondidas(){
+        $this->adminModel->crearGraficoPorPreguntasRespondidasBienPorUsuario($_POST['tiempo']);
+        $data = [
+            'ruta' => '../public/images/graficos/graficoPreguntasBien.png'
+        ];
+        $this->renderer->render('grafico',$data);
+    }
+
+    public function mostrarReporte(){
+        $this->adminModel->generarReporte();
+        header('Content-Type: application/pdf');
+        header('Content-Disposition: inline; filename="public/images/pdf/example.pdf"');
+        exit();
+    }
+    public function mostrarGraficos(){
+        $this->renderer->render('graficos');
     }
 }

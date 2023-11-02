@@ -3,41 +3,16 @@ require_once ('third-party/jpgraph-4.4.2/src/jpgraph.php');
 require_once ('third-party/jpgraph-4.4.2/src/jpgraph_bar.php');
 require_once ('third-party/jpgraph-4.4.2/src/jpgraph_pie.php');
 require_once ('third-party/jpgraph-4.4.2/src/jpgraph_line.php');
+require('third-party/fpdf/fpdf.php');
 
 class AdminModel{
     private $database;
 
     public function __construct($database){$this->database = $database;}
 
-    public function crearPieGraphic (){
-        //LE PASO LOS DATOS QUE VA A TENER ADENTRO
-        $data = array(30, 45, 25);
+    public function crearGraficoPaises($tiempo, $paraCambiarRuta){
 
-        // Le pasa el tamaño
-        $graph = new PieGraph(400, 300);
-
-        // CREO ALGO
-        $plot = new PiePlot($data);
-
-        // PONGO LOS COLORES
-        $plot->SetSliceColors(array('#FF5733', '#33FF57', '#5733FF'));
-
-        // Pongo las categorias
-        $plot->SetLegends(array('Slice 1', 'Slice 2', 'Slice 3'));
-
-        //agrego al grafico
-        $graph->Add($plot);
-
-        // Titulo
-        $graph->title->Set("Sample Pie Chart");
-
-        // Guardo la imagen
-        $graph->Stroke('public/images/graph.png');
-    }
-
-    public function crearGraficoPaises(){
-
-        $data = $this->agarrarPaises();
+        $data = $this->agarrarPaises($tiempo);
 
         $graph = new PieGraph(400, 300);
 
@@ -53,10 +28,44 @@ class AdminModel{
 
         $graph->Add($plot);
 
-        $graph->title->Set("PAISES");
+        $graph->title->Set("PAISES (". $tiempo . " Dias)");
 
         // Guardo la imagen
-        $graph->Stroke('public/images/graficoPaises.png');
+        $graph->Stroke('public/images/graficos/graficoPaises'.$paraCambiarRuta.'.png');
+    }
+
+    public function crearGraficoPorSexo($tiempo){
+        $this->crearGrafico($this->cantidadUsuariosPorSexo($tiempo), "Grafico Por Sexos", "graficoPorSexo");
+    }
+
+    public function crearGraficoPorEdad($tiempo){
+        $this->crearGrafico($this->getGruposDeEdad($tiempo), "Grafico Por Edad", "graficoPorEdad");
+    }
+
+    public function crearGraficoPorPreguntasRespondidasBienPorUsuario($tiempo){
+        $this->crearGrafico($this->getPorcentajePreguntasRespondidas($tiempo),
+            "Preguntas respondidas bien por usuario", "graficoPreguntasBien");
+    }
+
+    public function crearGrafico($data, $titulo, $nombreDelArchivoSinExtension){
+        $graph = new PieGraph(400, 300);
+
+        $plot = new PiePlot(array_values($data));
+
+        $coloresAleatorios = $this->generarColoresAleatorios(count($data));
+
+        $plot->SetSliceColors($coloresAleatorios);
+
+        $plot->SetLegends(array_map(function ($dato, $contador) {
+            return "$dato [$contador]";
+        }, array_keys($data), array_values($data)));
+
+        $graph->Add($plot);
+
+        $graph->title->Set($titulo);
+
+        // Guardo la imagen
+        $graph->Stroke('public/images/graficos/' . $nombreDelArchivoSinExtension . '.png');
     }
 
     function generarColoresAleatorios($cantidad) {
@@ -68,9 +77,9 @@ class AdminModel{
         return $colores;
     }
 
-    public function agarrarPaises(){
+    public function agarrarPaises($tiempo){
         $apiKey = 'AIzaSyB7e9X-iFFD8Sc6YZIY8DPShMfmWAbaC90';
-        $usuarios = $this->agarrarTodosLosUsuarios();
+        $usuarios = $this->agarrarTodosLosUsuarios($tiempo);
         $paises = [];
         foreach ($usuarios as $usuario) {
             $latitude = $usuario['latitud'];
@@ -102,18 +111,21 @@ class AdminModel{
         return $data;
     }
 
-    public function agarrarTodosLosUsuarios(){
-        $sql = 'SELECT * FROM user';
+    public function agarrarTodosLosUsuarios($tiempo){
+        $sql = 'SELECT * FROM user WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)';
         return $this->database->query($sql);
     }
 
-    public function cantidadUsuariosPorSexo(){
-        $sqlMasculinos = "SELECT COUNT (*) FROM user WHERE sex = 'masculino'";
+    public function cantidadUsuariosPorSexo($tiempo){
+        $sqlMasculinos = "SELECT COUNT(*) FROM user WHERE sex = 'masculino' 
+                            AND fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
         $masculinos = $this->database->query($sqlMasculinos);
-        $sqlFemenino = "SELECT COUNT (*) FROM user WHERE sex = 'femenino'";
-        $femeninos = $this->database->query($sqlFemenino);
-        $sqlNoEspecifica = "SELECT COUNT (*) FROM user WHERE sex = 'x'";
-        $noEspecifica = $this->database->query($sqlNoEspecifica);
+        $sqlFemenino = "SELECT COUNT(*) FROM user WHERE sex = 'femenino'
+                            AND fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
+        $femeninos = $this->database->fetchColumn($sqlFemenino);
+        $sqlNoEspecifica = "SELECT COUNT(*) FROM user WHERE sex = 'x' 
+                            AND fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
+        $noEspecifica = $this->database->fetchColumn($sqlNoEspecifica);
         $data = [
             'masculinos' => $masculinos,
             'femeninos' => $femeninos,
@@ -122,17 +134,18 @@ class AdminModel{
         return $data;
     }
 
-    public function getGruposDeEdad()
-    {
+    public function getGruposDeEdad($tiempo){
         $jubilados = 0;
         $menores = 0;
         $medio = 0;
-        $sql = 'SELECT spawn FROM user';
+        $sql = 'SELECT spawn FROM user 
+                    WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)';
         $nacimientos = $this->database->query($sql);
         foreach ($nacimientos as $nacimiento) {
-            if ($nacimiento < 1963) {
+            $fecha = date('Y', strtotime($nacimiento['spawn']));
+            if ($fecha < 1963) {
                 $jubilados++;
-            } else if ($nacimiento > 2014) {
+            } else if ($fecha > 2014) {
                 $menores++;
             } else {
                 $medio++;
@@ -146,29 +159,74 @@ class AdminModel{
         return $data;
     }
 
-    public function cantidadDePreguntasCreadas(){
-        $sql = "SELECT COUNT(*) FROM pregunta where preguntaCreadaPorUsuario = TRUE";
-        return $this->database->query($sql);
-    }
-
     public function contarCantidadDe($tabla){
         $sql = "SELECT COUNT(*) FROM ".$tabla;
-        return $this->database->query($sql);
+        return $this->database->fetchColumn($sql);
     }
 
-    public function getPorcentajePreguntasRespondidas(){
-        $vecesRespondidasCorrectamenteTotal = 0;
-        $vecesRespondidasTotal = 0;
-        $sql='SELECT veces_respondida FROM pregunta';
-        $vecesRespondidas = $this->database->query($sql);
-        foreach($vecesRespondidas as $vecesRespondida){
-            $vecesRespondidasTotal+=$vecesRespondida;
-        }
-        $sql2 = 'SELECT veces_respondida_bien FROM pregunta';
-        $vecesRespondidasBien = $this->database->query($sql2);
-        foreach($vecesRespondidasBien as $vecesRespondidaBien){
-            $vecesRespondidasCorrectamenteTotal += $vecesRespondidaBien;
-        }
-        return $vecesRespondidasCorrectamenteTotal*100/$vecesRespondidasTotal;
+    public function cantidadDePreguntasCreadas(){
+        $sql = "SELECT COUNT(*) FROM pregunta where preguntaCreadaPorUsuario = TRUE";
+        return $this->database->fetchColumn($sql);
     }
+
+    public function cantidadDeUsuariosNuevos(){
+        $sql = "SELECT COUNT(*) FROM user WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)";
+        return $this->database->fetchColumn($sql);
+    }
+
+    public function getPorcentajePreguntasRespondidas($tiempo){
+        $sql='SELECT SUM(veces_respondida) as total_veces_respondida FROM pregunta 
+                WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)';
+        $vecesRespondidasTotal = $this->database->query($sql);
+        $sql2 = 'SELECT SUM(veces_respondida_bien) as veces_respondida_bien FROM pregunta
+                    WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)';
+        $vecesRespondidasBien = $this->database->query($sql2);
+        $data = [
+            "Respondidas Bien" => $vecesRespondidasBien,
+            "Respondidas Total" => $vecesRespondidasTotal
+        ];
+        return $data;
+    }
+
+    public function generarReporte(){
+        $partida = $this->contarCantidadDe('partida');
+        $user = $this->contarCantidadDe('user');
+        $preguntasEnElJuego = $this->contarCantidadDe('pregunta');
+        $preguntasCreadas = $this->cantidadDePreguntasCreadas();
+        $jugadoresNuevos = $this->cantidadDeUsuariosNuevos();
+
+        $pdf = new FPDF();
+        $pdf->AddPage();
+
+//        $this->crearGrafico($this->getGruposDeEdad(300), "Grafico Por Edad", "graficoPorEdadTotal");
+//        $this->crearGrafico($this->cantidadUsuariosPorSexo(300), "Grafico Por Sexos", "graficoPorSexoTotal");
+//        $this->crearGraficoPaises(300, "Total");
+//        $this->crearGrafico($this->getPorcentajePreguntasRespondidas(1000),
+//            "Preguntas respondidas bien por usuario", "graficoPreguntasBienTotal");
+//
+//        $imagePath = ['public/images/graficos/graficoPreguntasBienTotal.png',
+//            'public/images/graficos/graficoPorSexoTotal.png',
+//            'public/images/graficos/graficoPorEdadTotal.png',
+//            'public/images/graficos/graficoPaisesTotal.png'];
+//
+//        foreach($imagePath as $image){
+//            $pdf->Image($image, 10, 10, 90);
+//        }
+
+        $pdf->SetFont('Arial', 'B', 16);
+        $titulo = "Reporte de Questionario";
+        $pdf->Cell(0, 10, $titulo, 0, 1, 'C');
+        $text = '||Cantidad de partidas jugadas: ' . $partida . '
+        ||Cantidad de usuarios: ' . $user . '
+        ||Cantidad de preguntas en el juego: ' . $preguntasEnElJuego . '
+        ||Cantidad de preguntas creadas: ' . $preguntasCreadas . '
+        ||Cantidad de jugadores nuevos: ' . $jugadoresNuevos .'';
+        $lines = explode("||", $text);
+        foreach ($lines as $line) {
+            $pdf->Cell(0, 10, $line, 0, 1, 'L');
+        }
+        $pdf->Output('public/images/pdf/example.pdf', 'D');
+
+    }
+
 }

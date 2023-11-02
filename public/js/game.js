@@ -17,8 +17,7 @@ $(document).ready(function(){
             success: function (response) {
                 var data = JSON.parse(response)["tiempo"];
                 if (data <= 0) {
-                    console.log("bien");
-                    window.location.href = "/game/end";
+                    window.location.href = "/game/perdiste";
                 }
                 $('.tiempo').html(data);
             }

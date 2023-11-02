@@ -34,6 +34,35 @@
     border-radius: 20px;
     border: 5px solid #ffffff;
 }
+.center-mid{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height:90vh;
+}
+.cartelPerdiste{
+
+}
+
+.tiempo {
+    border: 2px solid #945bc9;
+    border-radius:5px;
+    padding:10px 15px;
+    margin-top:15px;
+}
+
+.reportar {
+    padding:1rem 2rem;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    border-radius:5px;
+}
+
+.reportar:hover {
+    cursor:pointer;
+    background-color: #3d3d3d;
+}
 
 @media screen and (max-width: 1270px) {
 
@@ -59,28 +88,3 @@
 
 }
 
-.center-mid{
-    display:flex;
-    flex-direction:column;
-    justify-content: center;
-    align-items: center;
-}
-
-.tiempo {
-    border: 2px solid #945bc9;
-    border-radius:5px;
-    padding:10px 15px;
-    margin-top:15px;
-}
-
-.reportar {
-    padding:1rem 2rem;
-    background-color: #252525;
-    border: 2px solid #945bc9;
-    border-radius:5px;
-}
-
-.reportar:hover {
-    cursor:pointer;
-    background-color: #3d3d3d;
-}

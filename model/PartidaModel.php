@@ -9,8 +9,8 @@ class PartidaModel
         $this->database = $database;
     }
 
-    public function checkPartida($usuario){
-        if(sizeof($this->getPartidaByUsername($usuario)) > 0){
+    public function verificarPartida($usuario){
+        if(sizeof($this->getPartidaPorUsername($usuario)) > 0){
             return true;
         };
         return false;
@@ -19,10 +19,10 @@ class PartidaModel
     public function crearPartida($usuario){
         $sql = "INSERT INTO partida (username, puntaje, esta_activa, tiempo_pregunta) values ('$usuario', 0, true, 10)";
         $this->database->execute($sql);
-        return $this->getPartidaByUsername($usuario);
+        return $this->getPartidaPorUsername($usuario);
     }
 
-    public function getPartidaByUsername($usuario){
+    public function getPartidaPorUsername($usuario){
         $sql = "SELECT * FROM partida 
          WHERE username LIKE '$usuario'
          AND esta_activa = true";
@@ -36,14 +36,14 @@ class PartidaModel
         $this->database->execute($sql);
     }
 
-    public function gameOver($id){
+    public function finalizarJuego($id){
         $sql = "UPDATE partida
                 SET esta_activa = false
                 WHERE id = '$id'";
         $this->database->execute($sql);
     }
 
-    public function getPartidaById($id){
+    public function getPartidaPorId($id){
         $sql = "SELECT * FROM partida 
          WHERE id = '$id'";
         return $this->database->query($sql)[0];

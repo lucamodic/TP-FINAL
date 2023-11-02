@@ -22,7 +22,7 @@
                     {{/es_correcta}}
                 {{/respuestas}}
             </td>
-            <form action="/home/eliminarAgregarNuevas" method="POST">
+            <form action="/editor/eliminarAgregarNuevas" method="POST">
                 <input type="hidden" name="pregunta_id" value="{{pregunta.id}}">
                 <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
                 <td><button type="submit" name="agregar" value="agregar" class="boton2">Agregar</button></td>
@@ -45,7 +45,7 @@
         <tr>
             <td>{{nombre}}</td>
             <td></td>
-            <form action="/home/eliminarAgregarNuevasCategorias" method="POST">
+            <form action="/editor/eliminarAgregarNuevasCategorias" method="POST">
                 <input type="hidden" name="id" value="{{id}}">
                 <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
                 <td><button type="submit" name="agregar" value="agregar" class="boton2">Agregar</button></td>

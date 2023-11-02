@@ -37,7 +37,7 @@ class UserController
                 exit();
             }
             else{
-            $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
+            $user = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($usuario);
             $numeroRanking = $this->userModel->getNumeroRanking($user['username']);
             $data = [
                 'username' => $user['username'],
@@ -91,30 +91,32 @@ class UserController
     }
 
     public function mostrarPerfil(){
-        if(!isset($_SESSION['usuario'])){
-            $this->renderer->render('login');
-        }
-        $nombre = $_SESSION['usuario'];
-        if(isset($_GET['user'])){
+        $nombre = "";
+        $editar=false;
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        if($_GET['user'] != $_SESSION['usuario']){
             $nombre = $_GET['user'];
-        }
-        $editar = false;
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($nombre);
-        if($nombre === $_SESSION['usuario']){
+            $usuarioPerfil = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($nombre);
+        }else{
+            $nombre=$_SESSION['usuario'];
             $editar = true;
+            $usuarioPerfil = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($nombre);
         }
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'image' => $usuario['image'],
             'username' => $usuario['username'],
-            'puntaje' => $usuario['puntaje'],
-            'partidasRealizadas' => $usuario['partidasRealizadas'],
+            'numeroRanking' => $numeroRanking,
+            'imagePerfil' =>$usuarioPerfil['image'],
+            'usernamePerfil' =>$usuarioPerfil['username'],
+            'puntaje' => $usuarioPerfil['puntaje'],
+            'partidasRealizadas' => $usuarioPerfil['partidasRealizadas'],
             'editar' => $editar,
-            'latitud' => $usuario['latitud'],
-            'longitud' => $usuario['longitud'],
-            'verificado' => $usuario['esta_verificado'],
-            'qr'=>$usuario['qr'],
-            'numeroRanking' => $numeroRanking
+            'latitud' => $usuarioPerfil['latitud'],
+            'longitud' => $usuarioPerfil['longitud'],
+            'verificado' => $usuarioPerfil['esta_verificado'],
+            'qr'=>$usuarioPerfil['qr']
+
         ];
         $this->renderer->render('user', $data);
     }
@@ -123,7 +125,7 @@ class UserController
         if(!isset($_SESSION['usuario'])){
             $this->renderer->render('login');
         }
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
         $usernameBuscado = $_POST['username'];
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $resultadoBusqueda = $this->userModel->buscarPrefilPorNombre($usernameBuscado);
@@ -134,19 +136,11 @@ class UserController
                 'resultadoBusqueda' => $resultadoBusqueda,
                 'numeroRanking' => $numeroRanking
             ];
-            /*
-             * 'imagenBuscado' => $resultadoBusqueda['image'],
-                'usernameBuscado' => $resultadoBusqueda['username'],
-                'puntaje' => $resultadoBusqueda['puntaje'],
-                'partidasRealizadas' => $resultadoBusqueda['partidasRealizadas'],
-                'latitud' => $resultadoBusqueda['latitud'],
-                'longitud' => $resultadoBusqueda['longitud']
-             * */
             $this->renderer->render('userSearch',$data);
         }
         else{
 
-            $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+            $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
             $data = [
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
@@ -162,7 +156,7 @@ class UserController
         $token = $_GET['token'];
         $bool = $this->userModel->verificar($token);
         if(isset($_SESSION["usuario"])){
-            $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION["usuario"]);
+            $user = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION["usuario"]);
             $data = [
                 'username' => $user['username'],
                 'image' => $user['image'],
@@ -178,8 +172,16 @@ class UserController
     }
 
     public function enviarCorreo(){
-        $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION["usuario"]);
+        $user = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION["usuario"]);
         $this->userModel->enviarMail($this->userModel->getLink($user['token_verificacion']), $user['mail'], $user['name']);
         $this->mostrarPerfil();
+    }
+
+    public function logout(){
+        if (isset($_POST["Logout"])) {
+            unset($_SESSION["usuario"]);
+            $this->renderer->render('login');
+            exit();
+        }
     }
 }

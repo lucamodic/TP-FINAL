@@ -1,6 +1,6 @@
 
 <div class="botones-cont">
-    <a class="boton-activo" href="/game/startGame"> Jugar </a>
+    <a class="boton-activo" href="/game/empezarJuego"> Jugar </a>
     {{#verificar}}
         <h4>{{verificar}}</h4>
     {{/verificar}}
@@ -8,8 +8,8 @@
     <a class="boton-activo" href="/home/mostrarAgregarPregunta">Agregar pregunta</a>
     <a class="boton-activo" href="/home/mostrarAgregarCategoria">Agregar categoria</a>
     {{#esEditor}}
-        <a class="boton-activo" href="/home/mostrarPreguntasReportadas">Preguntas Reportadas</a>
-        <a class="boton-activo" href="/home/mostrarPreguntasNuevas">Nuevas</a>
-        <a class="boton-activo" href="/home/mostrarModoEditor">Editar o borrar</a>
+        <a class="boton-activo" href="/editor/mostrarPreguntasReportadas">Preguntas Reportadas</a>
+        <a class="boton-activo" href="/editor/mostrarPreguntasNuevas">Nuevas</a>
+        <a class="boton-activo" href="/editor/mostrarModoEditor">Editar o borrar</a>
     {{/esEditor}}
 </div>

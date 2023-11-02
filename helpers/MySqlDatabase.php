@@ -25,9 +25,10 @@ class MySqlDatabase {
         return mysqli_fetch_all($result, MYSQLI_BOTH);
     }
 
-    public function fetchAssoc($sql){
+    public function fetchColumn($sql){
         $result = mysqli_query($this->connection, $sql);
-        return mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_row($result);
+        return (int)$row[0];
     }
 
     public function querySinFetchAll($sql) {

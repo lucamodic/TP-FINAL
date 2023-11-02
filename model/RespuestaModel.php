@@ -9,7 +9,7 @@ class RespuestaModel{
     }
 
     public function getRespuestas($idPregunta){
-        $sql = "SELECT * FROM respuesta WHERE id_pregunta LIKE '$idPregunta'";
+        $sql = "SELECT * FROM respuesta WHERE id_pregunta LIKE '$idPregunta'  ORDER BY RAND()";
         return $this->database->query($sql);
     }
 

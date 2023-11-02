@@ -128,12 +128,81 @@ a {
 .rojo-admin{
     margin-left: 0.2em;
 }
+.grafico{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    align-items: center;
+    justify-content: space-around;
+}
+.botones-cont-graficos{
+    border: 2px solid #945bc9;
+    height: 20rem;
+    border-radius: 12px;
+    padding:1rem;
+}
+.container form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.container form div{
+    width: 100%;
+    height: auto;
+}
+.seleccione{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3em;
+}
+.radious {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.radious label{
+    margin: 0.2em 0;
+    width: 100%;
+    text-align: center;
+}
+.boton-pasivo{
+    margin-top: 2em;
+    padding:1rem 4rem;
+    font-size:1.5rem;
+    border-radius:15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    width:30rem;
+    text-align: center;
+}
+.boton-pasivo:hover {
+    cursor: pointer;
+    background-color: #100f0f;
+}
+.logout{
+    color: white;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    border-radius:15px;
+    padding: 1em;
+}
 
 @media screen and (max-width: 800px) {
     .botones-cont{
-    //si se achica el largo, los botones se van por encima
+    /*si se achica el largo, los botones se van por encima*/
     }
-    .boton-activo {
+
+   .boton-activo {
         padding:1.5rem 4rem;
         font-size:3rem;
         background-color: #252525;

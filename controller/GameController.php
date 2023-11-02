@@ -14,33 +14,35 @@ class GameController{
         $this->partidaModel= $partidaModel;
     }
 
-    public function startGame(){
-        if($this->userModel->checkVerification($_SESSION['usuario'])){
+    public function empezarJuego(){
+        if($this->userModel->checkearVerificacion($_SESSION['usuario'])){
             $this->createSession();
-            $this->renderer->render('game', $this->getDataGameStart());
+            $this->renderer->render('game', $this->getDataParaCuandoEmpiezaLaPartida());
         }
         else {
-            $this->renderer->render('home', $this->getData());
+            $this->renderer->render('home', $this->getDataNoEstaVerificado());
         }
     }
 
-    public function end(){
-        $partida = $this->partidaModel->getPartidaByUsername($_SESSION['usuario'])[0];
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+    public function perdiste(){
+        $partida = $this->partidaModel->getPartidaPorUsername($_SESSION['usuario'])[0];
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
         $this->userModel->sumarPartidaRealizadas($_SESSION['usuario']);
-        $this->partidaModel->gameOver($partida['id']);
+        $this->partidaModel->finalizarJuego($partida['id']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $data = [
             'puntajeUsuario'=> $usuario['puntaje'],
             'puntajeTotal' => $partida['puntaje'],
             'username' => $usuario['username'],
-            'image' => $usuario['image']
+            'image' => $usuario['image'],
+            'numeroRanking' => $numeroRanking
         ];
-        $this->renderer->render('end', $data);
+        $this->renderer->render('perdiste', $data);
     }
 
-    public function checkAnswer(){
+    public function verificarRespuesta(){
         if(!isset($_POST['URL'])){
-            $this->renderer->render('home', $this->getDataCheater());
+            $this->renderer->render('home', $this->getDataNoAccedePorBoton());
             exit();
         }
         $respuesta = $_POST['bool'];
@@ -51,12 +53,12 @@ class GameController{
             $this->partidaModel->sumarPuntos($_POST['id_partida']);
             $this->questionModel->sumarAcertada($pregunta);
             $this->createSession();
-            $this->renderer->render('game', $this->getDataGame());
+            $this->renderer->render('game', $this->getDataDelJuegoCuandoRespondeLaPregunta());
             exit();
         }
         $this->userModel->sumarPartidaRealizadas($_SESSION['usuario']);
-        $this->partidaModel->gameOver($_POST['id_partida']);
-        $this->renderer->render('end', $this->getDataGameOver());
+        $this->partidaModel->finalizarJuego($_POST['id_partida']);
+        $this->renderer->render('perdiste', $this->getDataPerdio());
         exit();
     }
 
@@ -72,45 +74,72 @@ class GameController{
     public function calcularTiempoQueQueda(){
         $tiempo = $_SESSION['tiempo'] - (time() - $_SESSION['start_time']);
         if($tiempo <= -1){
-            $this->end();
+            $this->perdiste();
         }
         $response = array("tiempo" => $tiempo);
         echo json_encode($response);
     }
 
-    public function checkQuestion($usuario){
-        $dificultadUser = $this->userModel->getDifficulty($usuario);
-        $this->checkCount($usuario);
+    public function agarrarPregunta($usuario){
+        $dificultadUser = $this->userModel->agarrarDificultad($usuario);
+        $this->verCuantasRespondio($usuario);
         $pregunta = $this->questionModel->getRandomQuestion($dificultadUser);
-        $this->questionModel->addQuestionToAnswered($pregunta['id'], $usuario);
-        $this->userModel->addRespondida($usuario);
+        $this->questionModel->agregarPreguntaARespondida($pregunta['id'], $usuario);
+        $this->userModel->agregarRespondida($usuario);
         return $pregunta;
     }
 
-    public function checkCount($usuario){
-        $user = $this->userModel->getUserFromDatabaseWhereUsernameExists($usuario);
-        $this->questionModel->checkAllQuestions($user);
+    public function verCuantasRespondio($usuario){
+        $user = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($usuario);
+        $this->questionModel->verificarSiRespondioTodasLasPreguntas($user);
     }
 
-    public function getDataGame(){
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        $pregunta = $this->checkQuestion($usuario['username']);
+    public function getDataParaCuandoEmpiezaLaPartida(){
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        $username = $usuario['username'];
+        if($this->partidaModel->verificarPartida($username)){
+            $partida = $this->partidaModel->getPartidaPorUsername($username);
+            $this->perdiste();
+        }else {
+            $pregunta = $this->agarrarPregunta($username);
+            $partida = $this->partidaModel->crearPartida($username);
+        }
+        $respuestas = $this->respuestaModel->getRespuestas($pregunta['id']);
+        $idCategoria = $pregunta['id_categoria'];
+        $categoria = $this->questionModel->getColor($idCategoria);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
+        return $data = [
+            'partida' => $partida[0]['id'],
+            'pregunta' => $pregunta,
+            'respuestas' => $respuestas,
+            'username' => $username,
+            'image' => $usuario['image'],
+            'categoria' => $categoria,
+            'numeroRanking' => $numeroRanking
+        ];
+    }
+
+    public function getDataDelJuegoCuandoRespondeLaPregunta(){
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        $pregunta = $this->agarrarPregunta($usuario['username']);
         $respuestas = $this->respuestaModel->getRespuestas($pregunta['id']);
         $partida = $_POST['id_partida'];
         $idCategoria = $pregunta['id_categoria'];
         $categoria = $this->questionModel->getColor($idCategoria);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         return $data = [
             'partida' => $partida,
             'pregunta' => $pregunta,
             'respuestas' => $respuestas,
             'username' => $usuario['username'],
             'image' => $usuario['image'],
-            'categoria' => $categoria
+            'categoria' => $categoria,
+            'numeroRanking' => $numeroRanking
         ];
     }
 
-    public function getData(){
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
+    public function getDataNoEstaVerificado(){
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
         return $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image'],
@@ -118,43 +147,22 @@ class GameController{
         ];
     }
 
-    public function getDataCheater(){
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        return $data = [
-            'username' => $usuario['username'],
-            'image' => $usuario['image']
-        ];
-    }
-
-    public function getDataGameStart(){
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        $username = $usuario['username'];
-        if($this->partidaModel->checkPartida($username)){
-            $partida = $this->partidaModel->getPartidaByUsername($username);
-            $this->end();
-        }else {
-            $pregunta = $this->checkQuestion($username);
-            $partida = $this->partidaModel->crearPartida($username);
-        }
-        $respuestas = $this->respuestaModel->getRespuestas($pregunta['id']);
-        $idCategoria = $pregunta['id_categoria'];
-        $categoria = $this->questionModel->getColor($idCategoria);
-        return $data = [
-            'partida' => $partida[0]['id'],
-            'pregunta' => $pregunta,
-            'respuestas' => $respuestas,
-            'username' => $username,
-            'image' => $usuario['image'],
-            'categoria' => $categoria
-        ];
-    }
-
-    public function getDataGameOver(){
-        $usuario = $this->userModel->getUserFromDatabaseWhereUsernameExists($_SESSION['usuario']);
-        $partida = $this->partidaModel->getPartidaById($_POST['id_partida']);
+    public function getDataPerdio(){
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        $partida = $this->partidaModel->getPartidaPorId($_POST['id_partida']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         return $data = [
             'puntajeUsuario'=> $usuario['puntaje'],
             'puntajeTotal' => $partida['puntaje'],
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'numeroRanking' => $numeroRanking
+        ];
+    }
+
+    public function getDataNoAccedePorBoton(){
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        return $data = [
             'username' => $usuario['username'],
             'image' => $usuario['image']
         ];
@@ -164,4 +172,6 @@ class GameController{
         $idPreguntaReportada = $_GET['id_pregunta'];
         $this->questionModel->agregarPreguntaReportada($idPreguntaReportada);
     }
+
+
 }

@@ -12,6 +12,7 @@ include_once ("model/RespuestaModel.php");
 include_once ("model/PartidaModel.php");
 include_once ("model/AdminModel.php");
 include_once('controller/HomeController.php');
+include_once('controller/EditorController.php');
 include_once('controller/UserController.php');
 include_once('controller/AdminController.php');
 include_once('controller/GameController.php');
@@ -50,6 +51,14 @@ class Configuration {
 
     public function getHomeController() {
         return new HomeController(
+            new UserModel($this->getDatabase()),
+            $this->getRenderer(),
+            new QuestionModel($this->getDatabase())
+        );
+    }
+
+    public function getEditorController() {
+        return new EditorController(
             new UserModel($this->getDatabase()),
             $this->getRenderer(),
             new QuestionModel($this->getDatabase())

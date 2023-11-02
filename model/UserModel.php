@@ -12,28 +12,27 @@ require 'third-party/phpqrcode/qrlib.php';
 class UserModel{
     private $database;
 
-
     public function __construct($database) {
         $this->database = $database;
     }
 
-    public function add($datos){
-        $suceso = $this->checkdata($datos);
+    public function registrar($datos){
+        $suceso = $this->checkearDatosParaRegistro($datos);
 
         if($suceso == "exito"){
-            $this->addToDatabase($datos);
+            $this->agregarALaBaseDeDatos($datos);
         }
         return $suceso;
     }
 
     public function checkearLogin($usuario, $password){
-         if(!$this->checkUsername($usuario)){
+         if(!$this->checkearUsername($usuario)){
              return false;
         }
-        return $this->checkPassword($usuario, $password);
+        return $this->checkearPassword($usuario, $password);
     }
 
-    public function addToDatabase($data){
+    public function agregarALaBaseDeDatos($data){
         $name = $data['nombre'];
         $spawn = $data['fecha'];
         $sex = $data['sexo'];
@@ -50,9 +49,9 @@ class UserModel{
             values ('$username', '$name', '$spawn', '$sex', '$mail', '$password', '$foto', 0, 0, '$qr', '$latitud', '$longitud', false, false, '$token')";
         $this->database->execute($sql);
 
-        $verificationLink = $this->getLink($token);
+        $linkDeVerificacion = $this->getLink($token);
 
-        $this->enviarMail($verificationLink, $mail, $name);
+        $this->enviarMail($linkDeVerificacion, $mail, $name);
 
     }
 
@@ -70,7 +69,7 @@ class UserModel{
         return true;
     }
 
-    public function checkdata($data){
+    public function checkearDatosParaRegistro($data){
         foreach ($data as $dato){
             if(empty($dato)){
                 return "Completar todos los campos";
@@ -89,7 +88,7 @@ class UserModel{
 
         $usuario = $data['usuario'];
 
-        if($this->checkUsername($usuario)){
+        if($this->checkearUsername($usuario)){
             return "Usuario ya registrado";
         }
 
@@ -109,7 +108,7 @@ class UserModel{
         return true;
     }
 
-    public function checkUsername($usuario){
+    public function checkearUsername($usuario){
         $sql = "SELECT * FROM user";
         $resultado = $this->database->query($sql);
 
@@ -121,7 +120,7 @@ class UserModel{
         return false;
     }
 
-    public function getUserFromDatabaseWhereUsernameExists($usuario){
+    public function agarrarUsuarioDeLaBaseDeDatosPorUsername($usuario){
         $sql = "SELECT * FROM user";
         $resultado = $this->database->query($sql);
 
@@ -142,14 +141,14 @@ class UserModel{
         }
     }
 
-    public  function  getAllUsersOrdenados(){
+    public  function agarrarUsuariosOrdenadosPorPuntaje(){
         $sql = "SELECT * FROM user 
         ORDER BY puntaje DESC LIMIT 10";
         return $this->database->query($sql);
     }
 
-    public function checkPassword($usuario, $password){
-        $resultado = $this->getUserFromDatabaseWhereUsernameExists($usuario);
+    public function checkearPassword($usuario, $password){
+        $resultado = $this->agarrarUsuarioDeLaBaseDeDatosPorUsername($usuario);
         return $password == $resultado['password'];
     }
 
@@ -234,8 +233,8 @@ class UserModel{
         }
     }
 
-    public function checkVerification($usuario){
-        return $this->getUserFromDatabaseWhereUsernameExists($usuario)['esta_verificado'];
+    public function checkearVerificacion($usuario){
+        return $this->agarrarUsuarioDeLaBaseDeDatosPorUsername($usuario)['esta_verificado'];
     }
 
     public function generarQr($username){
@@ -253,15 +252,15 @@ class UserModel{
         return $filename;
     }
 
-    public function getDifficulty($usuario){
-        $user = $this->getUserFromDatabaseWhereUsernameExists($usuario);
+    public function agarrarDificultad($usuario){
+        $user = $this->agarrarUsuarioDeLaBaseDeDatosPorUsername($usuario);
         if($user['veces_respondidas'] >= 10){
             return $user['veces_acertadas'] * 100 / $user['veces_respondidas'];
         }
         return 1000;
     }
 
-    public function addRespondida($usuario){
+    public function agregarRespondida($usuario){
         $sql = "UPDATE user SET veces_respondidas = veces_respondidas + 1 WHERE username LIKE '$usuario'";
         $this->database->execute($sql);
     }
@@ -272,7 +271,7 @@ class UserModel{
     }
 
     public function getNumeroRanking($usuario){
-        $ranking = $this->getAllUsersOrdenados();
+        $ranking = $this->agarrarUsuariosOrdenadosPorPuntaje();
         $posicion = 1;
         foreach ($ranking as $usuarioRanking){
             if($usuarioRanking['username'] == $usuario){
