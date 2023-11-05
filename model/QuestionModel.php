@@ -145,9 +145,14 @@ class QuestionModel{
         $respuesta2 = $data["respuesta2"];
         $respuesta3 = $data["respuesta3"];
         $respuesta4 = $data["respuesta4"];
-
+        $esEditor = $data["esEditor"];
+        if(!$esEditor){
         $sql = "INSERT INTO pregunta(id_categoria, enunciado, reportada, agregada, veces_respondida, preguntaCreadaPorUsuario)
-        values('$categoria', '$enunciado', false, true, 0, true);";
+        values('$categoria', '$enunciado', false, true, 0, true);";}
+        else{
+        $sql = "INSERT INTO pregunta(id_categoria, enunciado, reportada, agregada, veces_respondida, preguntaCreadaPorUsuario)
+        values('$categoria', '$enunciado', false, false, 0, true);";
+        }
         $this->database->execute($sql);
 
         $sql7="SELECT * FROM pregunta WHERE enunciado='$enunciado'";

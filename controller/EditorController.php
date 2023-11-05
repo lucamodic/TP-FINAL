@@ -26,17 +26,17 @@ class EditorController
     }
 
     public function agregarPreguntaParaEditor(){
-
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
         $data = array(
             "categoria" => $_POST["categoria"],
             "enunciado" => $_POST["enunciado"],
             "respuesta1" => $_POST["respuesta1"],
             "respuesta2" => $_POST["respuesta2"],
             "respuesta3" => $_POST["respuesta3"],
-            "respuesta4" => $_POST["respuesta4"]
+            "respuesta4" => $_POST["respuesta4"],
+            "esEditor"=>$usuario['esEditor']
         );
         $this->questionModel->setPreguntasAgregadas($data);
-        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $dataHome = [
             'username' => $usuario['username'],

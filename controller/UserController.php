@@ -54,7 +54,7 @@ class UserController
 
     }
 
-    public function add(){
+    public function registrar(){
         $imagen_ruta="../public/images/generica.png";
 
         if(isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] === UPLOAD_ERR_OK){
@@ -78,7 +78,7 @@ class UserController
             "qr" => $this->userModel->generarQr($_POST["usuario"])
         );
 
-        $suceso = $this->userModel->add($datos);
+        $suceso = $this->userModel->registrar($datos);
 
         if($suceso != "exito"){
             $data = array("suceso" => $suceso);
