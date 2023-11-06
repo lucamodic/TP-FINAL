@@ -142,7 +142,7 @@ class UserModel{
     }
 
     public  function agarrarUsuariosOrdenadosPorPuntaje(){
-        $sql = "SELECT * FROM user 
+        $sql = "SELECT * FROM user WHERE esAdmin = 0 AND esEditor = 0
         ORDER BY puntaje DESC LIMIT 10";
         return $this->database->query($sql);
     }

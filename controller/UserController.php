@@ -103,6 +103,10 @@ class UserController
             $usuarioPerfil = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($nombre);
         }
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
+        if($usuarioPerfil['esEditor'] || $usuarioPerfil['esAdmin']){
+            $this->irAlHome($usuarioPerfil, $numeroRanking);
+            exit();
+        }
         $data = [
             'image' => $usuario['image'],
             'username' => $usuario['username'],
@@ -119,6 +123,16 @@ class UserController
 
         ];
         $this->renderer->render('user', $data);
+    }
+
+    public function irAlHome($usuario, $numeroRanking){
+        $data = [
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'esEditor' => $usuario['esEditor'],
+            'numeroRanking' => $numeroRanking
+        ];
+        $this->renderer->render('home', $data);
     }
 
     public function buscarPerfil(){
