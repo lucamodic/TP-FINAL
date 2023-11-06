@@ -72,4 +72,13 @@ class AdminController
     public function mostrarGraficos(){
         $this->renderer->render('graficos');
     }
+
+    public function logout(){
+        if (isset($_POST["Logout"])) {
+            unset($_SESSION["usuario"]);
+            unset($_SESSION["admin"]);
+            $this->renderer->render('login');
+            exit();
+        }
+    }
 }

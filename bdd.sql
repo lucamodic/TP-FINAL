@@ -70,7 +70,7 @@ ALTER TABLE pregunta
     ADD COLUMN reportada BOOLEAN DEFAULT false;
 
 ALTER TABLE pregunta
-    ADD COLUMN agregada BOOLEAN DEFAULT false;
+    ADD COLUMN agregada BOOLEAN DEFAULT true;
 
 ALTER TABLE pregunta
     ADD COLUMN preg_default BOOLEAN DEFAULT FALSE;
@@ -94,6 +94,12 @@ ALTER TABLE pregunta
 
 ALTER TABLE user
     ADD COLUMN fecha_de_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
+
+    INSERT INTO categoria(id,nombre,agregada,color)values(1,'Espectaculo',false,'#F5D430');
+    INSERT INTO categoria(id,nombre,agregada,color)values(2,'Deportes',false, '#da6e19');
+    INSERT INTO categoria(id,nombre,agregada,color)values(3,'Arte',false,'#1eb0a6');
+    INSERT INTO categoria(id,nombre,agregada,color)values(4,'Ciencia',false,'#abc52f');
+    INSERT INTO categoria(id,nombre,agregada,color)values(5,'Programacion',false,'#30A7F5');
 
     INSERT INTO pregunta(id_categoria, enunciado)values(1, '¿Cuál es el nombre del actor que interpreta a Tony Stark/Iron Man en el Universo Cinematográfico de Marvel?');
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Robert Downey Jr.', 1, true);
@@ -215,11 +221,11 @@ ALTER TABLE user
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Moana', 20, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Inside Out', 20, false);
 
-    INSERT INTO pregunta(id_categoria, enunciado)values(2, '¿Cuál es el deporte que se juega en la Copa Davis?');
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Tenis', 21, true);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Fútbol', 21, false);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Golf', 21, false);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Baloncesto', 21, false);
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (2, '¿Quién ostenta el récord de más títulos de Grand Slam en la historia del tenis masculino a partir de 2022?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Roger Federer', 21, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Rafael Nadal', 21, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Novak Djokovic', 21, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Pete Sampras', 21, false);
 
     INSERT INTO pregunta(id_categoria, enunciado)values(2, '¿En qué deporte se utiliza una red separando a dos equipos, y el objetivo es pasar la pelota sobre la red y que toque el suelo en el campo contrario?');
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Voleibol', 22, true);
@@ -227,11 +233,11 @@ ALTER TABLE user
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Balonmano', 22, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Bádminton', 22, false);
 
-    INSERT INTO pregunta(id_categoria, enunciado)values(2, '¿Cuál es el único deporte en el que los jugadores pueden usar sus pies, excepto el portero?');
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Fútbol', 23, true);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Baloncesto', 23, false);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Hockey sobre hielo', 23, false);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Tenis', 23, false);
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (7, '¿Cuál fue el país ganador de la Copa Mundial de la FIFA en 1954?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Alemania Occidental', 23, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Hungría', 23, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Brasil', 23, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Italia', 23, false);
 
     INSERT INTO pregunta(id_categoria, enunciado)values(2, '¿En qué deporte el jugador puede marcar puntos al encestar la pelota en el aro del equipo contrario?');
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Baloncesto', 24, true);
@@ -330,18 +336,17 @@ ALTER TABLE user
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Bobsleigh', 39, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Patinaje artístico', 39, false);
 
-
     INSERT INTO pregunta(id_categoria, enunciado)values(2, '¿Cual fue la mayor cantidad de goles que recibio en un solo partido la seleccion de Brasil?');
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('7', 40, true);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('5', 40, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('6', 40, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('8', 40, false);
 
-    INSERT INTO pregunta(id_categoria, enunciado)values(3, '¿Quién pintó la famosa obra "La última cena"?');
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Vincent van Gogh', 41, false);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Pablo Picasso', 41, false);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Leonardo da Vinci', 41, true);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Salvador Dalí', 41, false);
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (3, '¿Cuál de los siguientes pintores del Renacimiento italiano es conocido por la creación de la obra "La Primavera" y "El Nacimiento de Venus"?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Sandro Botticelli', 41, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Leonardo da Vinci', 41, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Michelangelo Buonarroti', 41, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Raffaello Sanzio', 41, false);
 
     INSERT INTO pregunta(id_categoria, enunciado)values(3, '¿Cuál de las siguientes pinturas es conocida por su representación de una noche estrellada sobre un pueblo?');
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('La Mona Lisa', 42, false);
@@ -361,11 +366,11 @@ ALTER TABLE user
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Pablo Picasso', 44, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Edgar Degas', 44, false);
 
-    INSERT INTO pregunta(id_categoria, enunciado)values(3, '¿Cuál de las siguientes corrientes artísticas se caracteriza por el uso de colores brillantes y formas geométricas?');
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Barroco', 45, false);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Pop art', 45, true);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Renacimiento', 45, false);
-    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Realismo', 45, false);
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (3, '¿Quién fue el artista del Renacimiento italiano conocido por su pintura "La Anunciación" y por ser un pionero en el uso de la perspectiva lineal en la pintura?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Leonardo da Vinci', 45, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Sandro Botticelli', 45, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Michelangelo Buonarroti', 45, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Raffaello Sanzio', 45, false);
 
     INSERT INTO pregunta(id_categoria, enunciado)values(3, '¿Qué famoso artista pintó "La persistencia de la memoria", con relojes derretidos?');
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Salvador Dalí', 46, true);
@@ -414,7 +419,6 @@ ALTER TABLE user
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Guernica', 53, true);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('El Grito', 53, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('El nacimiento de Venus', 53, false);
-
 
     INSERT INTO pregunta(id_categoria, enunciado)values(3, '¿Qué artista es conocido por sus autorretratos, en los que a menudo se representa con una ceja unida?');
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Frida Kahlo', 54, true);
@@ -475,7 +479,6 @@ ALTER TABLE user
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Respiración', 63, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Fermentación', 63, false);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Combustión', 63, false);
-
 
     INSERT INTO pregunta(id_categoria, enunciado)values(4, '¿Cuál es la fuerza que mantiene a los planetas en órbita alrededor del Sol?');
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Gravedad', 64, true);
@@ -699,10 +702,81 @@ ALTER TABLE user
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Página web (web page)', 100, true);
     INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Cola (queue)', 100, false);
 
-    INSERT INTO categoria(id,nombre,agregada,color)values(1,'Espectaculo',false,'#F5D430');
-    INSERT INTO categoria(id,nombre,agregada,color)values(2,'Deportes',false, '#da6e19');
-    INSERT INTO categoria(id,nombre,agregada,color)values(3,'Arte',false,'#1eb0a6');
-    INSERT INTO categoria(id,nombre,agregada,color)values(4,'Ciencia',false,'#abc52f');
-    INSERT INTO categoria(id,nombre,agregada,color)values(5,'Programacion',false,'#30A7F5');
+    INSERT INTO pregunta(id_categoria, enunciado)values(3, '¿Quién pintó la famosa obra "La última cena"?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Vincent van Gogh', 101, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Pablo Picasso', 101, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Leonardo da Vinci', 101, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Salvador Dalí', 101, false);
 
-    UPDATE pregunta SET preg_default=1 where id < 10;
+    INSERT INTO pregunta(id_categoria, enunciado)values(3, '¿Cuál de las siguientes corrientes artísticas se caracteriza por el uso de colores brillantes y formas geométricas?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Barroco', 102, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Pop art', 102, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Renacimiento', 102, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Realismo', 102, false);
+
+    INSERT INTO pregunta(id_categoria, enunciado)values(2, '¿Cuál es el deporte que se juega en la Copa Davis?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Tenis', 103, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Fútbol', 103, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Golf', 103, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Baloncesto', 103, false);
+
+    INSERT INTO pregunta(id_categoria, enunciado)values(2, '¿Cuál es el único deporte en el que los jugadores pueden usar sus pies, excepto el portero?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Fútbol', 104, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Baloncesto', 104, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Hockey sobre hielo', 104, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta)values('Tenis', 104, false);
+
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (1, '¿Cuál es la primera película en la historia del cine que ganó los cinco premios Oscar principales?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Lo que el viento se llevó', 105, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Ben-Hur', 105, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Titanic', 105, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('El Silencio de los Corderos', 105, false);
+
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (1, '¿Como se llama el protagonista de la famosa serie Breaking Bad?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Walter White', 106, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Jessy Pinkman', 106, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Homero Simpson', 106, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Anthony Bruno', 106, false);
+
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (4, '¿Que se encuentra en el centro de casi todas las galaxias grandes?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Una estrella', 107, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Un agujero negro', 107, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Un agujero negro supermasivo', 107, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Ninguna es correcta', 107, false);
+
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (4, '¿Cual es el limite imaginario de donde es imposible escapar en un agujero negro?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Horizonte de Einstein', 108, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Horizonte relativo', 108, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Horizonte de sucesos', 108, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Horizonte de Schwarzschild', 108, false);
+
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (5, '¿Que lenguaje de programación tiene como logo una taza de café?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Java', 109, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Python', 109, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('C++', 109, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('C#', 109, false);
+
+    INSERT INTO pregunta(id_categoria, enunciado) VALUES (5, '¿Cual de estos lenguajes de programación no existe?');
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Codescript', 110, true);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Malbolge', 110, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('Shakespeare', 110, false);
+    INSERT INTO respuesta(texto, id_pregunta, es_correcta) VALUES ('CheLang', 110, false);
+
+    UPDATE pregunta SET preg_default=1 where id > 100;
+
+    UPDATE pregunta SET agregada=0 where id <= 110;
+
+    UPDATE pregunta
+    SET veces_respondida = 30
+    WHERE (id > 10 AND id < 13)
+       OR (id > 28 AND id < 31)
+       OR (id > 46 AND id < 49)
+       OR (id > 64 AND id < 67)
+       OR (id > 82 AND id < 85);
+
+    INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje, partidasRealizadas, qr, latitud, longitud, esEditor, esAdmin, token_verificacion, esta_verificado, veces_acertadas, veces_respondidas)
+    values ('admin', 'admin', null, null, null, 'admin', null, null, null, null, null, null, 0, 1, 'admin', 1, null, null);
+
+    INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje, partidasRealizadas, qr, latitud, longitud, esEditor, esAdmin, token_verificacion, esta_verificado, veces_acertadas, veces_respondidas)
+    values ('editor', 'editor', null, null, null, 'editor', null, null, null, null, null, null, 1, 0, 'editor', 1, null, null);
+

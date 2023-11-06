@@ -119,7 +119,7 @@ class AdminModel{
     public function cantidadUsuariosPorSexo($tiempo){
         $sqlMasculinos = "SELECT COUNT(*) FROM user WHERE sex = 'masculino' 
                             AND fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
-        $masculinos = $this->database->query($sqlMasculinos);
+        $masculinos = $this->database->fetchColumn($sqlMasculinos);
         $sqlFemenino = "SELECT COUNT(*) FROM user WHERE sex = 'femenino'
                             AND fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
         $femeninos = $this->database->fetchColumn($sqlFemenino);

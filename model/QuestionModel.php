@@ -148,10 +148,10 @@ class QuestionModel{
         $esEditor = $data["esEditor"];
         if(!$esEditor){
         $sql = "INSERT INTO pregunta(id_categoria, enunciado, reportada, agregada, veces_respondida, preguntaCreadaPorUsuario)
-        values('$categoria', '$enunciado', false, true, 0, true);";}
+        values('$categoria', '$enunciado', false, true, 1, true);";}
         else{
         $sql = "INSERT INTO pregunta(id_categoria, enunciado, reportada, agregada, veces_respondida, preguntaCreadaPorUsuario)
-        values('$categoria', '$enunciado', false, false, 0, true);";
+        values('$categoria', '$enunciado', false, false, 1, true);";
         }
         $this->database->execute($sql);
 
