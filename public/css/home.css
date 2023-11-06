@@ -3,7 +3,20 @@
     padding:0px;
     box-sizing: border-box;color:white;
     font-family: Consolas, sans-serif;
+    overflow-y:hidden;
 }
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: rgb(220, 192, 255);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(130, 99, 167);
+}
+
 body {
     background-color: #1E1E1E;
     background-image: radial-gradient(#333232 1px, transparent 0);
@@ -106,7 +119,7 @@ a {
     border-radius: 5px;
 }
 .ranking{
-    margin-right: 14em;
+    margin-right: 8em;
     padding:0.5rem;
     font-size:1rem;
     border-radius:8px;
@@ -197,23 +210,191 @@ a {
     padding: 1em;
 }
 
-@media screen and (max-width: 800px) {
-    .botones-cont{
-    /*si se achica el largo, los botones se van por encima*/
-    }
+.hamburger-button {
+    display: none;
+}
 
-   .boton-activo {
-        padding:1.5rem 4rem;
-        font-size:3rem;
-        background-color: #252525;
-        margin:0.7rem;
+@media screen and (max-width: 1300px) {
+    .ranking{
+        margin-right:1rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .busqueda .form{
+        width:20rem;
+    }
+    .questionario {
+        width:40vw;
+    }
+    .logo {
         width:50%;
     }
+}
+
+@media screen and (min-width: 1400px) {
+    .logo {
+        width: 15rem;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .busqueda .form{
+        width:15rem;
+    }
+    .a-header-questionario {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+    }
+
+    .ranking{
+        margin:auto;
+    }
+
+    .busqueda .form{
+        margin:auto;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .botonConfirmar {
+        margin-top:10px;
+    }
+
+    .busqueda{
+        margin:10px;
+    }
+
+
+    .header-right{
+        justify-content: center;
+        align-items: center;
+    }
+
+    .boton-activo {
+        padding:1rem 2rem;
+        font-size:1rem;
+        background-color: #252525;
+        margin:0.7rem;
+        width:15rem;
+    }
+
     .logo{
         width:70%;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .header-home{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .a-header-questionario {
+       display:flex;
+        justify-content: center;
+        align-items: center;
+        width:100%;
+    }
+
+    .questionario {
+        display:flex;
+        align-items: center;
+        overflow-x:hidden;
+    }
+
+    .perfil {
+        justify-content: center;
+    }
+
+    .ranking{
+        margin:auto;
+    }
+
+    .busqueda .form{
+        margin:auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .botonConfirmar {
+        margin-top:10px;
+    }
+
+    .busqueda{
+        margin:10px;
+    }
+
+    .boton-activo {
+        padding:1rem 2rem;
+        font-size:1rem;
+        background-color: #252525;
+        margin:0.7rem;
+        width:15rem;
+    }
+
+    .logo{
+        width:10rem;
+        margin: auto;
+        padding:10px;
     }
     .buscador{
-        width:150%
+        width:100%;
+        margin-right:0px;
+    }
+
+    .botones-cont {
+        height:50vh;
+    }
+
+    .header-right{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width:70vw;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+
+    .header-right.abierto {
+        max-height: 200px;
+    }
+
+    .content {
+        opacity: 0;
+        transition: opacity 0.5s;
+    }
+
+    .header-right.open .content {
+        opacity: 1;
+    }
+
+    .rotate {
+        transform: rotate(90deg);
+    }
+
+    .hamburger-button {
+        display: block;
+        cursor:pointer;
+        width:20%;
+        height:60%;
+        margin:10px;
+        padding:5px 10px;
+        border-radius:5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        background-color: #252525;
+        border: 2px solid #945bc9;
+        text-align: center;
+    }
+
+    .hamburger-button:hover {
+        background-color: #100f0f;
     }
 }
 
