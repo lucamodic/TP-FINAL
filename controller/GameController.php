@@ -45,20 +45,32 @@ class GameController{
             $this->renderer->render('home', $this->getDataNoAccedePorBoton());
             exit();
         }
-        $respuesta = $_POST['bool'];
         $pregunta = $_POST['id_pregunta'];
         $tiempo = - ($_SESSION['start_time'] - time());
+        $this->checkearTrampita($tiempo, $pregunta);
+        $respuesta = $_POST['bool'];
         if($respuesta && $tiempo <= 10){
-            $this->userModel->sumarPuntos($_SESSION['usuario']);
-            $this->partidaModel->sumarPuntos($_POST['id_partida']);
-            $this->questionModel->sumarAcertada($pregunta);
-            $this->createSession();
-            $this->renderer->render('game', $this->getDataDelJuegoCuandoRespondeLaPregunta());
-            exit();
+            $this->respuestaAcertada($pregunta);
         }
         $this->userModel->sumarPartidaRealizadas($_SESSION['usuario']);
         $this->partidaModel->finalizarJuego($_POST['id_partida']);
         $this->renderer->render('perdiste', $this->getDataPerdio());
+        exit();
+    }
+
+    public function checkearTrampita($tiempo, $pregunta){
+        if($tiempo <= 10 && isset($_POST['trampita'])){
+            $this->userModel->descontarTrampita($_SESSION['usuario']);
+            $this->respuestaAcertada($pregunta);
+        }
+    }
+    
+    public function respuestaAcertada($pregunta){
+        $this->userModel->sumarPuntos($_SESSION['usuario']);
+        $this->partidaModel->sumarPuntos($_POST['id_partida']);
+        $this->questionModel->sumarAcertada($pregunta);
+        $this->createSession();
+        $this->renderer->render('game', $this->getDataDelJuegoCuandoRespondeLaPregunta());
         exit();
     }
 
@@ -109,6 +121,7 @@ class GameController{
         $categoria = $this->questionModel->getColor($idCategoria);
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         return $data = [
+            'trampitas' => $usuario['trampitas'],
             'partida' => $partida[0]['id'],
             'pregunta' => $pregunta,
             'respuestas' => $respuestas,
@@ -128,6 +141,7 @@ class GameController{
         $categoria = $this->questionModel->getColor($idCategoria);
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         return $data = [
+            'trampitas' => $usuario['trampitas'],
             'partida' => $partida,
             'pregunta' => $pregunta,
             'respuestas' => $respuestas,

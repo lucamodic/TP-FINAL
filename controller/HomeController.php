@@ -62,5 +62,14 @@ class HomeController
         ];
         $this->renderer->render('agregarCategoria',$data);
     }
-
+    public function tienda(){
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
+        $data=[
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'numeroRanking' => $numeroRanking
+        ];
+        $this->renderer->render('tienda',$data);
+    }
 }

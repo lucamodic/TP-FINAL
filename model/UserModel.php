@@ -284,12 +284,15 @@ class UserModel{
 
     public function checkearSiEsAdmin($usuario){
         $sql="SELECT esAdmin FROM user WHERE username = '$usuario'";
-        Logger::info('que carajos me trae---------: ' . json_encode($this->database->query($sql)));
         $queryResult = json_encode($this->database->query($sql));
         $data = json_decode($queryResult, true);
         $esAdminValue = $data[0]['esAdmin'];
         return $esAdminValue;
     }
 
+    public function descontarTrampita($usuario){
+        $sql = "UPDATE user SET trampitas = trampitas - 1 WHERE username = '$usuario'";
+        $this->database->execute($sql);
+    }
 
 }

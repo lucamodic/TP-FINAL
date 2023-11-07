@@ -135,7 +135,9 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-
+}
+.modo-admin form{
+    margin-right: 2em;
 }
 .rojo-admin{
     margin-left: 0.2em;
@@ -207,6 +209,11 @@ a {
     border: 2px solid #945bc9;
     border-radius:15px;
     padding: 1em;
+    cursor: pointer;
+}
+.logout:hover {
+    cursor: pointer;
+    background-color: #100f0f;
 }
 
 .hamburger-button {

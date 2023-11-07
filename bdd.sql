@@ -95,6 +95,9 @@ ALTER TABLE pregunta
 ALTER TABLE user
     ADD COLUMN fecha_de_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP;
 
+ALTER TABLE user
+    ADD COLUMN trampitas INT DEFAULT 5;
+
     INSERT INTO categoria(id,nombre,agregada,color)values(1,'Espectaculo',false,'#F5D430');
     INSERT INTO categoria(id,nombre,agregada,color)values(2,'Deportes',false, '#da6e19');
     INSERT INTO categoria(id,nombre,agregada,color)values(3,'Arte',false,'#1eb0a6');

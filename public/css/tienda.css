@@ -1,0 +1,67 @@
+.principal{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.flex{
+    display: flex;
+
+}
+.tarjetas{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(206, 194, 192, 0.13);
+    align-items: center;
+    justify-content: center;
+    width: 15rem;
+    height: 15rem;
+
+}
+.divTarjetas{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 2em;
+}
+.containerTarjetas{
+    width: 60%;
+}
+.botonComprar{
+    color: white;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    border-radius:15px;
+    padding: 0.5em;
+    cursor: pointer;
+    margin-top: 1em;
+}
+.tarjetaMetodos{
+    background-color: rgba(218, 214, 214, 0.65);
+    width: 10rem;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedorMetodos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    flex-direction: column;
+}
+.divMetodos{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    width: 60%;
+}
+.precio{
+    position: relative;
+    left: 6em;
+}
+
+

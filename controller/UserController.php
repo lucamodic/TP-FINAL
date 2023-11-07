@@ -198,4 +198,11 @@ class UserController
             exit();
         }
     }
+
+    public function traerUsuariosPorPuntajeAjax(){
+        $users = $this->userModel->agarrarUsuariosOrdenadosPorPuntaje();
+        header('Content-Type: application/json');
+        echo json_encode(['usuarios' => $users]);
+
+    }
 }

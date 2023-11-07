@@ -1,22 +1,19 @@
 <link rel="stylesheet" href="../public/css/ranking.css">
+
+<script type="text/javascript" src="../public/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../public/js/ranking.js"></script>
+
 <div class="contRanking">
     <div class="rankingGeneral">
         <h3>Ranking Mundial</h3>
-        <table >
+        <table id="tablaRanking">
             <thead>
             <tr>
                 <th>Username</th>
                 <th>Puntos</th>
             </tr>
             </thead>
-            <tbody>
-            {{#usuarios}}
-                <tr>
-                    <td><a href="/user/mostrarPerfil?user={{username}}">{{username}}</a></td>
-                    <td>{{puntaje}}</td>
-                </tr>
-            {{/usuarios}}
-            </tbody>
+            <tbody></tbody>
         </table>
     </div>
     <div class="historialPartidas">
@@ -41,5 +38,7 @@
         </table>
     </div>
 </div>
+
+
 
 
