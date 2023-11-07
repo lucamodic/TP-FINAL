@@ -205,4 +205,61 @@ class UserController
         echo json_encode(['usuarios' => $users]);
 
     }
+
+    public function mostrarModificarPerfil(){
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        $data=[
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+        ];
+        $this->renderer->render('modificarPerfil', $data);
+    }
+
+    public function modificarPerfil() {
+        $usuario=$_SESSION['usuario'];
+        $usernameNuevo = $_POST["username"];
+        $passwordNuevo= $_POST["password"];
+        if(isset($_FILES["imagen"]) && $_FILES["imagen"]["error"] === UPLOAD_ERR_OK){
+            $imagen= $_FILES["imagen"]["name"];
+            $loc_temp = $_FILES["imagen"]["tmp_name"];
+            $imagen_ruta = "public/images/" . $imagen;
+            move_uploaded_file($loc_temp, $imagen_ruta);
+            $this->userModel->modificarImagen($imagen_ruta, $usuario);
+        };
+
+        if (strlen($passwordNuevo) > 7) {
+            $this->userModel->modificarPassword($passwordNuevo,$usuario);
+        }else if(strlen($passwordNuevo)>0){ $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+            $data=[
+                'errorNombre' => "Contraseña muy corta",
+                'username' => $usuario['username'],
+                'image' => $usuario['image'],
+            ];
+            $this->renderer->render('modificarPerfil', $data);}
+
+        if (strlen($usernameNuevo) > 1) {
+            if(!$this->userModel->modificarUsername($usernameNuevo, $usuario)){
+                $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+                $data=[
+                    'errorNombre' => "Usuario ya existente",
+                    'username' => $usuario['username'],
+                    'image' => $usuario['image'],
+                ];
+                $this->renderer->render('modificarPerfil', $data);
+            };
+            $_SESSION["usuario"] = $usernameNuevo;
+            Logger::info($_SESSION['usuario'] . "----------------");
+        }
+        $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
+        $data = [
+            'username' => $usuario['username'],
+            'image' => $usuario['image'],
+            'esEditor' => $usuario['esEditor'],
+            'esAdmin' => $usuario['esAdmin'],
+            'numeroRanking' => $numeroRanking
+        ];
+        $this->renderer->render('home', $data);
+    }
+
 }

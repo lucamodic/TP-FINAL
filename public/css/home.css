@@ -210,10 +210,20 @@ a {
     border-radius:15px;
     padding: 1em;
     cursor: pointer;
+    margin-bottom:0.5em;
 }
 .logout:hover {
     cursor: pointer;
     background-color: #100f0f;
+}
+.modificar{
+    color: white;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    border-radius:15px;
+    padding: 1em;
+    cursor: pointer;
+    margin:2em;
 }
 
 .hamburger-button {

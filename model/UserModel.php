@@ -295,4 +295,26 @@ class UserModel{
         $this->database->execute($sql);
     }
 
+    public function modificarUsername($usernameNuevo, $usuario) {
+        if($this->checkearUsername($usernameNuevo)){
+            return false;
+        }
+        $sql1 = "UPDATE partida SET username = '$usernameNuevo' WHERE username = '$usuario'";
+        $this->database->execute($sql1);
+        $sql2 = "UPDATE preguntas_usadas SET username = '$usernameNuevo' WHERE username = '$usuario'";
+        $this->database->execute($sql2);
+        $sql3 = "UPDATE user SET username = '$usernameNuevo' WHERE username = '$usuario'";
+        $this->database->execute($sql3);
+    }
+
+
+    public function modificarImagen($image, $usuario){
+        $sql = "UPDATE user SET image = '$image' WHERE username = '$usuario'";
+        $this->database->execute($sql);
+    }
+
+    public function modificarPassword($passwordNuevo,$usuario){
+        $sql = "UPDATE user SET password = '$passwordNuevo' WHERE username = '$usuario'";
+        $this->database->execute($sql);
+    }
 }

@@ -74,6 +74,19 @@ h3{
 .input3::placeholder {
     color: #d3cccc
 }
+.img-perfil{
+    width:3.5rem;
+    border-radius:100%;
+    margin-bottom:1em;
+}
+.usuario{
+    margin:0.5em;
+}
+.input-mod{
+    margin: 10px;
+    padding: 5px;
+    color: #824ae3;
+}
 @media screen and (max-width: 1700px) {
 
     .div-todo{

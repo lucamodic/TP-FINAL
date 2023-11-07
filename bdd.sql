@@ -16,8 +16,8 @@ CREATE TABLE user(
 CREATE TABLE partida (
                          id INT AUTO_INCREMENT PRIMARY KEY,
                          username VARCHAR(255),
-                         puntaje INT,
-                         FOREIGN KEY (username) REFERENCES user(username)
+                         puntaje INT
+
 );
 
 CREATE TABLE pregunta(
@@ -35,10 +35,9 @@ CREATE TABLE respuesta (
 
 CREATE TABLE preguntas_usadas (
                                   username VARCHAR(255),
-                                  pregunta_id INT,
-                                  FOREIGN KEY (username) REFERENCES user(username),
-                                  FOREIGN KEY (pregunta_id) REFERENCES pregunta(id)
+                                  pregunta_id INT
 );
+
 CREATE TABLE categoria (
                            id INT AUTO_INCREMENT PRIMARY KEY,
                            nombre VARCHAR(255),

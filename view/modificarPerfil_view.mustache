@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="../public/css/agregarPregunta.css">
+<div class="div-entero">
+    <div class="div-todo">
+        <h3>Editar Perfil</h3>
+                <p class="usuario">{{username}}</p>
+                <img class="img-perfil" src="../{{image}}" alt="">
+            <form action="/user/modificarPerfil" method="post" class="form2" enctype="multipart/form-data">
+                <input type="text" name="username" placeholder="Nuevo usuario..." class="input-mod">
+                <input type="password" name="password" placeholder="Nueva contraseña..." class="input-mod">
+                <input type="file" name="imagen" accept="image/*" class="input-mod">
+                <input type="submit" value="Editar" class="boton2">
+             </form>
+        {{#errorNombre}}
+            <p>{{errorNombre}}</p>
+        {{/errorNombre}}
+    </div>
+</div>

@@ -2,7 +2,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAiq3xISXSZYgkd9GDAOdajy4NK2d3L7dY&callback=initMap" async defer></script>
 <div class="usuario-entero">
     <div class="usuario">
-        <img class="img-usuario" src="../{{imagePerfil}}" alt="" >
+
+        <img class="img-usuario" src="../{{imagePerfil}}" alt="" width="200px">
         {{#editar}}
 
             <form action="/user/logout" method="POST" class="form">
@@ -27,6 +28,9 @@
         <div class="qr">
             <img src = "../{{qr}}"  alt="Qr"/>
         </div>
+        <form action="/user/mostrarModificarPerfil" method="POST" class="form">
+            <input type="submit" name="modificar" value="modificar perfil" class="modificar">
+        </form>
     </div>
 
     <input type="hidden" name="latitud" id="latitud" value="{{latitud}}">
