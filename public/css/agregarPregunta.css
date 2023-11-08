@@ -98,3 +98,9 @@ h3{
         width:60%;
     }
 }
+
+@media screen and (max-width: 450px) {
+    h3 {
+        text-align: center;
+    }
+}

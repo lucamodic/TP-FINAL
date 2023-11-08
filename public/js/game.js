@@ -16,7 +16,7 @@ $(document).ready(function(){
             url: '/game/calcularTiempoQueQueda',
             success: function (response) {
                 var data = JSON.parse(response)["tiempo"];
-                if (data <= 0) {
+                if (data <= -1000000) {
                     window.location.href = "/game/perdiste";
                 }
                 $('.tiempo').html(data);

@@ -33,11 +33,22 @@ td{
 .boton-activo {
     padding:0.5rem;
     font-size:1rem;
-    margin:0.2rem;
+    margin:auto;
+    transform: translate(-20%, 0%);
     border-radius:15px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     background-color: #252525;
     border: 2px solid #945bc9;
     text-align: center;
-    width: 10rem;
+    width: 15vw;
+}
+
+@media screen and (max-width: 550px) {
+    *{
+        font-size:10px;
+    }
+
+    .boton-activo {
+        transform: translate(-40%, 0%);
+    }
 }
