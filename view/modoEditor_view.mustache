@@ -1,41 +1,43 @@
 <link rel="stylesheet" href="../public/css/tablas.css">
-<table>
-    <thead>
-    <tr>
-        <th>Pregunta</th>
-        <th>Respuestas</th>
-        <th>Categoria</th>
-        <th></th>
-        <th></th>
-    </tr>
-    </thead>
-    <tbody>
-    {{#preguntasConRespuestas}}
+<div class="div-container">
+    <table>
+        <thead>
         <tr>
-            <td>{{pregunta.enunciado}}</td>
-            <td>
-                {{#respuestas}}
-                    {{^es_correcta}}
-                        <p class="red">{{texto}}</p>
-                    {{/es_correcta}}
-                    {{#es_correcta}}
-                        <p class="green">{{texto}}</p>
-                    {{/es_correcta}}
-                {{/respuestas}}
-            </td>
-
-            <td>
-            {{#categorias}}
-                {{nombre}}
-            {{/categorias}}
-            </td>
-            <form action="/editor/editarEliminar" method="POST">
-                <input type="hidden" name="pregunta_id" value="{{pregunta.id}}">
-                <td><button type="submit" name="editar" value="editar" class="boton2">Editar</button></td>
-                <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
-            </form>
+            <th>Pregunta</th>
+            <th>Respuestas</th>
+            <th>Categoria</th>
+            <th></th>
+            <th></th>
         </tr>
-    {{/preguntasConRespuestas}}
+        </thead>
+        <tbody>
+        {{#preguntasConRespuestas}}
+            <tr>
+                <td>{{pregunta.enunciado}}</td>
+                <td>
+                    {{#respuestas}}
+                        {{^es_correcta}}
+                            <p class="red">{{texto}}</p>
+                        {{/es_correcta}}
+                        {{#es_correcta}}
+                            <p class="green">{{texto}}</p>
+                        {{/es_correcta}}
+                    {{/respuestas}}
+                </td>
 
-    </tbody>
-</table>
+                <td>
+                    {{#categorias}}
+                        {{nombre}}
+                    {{/categorias}}
+                </td>
+                <form action="/editor/editarEliminar" method="POST">
+                    <input type="hidden" name="pregunta_id" value="{{pregunta.id}}">
+                    <td><button type="submit" name="editar" value="editar" class="boton2">Editar</button></td>
+                    <td><button type="submit" name="eliminar" value="eliminar" class="boton2">Eliminar</button></td>
+                </form>
+            </tr>
+        {{/preguntasConRespuestas}}
+
+        </tbody>
+    </table>
+</div>

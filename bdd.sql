@@ -782,3 +782,4 @@ ALTER TABLE user
     INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje, partidasRealizadas, qr, latitud, longitud, esEditor, esAdmin, token_verificacion, esta_verificado, veces_acertadas, veces_respondidas)
     values ('editor', 'editor', null, null, null, 'editor', null, null, null, null, null, null, 1, 0, 'editor', 1, null, null);
 
+

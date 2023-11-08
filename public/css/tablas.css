@@ -46,6 +46,10 @@ td{
 .green{
     color: #6cb96c;
 }
+.div-container{
+    overflow-x: scroll;
+    max-width: 100%;
+}
 
 @media screen and (max-width: 660px) {
     *{
