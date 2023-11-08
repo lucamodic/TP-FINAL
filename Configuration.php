@@ -12,6 +12,7 @@ include_once ("model/RespuestaModel.php");
 include_once ("model/PartidaModel.php");
 include_once ("model/AdminModel.php");
 include_once('controller/HomeController.php');
+include_once('controller/TiendaController.php');
 include_once('controller/EditorController.php');
 include_once('controller/UserController.php');
 include_once('controller/AdminController.php');
@@ -33,12 +34,21 @@ class Configuration {
             $this->getRenderer()
         );
     }
+
     public function getAdminController(){
         return new AdminController(
             new  AdminModel($this->getDatabase()),
             $this->getRenderer()
         );
     }
+
+    public function getTiendaController(){
+        return new TiendaController(
+            new UserModel($this->getDatabase()),
+            $this->getRenderer()
+        );
+    }
+
     public function getGameController(){
         return new GameController(
             new QuestionModel($this->getDatabase()),

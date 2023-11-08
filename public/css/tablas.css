@@ -20,7 +20,6 @@ thead {
 
 }
 
-
 th, td {
     padding: 20px;
     border-bottom: 1px solid #ccc;
@@ -46,4 +45,23 @@ td{
 }
 .green{
     color: #6cb96c;
+}
+
+@media screen and (max-width: 660px) {
+    *{
+        font-size:13px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    *{
+        font-size:10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .boton2{
+        padding:0.5rem 0.5rem;
+        margin:auto;
+    }
 }
