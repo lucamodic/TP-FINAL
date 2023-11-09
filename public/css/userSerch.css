@@ -21,7 +21,6 @@ thead {
     display: flex;
     justify-content: center;
 }
-
 th, td {
     padding: 20px;
     border-bottom: 1px solid #ccc;
@@ -40,7 +39,13 @@ td{
     background-color: #252525;
     border: 2px solid #945bc9;
     text-align: center;
-    width: 15vw;
+    width:7rem;
+}
+.tdBoton{
+    text-align:  center;
+}
+a{
+    width: 0;
 }
 
 @media screen and (max-width: 550px) {
@@ -50,5 +55,7 @@ td{
 
     .boton-activo {
         transform: translate(-40%, 0%);
+        font-size:1rem;
+        width: 5rem;
     }
 }
