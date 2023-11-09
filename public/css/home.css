@@ -67,6 +67,13 @@ a {
     align-items:center;
     flex-direction:column;
 }
+.botones-conte{
+    height:90vh;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction:column;
+}
 
 .boton-activo {
     padding:1rem 4rem;
@@ -229,7 +236,51 @@ a {
 .hamburger-button {
     display: none;
 }
-
+@media screen and (max-width: 1570px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1em;
+        height: 100vh;
+    }
+    .radious {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .botones-cont-graficos{
+        border: 2px solid #945bc9;
+        height: 20rem;
+        border-radius: 12px;
+        padding:1rem;
+        margin-top: 2rem;
+    }
+    .container form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+    .boton-pasivo{
+        margin-top: 2em;
+        padding:1rem 4rem;
+        font-size:1.5rem;
+        border-radius:15px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        background-color: #252525;
+        border: 2px solid #945bc9;
+        width:30rem;
+        text-align: center;
+    }
+    .seleccione{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 3em;
+    }
+}
 @media screen and (max-width: 1300px) {
     .ranking{
         margin-right:1rem;
@@ -299,6 +350,49 @@ a {
     .logo{
         width:70%;
         margin: auto;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .radious {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .botones-cont-graficos{
+        border: 2px solid #945bc9;
+        height: 15rem;
+        width: 15rem;
+        border-radius: 12px;
+        padding:1rem;
+    }
+    .container form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+    .boton-pasivo{
+        padding:1rem 1rem;
+        font-size:12px;
+        border-radius:15px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        background-color: #252525;
+        border: 2px solid #945bc9;
+        width: 13rem;
+        text-align: center;
+    }
+    .seleccione{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0.5em;
     }
 }
 
@@ -408,7 +502,49 @@ a {
     .hamburger-button:hover {
         background-color: #100f0f;
     }
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .radious {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .botones-cont-graficos{
+        border: 2px solid #945bc9;
+        height: 15rem;
+        width: 15rem;
+        border-radius: 12px;
+        padding:1rem;
+    }
+    .container form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        align-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+    .boton-pasivo{
+        padding:1rem 1rem;
+        font-size:12px;
+        border-radius:15px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        background-color: #252525;
+        border: 2px solid #945bc9;
+        width: 13rem;
+        text-align: center;
+    }
+    .seleccione{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0.5em;
+    }
 }
+
 
 
 

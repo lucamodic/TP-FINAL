@@ -12,6 +12,16 @@ table {
     table-layout: fixed;
     margin: 2rem 2rem ;
 }
+.preguntas{
+    width: 95%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+.preguntasEditar{
+    width: 97%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
 
 thead {
     background-color: #333;
@@ -46,12 +56,25 @@ td{
 .green{
     color: #6cb96c;
 }
-.div-container{
-    overflow-x: scroll;
-    max-width: 100%;
-}
 
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 767px) {
+    *{
+        font-size:12px;
+    }
+    .boton2{
+        padding:0.5rem 0.5rem;
+        margin:auto;
+    }
+    th, td {
+        font-size: 12px;
+        padding: 6px;
+    }
+    .busqueda {
+        width: 15rem;
+    }
+
+}
+/*@media screen and (max-width: 660px) {
     *{
         font-size:13px;
     }
@@ -68,4 +91,4 @@ td{
         padding:0.5rem 0.5rem;
         margin:auto;
     }
-}
+}*/

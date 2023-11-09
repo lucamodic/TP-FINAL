@@ -67,7 +67,7 @@
 
 @media screen and (max-width: 500px) {
     .principal{
-        height:240vh;
+        margin-top: 28rem;
     }
 
     .tarjetas{
