@@ -782,4 +782,6 @@ ALTER TABLE user
     INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje, partidasRealizadas, qr, latitud, longitud, esEditor, esAdmin, token_verificacion, esta_verificado, veces_acertadas, veces_respondidas)
     values ('editor', 'editor', null, null, null, 'editor', null, null, null, null, null, null, 1, 0, 'editor', 1, null, null);
 
-
+    INSERT INTO user (username, name, spawn, sex, mail, password, image, puntaje, partidasRealizadas,qr, latitud, longitud, esEditor, esAdmin, token_verificacion, esta_verificado, veces_acertadas, veces_respondidas, fecha_de_creacion, trampitas)
+    VALUES ("user1", "user1", "1950-11-06", "masculino", "user1@gmail.com", "user1", "public/images/generica.png", 10, 10, "null", "-22.9712", "-43.1829", 0, 0, "user1", 1, 1, 1, "2020-11-08 11:07:30", 5),
+    ("user2", "user2", "2002-11-06", "x", "user2@gmail.com", "user2", "public/images/generica.png", 10, 10, "null", "36.7783", "-119.4179", 0, 0, "user2", 1, 1, 1, "2023-11-08 11:07:30", 5) ;

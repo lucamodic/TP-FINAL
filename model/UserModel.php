@@ -136,7 +136,7 @@ class UserModel{
         if(empty($usernameBuscado)){
             return false;
         } else{
-            $sql = "SELECT * FROM user WHERE username LIKE '%$usernameBuscado%'";
+            $sql = "SELECT * FROM user WHERE username LIKE '%$usernameBuscado%' AND esAdmin = 0 AND esEditor = 0";
             return  $this->database->query($sql);
         }
     }

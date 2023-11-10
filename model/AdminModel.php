@@ -112,7 +112,7 @@ class AdminModel{
     }
 
     public function agarrarTodosLosUsuarios($tiempo){
-        $sql = 'SELECT * FROM user WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)';
+        $sql = 'SELECT * FROM user WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY) AND esAdmin = 0 AND esEditor = 0';
         return $this->database->query($sql);
     }
 
@@ -197,21 +197,6 @@ class AdminModel{
 
         $pdf = new FPDF();
         $pdf->AddPage();
-
-//        $this->crearGrafico($this->getGruposDeEdad(300), "Grafico Por Edad", "graficoPorEdadTotal");
-//        $this->crearGrafico($this->cantidadUsuariosPorSexo(300), "Grafico Por Sexos", "graficoPorSexoTotal");
-//        $this->crearGraficoPaises(300, "Total");
-//        $this->crearGrafico($this->getPorcentajePreguntasRespondidas(1000),
-//            "Preguntas respondidas bien por usuario", "graficoPreguntasBienTotal");
-//
-//        $imagePath = ['public/images/graficos/graficoPreguntasBienTotal.png',
-//            'public/images/graficos/graficoPorSexoTotal.png',
-//            'public/images/graficos/graficoPorEdadTotal.png',
-//            'public/images/graficos/graficoPaisesTotal.png'];
-//
-//        foreach($imagePath as $image){
-//            $pdf->Image($image, 10, 10, 90);
-//        }
 
         $pdf->SetFont('Arial', 'B', 16);
         $titulo = "Reporte de Questionario";

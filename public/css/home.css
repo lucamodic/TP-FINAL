@@ -280,6 +280,9 @@ a {
         justify-content: center;
         margin-bottom: 3em;
     }
+    .admin-container {
+        margin-top:4rem;
+    }
 }
 @media screen and (max-width: 1300px) {
     .ranking{
