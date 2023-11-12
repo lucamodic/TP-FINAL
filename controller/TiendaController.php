@@ -1,9 +1,12 @@
 <?php
 
 require 'third-party/vendor/autoload.php';
+require 'third-party/sdk-php-master/src/MercadoPago/MercadoPagoConfig.php';
+require 'third-party/sdk-php-master/src/MercadoPago/Client/Preference/PreferenceClient.php';
 
 use MercadoPago\Client\Preference\PreferenceClient;
 use MercadoPago\MercadoPagoConfig;
+
 
 class TiendaController{
     private $userModel;
