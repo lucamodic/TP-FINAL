@@ -142,18 +142,23 @@ class UserController
         $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
         $usernameBuscado = $_POST['username'];
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
-        $resultadoBusqueda = $this->userModel->buscarPrefilPorNombre($usernameBuscado);
+        $numeroDePagina = $_GET['numeroDePagina'];
+        $resultadoBusqueda = $this->userModel->buscarPrefilPorNombre($usernameBuscado, $numeroDePagina);
         if($resultadoBusqueda){
+            $anterior = $this->verSiHayPaginaAnterior($numeroDePagina);
+            $siguiente = $this->userModel->verSiHayPaginaSiguiente($numeroDePagina, $usernameBuscado);
             $data = [
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
                 'resultadoBusqueda' => $resultadoBusqueda,
-                'numeroRanking' => $numeroRanking
+                'numeroRanking' => $numeroRanking,
+                'siguiente' => $siguiente,
+                'anterior' => $anterior,
+                'usuarioBuscado' => $usernameBuscado
             ];
             $this->renderer->render('userSearch',$data);
         }
         else{
-
             $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
             $data = [
                 'username' => $usuario['username'],
@@ -163,6 +168,15 @@ class UserController
                 'numeroRanking' => $numeroRanking
             ];
             $this->renderer->render('home', $data);
+        }
+    }
+
+    public function verSiHayPaginaAnterior($numeroDePagina){
+        if($numeroDePagina > 1){
+            return $numeroDePagina - 1;
+        }
+        else {
+            return false;
         }
     }
 

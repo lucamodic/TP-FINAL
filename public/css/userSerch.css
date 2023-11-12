@@ -41,6 +41,11 @@ td{
     text-align: center;
     width:7rem;
 }
+
+.boton-activo:hover {
+    cursor:pointer
+}
+
 .tdBoton{
     text-align:  center;
 }
@@ -48,9 +53,33 @@ a{
     width: 0;
 }
 
+.botones-busqueda-div {
+    display:flex;
+    justify-content: center;
+    margin:10px;
+}
+
+.busqueda-boton {
+    padding:0.5rem;
+    font-size:1rem;
+    transform: translate(-20%, 0%);
+    border-radius:15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background-color: #252525;
+    border: 2px solid #945bc9;
+    text-align: center;
+    width:7rem;
+    margin:0px 10px;
+}
+
+.busqueda-boton:hover {
+    cursor:pointer;
+}
+
 @media screen and (max-width: 550px) {
-    *{
-        font-size:10px;
+
+    tr {
+        font-size:12px;
     }
 
     .boton-activo {

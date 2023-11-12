@@ -23,6 +23,19 @@
         {{/resultadoBusqueda}}
         </tbody>
     </table>
-
+</div>
+<div class="botones-busqueda-div">
+    {{#anterior}}
+        <form class="form" action="/user/buscarPerfil?numeroDePagina={{anterior}}" method="post">
+            <input type="hidden" name="username" value="{{usuarioBuscado}}">
+            <input class="busqueda-boton" type="submit" value="Anterior">
+        </form>
+    {{/anterior}}
+    {{#siguiente}}
+        <form class="form" action="/user/buscarPerfil?numeroDePagina={{siguiente}}" method="post">
+            <input type="hidden" name="username" value="{{usuarioBuscado}}">
+            <input class="busqueda-boton" type="submit" value="Siguiente">
+        </form>
+    {{/siguiente}}
 </div>
 

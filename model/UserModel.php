@@ -132,12 +132,24 @@ class UserModel{
         return false;
     }
 
-    public function buscarPrefilPorNombre($usernameBuscado){
+    public function buscarPrefilPorNombre($usernameBuscado, $numeroDePagina){
         if(empty($usernameBuscado)){
             return false;
         } else{
-            $sql = "SELECT * FROM user WHERE username LIKE '%$usernameBuscado%' AND esAdmin = 0 AND esEditor = 0";
+            $limiteDeUsuariosHasta = $numeroDePagina * 10;
+            $limiteDeUsuariosDesde = $limiteDeUsuariosHasta - 10;
+            $sql = "SELECT * FROM user WHERE username LIKE '%$usernameBuscado%' AND esAdmin = 0 AND esEditor = 0 LIMIT ". $limiteDeUsuariosDesde . ", " . $limiteDeUsuariosHasta;
             return  $this->database->query($sql);
+        }
+    }
+
+    public function verSiHayPaginaSiguiente($numeroDePagina, $usernameBuscado){
+        $sql = "SELECT COUNT(*) FROM user WHERE username LIKE '%$usernameBuscado%' AND esAdmin = 0 AND esEditor = 0";
+        $cantidadDeUsuarios = $this->database->fetchColumn($sql);
+        if($numeroDePagina * 10 < $this->database->fetchColumn($sql)){
+            return $numeroDePagina + 1;
+        }else {
+            return false;
         }
     }
 
