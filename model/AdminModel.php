@@ -118,13 +118,13 @@ class AdminModel{
 
     public function cantidadUsuariosPorSexo($tiempo){
         $sqlMasculinos = "SELECT COUNT(*) FROM user WHERE sex = 'masculino' 
-                            AND fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
+                            AND fecha_de_creacion <= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
         $masculinos = $this->database->fetchColumn($sqlMasculinos);
         $sqlFemenino = "SELECT COUNT(*) FROM user WHERE sex = 'femenino'
-                            AND fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
+                            AND fecha_de_creacion <= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
         $femeninos = $this->database->fetchColumn($sqlFemenino);
         $sqlNoEspecifica = "SELECT COUNT(*) FROM user WHERE sex = 'x' 
-                            AND fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
+                            AND fecha_de_creacion <= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)";
         $noEspecifica = $this->database->fetchColumn($sqlNoEspecifica);
         $data = [
             'masculinos' => $masculinos,
@@ -139,7 +139,7 @@ class AdminModel{
         $menores = 0;
         $medio = 0;
         $sql = 'SELECT spawn FROM user 
-                    WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)';
+                    WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY) AND esAdmin = 0 AND esEditor = 0';
         $nacimientos = $this->database->query($sql);
         foreach ($nacimientos as $nacimiento) {
             $fecha = date('Y', strtotime($nacimiento['spawn']));
@@ -170,17 +170,17 @@ class AdminModel{
     }
 
     public function cantidadDeUsuariosNuevos(){
-        $sql = "SELECT COUNT(*) FROM user WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL 30 DAY)";
+        $sql = "SELECT COUNT(*) FROM user WHERE fecha_de_creacion <= DATE_SUB(CURDATE(), INTERVAL 30 DAY)";
         return $this->database->fetchColumn($sql);
     }
 
     public function getPorcentajePreguntasRespondidas($tiempo){
         $sql='SELECT SUM(veces_respondida) as total_veces_respondida FROM pregunta 
                 WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)';
-        $vecesRespondidasTotal = $this->database->query($sql);
+        $vecesRespondidasTotal = $this->database->fetchColumn($sql);
         $sql2 = 'SELECT SUM(veces_respondida_bien) as veces_respondida_bien FROM pregunta
                     WHERE fecha_de_creacion >= DATE_SUB(CURDATE(), INTERVAL ' . $tiempo . ' DAY)';
-        $vecesRespondidasBien = $this->database->query($sql2);
+        $vecesRespondidasBien = $this->database->fetchColumn($sql2);
         $data = [
             "Respondidas Bien" => $vecesRespondidasBien,
             "Respondidas Total" => $vecesRespondidasTotal

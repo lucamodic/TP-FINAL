@@ -49,9 +49,6 @@ td{
 .tdBoton{
     text-align:  center;
 }
-a{
-    width: 0;
-}
 
 .botones-busqueda-div {
     display:flex;

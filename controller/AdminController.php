@@ -39,6 +39,14 @@ class AdminController
         $this->renderer->render('grafico',$data);
     }
 
+    public function mostrarGraficoPreguntas(){
+        $this->adminModel->crearGraficoPorPreguntasRespondidasBienPorUsuario($_POST['tiempo'],"Temporal");
+        $data = [
+            'ruta' => '../public/images/graficos/graficoPreguntasBien.png'
+        ];
+        $this->renderer->render('grafico',$data);
+    }
+
     public function mostrarGraficoPorSexo(){
         $this->adminModel->crearGraficoPorSexo($_POST['tiempo']);
         $data = [
