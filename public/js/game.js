@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $('#reportar').click(function(e){
-        var idPregunta = $('#id_pregunta').val();
-        var url = '/game/reportarPregunta?id_pregunta=' + idPregunta;
+        let  idPregunta = $('#id_pregunta').val();
+        let url = '/game/reportarPregunta?id_pregunta=' + idPregunta;
         $.ajax({
             url: url,
             type: 'GET',
@@ -15,8 +15,8 @@ $(document).ready(function(){
         $.ajax({
             url: '/game/calcularTiempoQueQueda',
             success: function (response) {
-                var data = JSON.parse(response)["tiempo"];
-                if (data <= -1000000) {
+                let data = JSON.parse(response)["tiempo"];
+                if (data <= 0) {
                     window.location.href = "/game/perdiste";
                 }
                 $('.tiempo').html(data);

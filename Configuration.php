@@ -71,7 +71,8 @@ class Configuration {
         return new EditorController(
             new UserModel($this->getDatabase()),
             $this->getRenderer(),
-            new QuestionModel($this->getDatabase())
+            new QuestionModel($this->getDatabase()),
+            new RespuestaModel($this->getDatabase())
         );
     }
 

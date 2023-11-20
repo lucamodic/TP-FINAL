@@ -64,7 +64,6 @@ class AdminModel{
 
         $graph->title->Set($titulo);
 
-        // Guardo la imagen
         $graph->Stroke('public/images/graficos/' . $nombreDelArchivoSinExtension . '.png');
     }
 

@@ -225,9 +225,14 @@ class QuestionModel{
         $this->database->execute($sql);
     }
 
-    public function setNuevaCategoria($categoria, $color){
-        $sql = "INSERT INTO categoria(nombre,agregada,color)
-        values('$categoria',1,'$color')";
+    public function setNuevaCategoria($categoria, $color, $es_editor){
+        if($es_editor){
+            $sql = "INSERT INTO categoria(nombre,agregada,color)
+            values('$categoria',0,'$color')";
+        } else{
+            $sql = "INSERT INTO categoria(nombre,agregada,color)
+            values('$categoria',1,'$color')";
+        }
         $this->database->execute($sql);
     }
 
@@ -290,14 +295,15 @@ class QuestionModel{
     }
 
     public function editarPregunta($data){
-        $id=$data['id'];
+        $id = $data['id'];
         $enunciado = $data['enunciado'];
-
         if($enunciado){
             $sql = "UPDATE pregunta SET enunciado='$enunciado' WHERE id = '$id'";
             $this->database->execute($sql);
         }
     }
+
+
 
     public function getColor($idCategoria){
         $sql = "SELECT * FROM categoria WHERE id = '$idCategoria'";

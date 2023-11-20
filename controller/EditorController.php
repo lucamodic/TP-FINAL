@@ -6,10 +6,13 @@ class EditorController
     private $userModel;
     private $questionModel;
 
-    public function __construct($userModel, $renderer, $questionModel) {
+    private $respuestaModel;
+
+    public function __construct($userModel, $renderer, $questionModel,$respuestaModel) {
         $this->userModel = $userModel;
         $this->renderer = $renderer;
         $this->questionModel = $questionModel;
+        $this->respuestaModel = $respuestaModel;
     }
 
     public function mostrarPreguntasReportadas(){
@@ -106,10 +109,11 @@ class EditorController
     }
 
     public function agregarCategoria(){
-        $categoria=$_POST["categoria"];
-        $color=$_POST["color"];
-        $this->questionModel->setNuevaCategoria($categoria,$color);
+        $categoria = $_POST["categoria"];
+        $color = $_POST["color"];
         $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
+        $es_editor= $usuario['esEditor'];
+        $this->questionModel->setNuevaCategoria($categoria, $color, $es_editor);
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $dataHome = [
             'username' => $usuario['username'],
@@ -172,19 +176,22 @@ class EditorController
             $this->renderer->render('home', $data);
         }else if($editar){
             $pregunta=$this->questionModel->buscarPreguntaParaEditar($pregunta_id);
+            $respuestas = $this->respuestaModel->getRespuestasEditor($pregunta_id);
             $categorias= $this->questionModel->getCategoriasQueEstenAgregadas();
             $data=[
                 'username' => $usuario['username'],
                 'image' => $usuario['image'],
                 'pregunta'=>$pregunta,
                 'categorias' => $categorias,
-                'numeroRanking' => $numeroRanking
+                'numeroRanking' => $numeroRanking,
+                "respuestas" => $respuestas
             ];
             $this->renderer->render('editar', $data);
         }
     }
 
     public function editarPregunta(){
+        $respuestas = $this->respuestaModel->getRespuestasEditor($_POST["id"]);
         $data = array(
             "id"=>$_POST["id"],
             "categoria" =>$_POST["categoria"],
@@ -192,9 +199,11 @@ class EditorController
             "respuesta1" =>$_POST["respuesta1"],
             "respuesta2" =>$_POST["respuesta2"],
             "respuesta3" =>$_POST["respuesta3"],
-            "respuesta4" =>$_POST["respuesta4"]
+            "respuesta4" =>$_POST["respuesta4"],
+            "respuestasOriginales" => $respuestas
         );
         $this->questionModel->editarPregunta($data);
+        $this->respuestaModel->editarRespuestas($data);
         $usuario = $this->userModel->agarrarUsuarioDeLaBaseDeDatosPorUsername($_SESSION['usuario']);
         $numeroRanking = $this->userModel->getNumeroRanking($usuario['username']);
         $dataHome = [

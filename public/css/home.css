@@ -51,6 +51,7 @@ a {
 
 .pfp {
     width:3.5rem;
+    height: 3.5rem;
     border-radius:100%;
     transition: border 0.1s ease;
 }
